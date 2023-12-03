@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>InKosTel Cari Kost</title>
-    <link rel="stylesheet" href="{{ asset('front/bootstrap/css/bootstrap.min.css') }}"> 
+    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="{{ asset('front/css/carikost.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/carikost.css') }}">
   </head>
   <body>
     <!-- navbar start -->
@@ -21,7 +21,7 @@
                 <div class="container" id="conHeader">
                     <div class="row">
                         <div class="col-md-4 logo">
-                            <img src="{{ asset('front/img/logo_inkostel.png') }}" alt="Logo KosTel">
+                            <img src="{{ asset('/img/logo_inkostel.png') }}" alt="Logo KosTel">
                         </div>
               
                         <div class="col-md-4 text-center">
@@ -36,7 +36,7 @@
                         <div class="col-md-4 text-end" id="button-container">
                             <h5 id="username">Supri</h5>
                               <a class="nav-link" href="../html/profile.html" id="profileButton">
-                                <img src="{{ asset('front/img/profile.png') }}" style="width:50px; border-radius:50%;"/>
+                                <img src="{{ asset('/img/profile.png') }}" style="width:50px; border-radius:50%;"/>
                                 <span class="xp-user-live"></span>
                               </a>
                         </div>   
@@ -128,7 +128,7 @@
   
               <div class="footer-col">
                   <div class="logo-footer">
-                      <img src="{{ asset('front/img/logo_inkostel.png') }}" alt="logofooter" >
+                      <img src="{{ asset('/img/logo_inkostel.png') }}" alt="logofooter" >
                       <br> <br>
                       <h5>About Us</h5>
                       <p>InKosTel aplikasi untuk mencari informasi penjualan kos terbaik dan ternyaman di sekitar Telkom University</p>
@@ -179,6 +179,6 @@
     <!--Akhir Footer--> 
 
     <!-- script js -->
-    <script src="{{ asset('front/js/carikost.js') }}"></script>
+    <script src="{{ asset('/js/carikost.js') }}"></script>
   </body>
 </html>

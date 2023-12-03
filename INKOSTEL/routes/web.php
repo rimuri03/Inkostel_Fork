@@ -19,3 +19,7 @@ Route::get('/carikost', function () {
 
 Route::get('/getKosData', 'KosController@getKosData');
 
+Route::get('/home', function () {
+    return view('index');
+});
+
