@@ -23,3 +23,6 @@ Route::get('/home', function () {
     return view('index');
 });
 
+Route::get('/profile', function () {
+    return view('profile');
+});
