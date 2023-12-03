@@ -13,11 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/carikost', function () {
-    return view('carikost');
+
+Route::get('/detailKos', function () {
+    return view('detailKos');
 });
 
 Route::get('/getKosData', 'KosController@getKosData');
+
 
 Route::get('/home', function () {
     return view('index');
@@ -26,3 +28,7 @@ Route::get('/home', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
+Route::get('/carikost', function () {
+    return view('carikost');
+});
+
