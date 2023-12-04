@@ -5,22 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/login.css">
-  <title>Log In InKosTel</title>
+  <title>Inkostel | Login</title>
 </head>
 <body>
   <div class="container">
     <div class="forms-container">
       <div class="signin-signup">
-        <form action="" class="sign-in-form">
+        <form action="/login" method="post" class="sign-in-form">
+            @csrf 
           <img src="../img/logo_inkostel.png" alt="" class="logo">
           <h2 class="title">Log In</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username">
+            <input type="text" placeholder="Username" id="username" name="username" autofocus required>
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Password" id="password" name="password" required>
           </div>
           <input type="submit" value="Login" class="btn solid" id="loginButton"> 
 
@@ -46,15 +47,15 @@
           <h2 class="title">Sign Up</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username">
+            <input type="text" placeholder="Username" id="username" name="name" autofocus required>
           </div>
           <div class="input-field">
             <i class="fas fa-envelope"></i>
-            <input type="text" placeholder="Email">
+            <input type="email" placeholder="Email" id="email" name="email" required>
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Password" id="password" name="password" required>
           </div>
           <input type="submit" value="Sign up" class="btn solid">
 

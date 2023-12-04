@@ -23,7 +23,7 @@
                     <div class="row">
         
                         <div class="col-md-4 logo">
-                            <img src="{{ asset('/img/logo_inkostel.png') }}" alt="Logo KosTel">
+                            <img src="/img/logo_inkostel.png" alt="Logo KosTel">
                         </div>
                 
                         <div class="col-md-4 text-center">
@@ -36,9 +36,10 @@
                         </div>
                 
                         <div class="col-md-4 text-end" id="button-container">
+                            <a href="/login">
                             <button type="button" class="btn btn-success custom-button1" id="loginButton">Login</button>
+                            </a>
                         </div>
-                        
                 </div>
             </div>
             <!-- SideBar Menu -->
@@ -51,7 +52,7 @@
                 <div class="sidebar-content">
                     <ul class="lists">
                         <li class="list">
-                            <a href="../html/index.html" class="nav-link"> /*Mungkin get*/
+                            <a href="../html/index.html" class="nav-link">
                                 <i class='bx bx-home-alt icon'></i>
                                 <span class="link">Home</span>
                             </a>
@@ -214,7 +215,7 @@
                     <div class="yukcari-text">
                         <h1>Yuk cari kosan pilihan terbaikmu di Inkostel</h1>
                             <br>
-                            <a class="btn btn-warning custom-button3" id="cariButton" href="#">Mulai Mencari</a>
+                            <a href="#" class="btn btn-warning custom-button3" id="cariButton" >Mulai Mencari</a>
                     </div>
                 </div>
                     
