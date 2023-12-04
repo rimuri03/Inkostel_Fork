@@ -13,4 +13,14 @@ class KosController extends Controller
 
         return response()->json($kosData);
     }
+
+    public function jualkos(){
+        return view('jualkos');
+    }
+
+    public function simpanjualkos(Request $request){
+        dd($request->all());
+    }
+
+
 }

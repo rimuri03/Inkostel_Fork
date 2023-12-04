@@ -13,9 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/carikost', function () {
-    return view('carikost');
+Route::get('/jualkos', function () {
+    return view('jualkos');
 });
 
-Route::get('/getKosData', 'KosController@getKosData');
+Route::get('/getKosData', [KosController::class,'getKosData']);
+Route::get('/jualkos', [KosController::class,'jualkos'])->name('jualkos');
+Route::post('/simpanjualkos', [KosController::class,'jualkos'])->name('simpanjualkos');
+
 
