@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kos;
+use App\Models\Detail;
 
 class KosController extends Controller
 {
@@ -11,8 +12,10 @@ class KosController extends Controller
     {
         $kosData = Kos::all(); // Sesuaikan dengan model dan kolom Anda
 
+
         return response()->json($kosData);
     }
+
 
     public function jualkos(){
         return view('jualkos');
@@ -21,6 +24,5 @@ class KosController extends Controller
     public function simpanjualkos(Request $request){
         dd($request->all());
     }
-
 
 }
