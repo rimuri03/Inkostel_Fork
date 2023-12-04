@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\KosController;
+//use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +27,11 @@ Route::get('/carikost', function () {
     return view('carikost');
 });
 
-Route::get('/getKosData', 'KosController@getKosData');
+Route::get('/getKosData', [KosController::class,'getKosData']);
+Route::get('/jualkos', [KosController::class,'jualkos'])->name('jualkos');
+Route::post('/simpanjualkos', [KosController::class,'jualkos'])->name('simpanjualkos');
+
+
 
 Route::get('/login', function () {
     return view('login');
