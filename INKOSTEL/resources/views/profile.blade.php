@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
-    <link rel="stylesheet" href="{{ asset('front/bootstrap/css/bootstrap.min.css') }}"> 
+    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="{{ asset('front/css/profile.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
 </head>
 <body>
     <!-- navbar start -->
@@ -24,7 +24,7 @@
         
                         <div class="col-md-4 logo">
                             <a href="index.html">
-                                <img src="{{ asset('front/img/logo_inkostel.png') }}" alt="Logo KosTel">
+                                <img src="{{ asset('img/logo_inkostel.png') }}" alt="Logo KosTel">
                             </a>
                         </div>
                 
@@ -133,7 +133,7 @@
                     </div>
                     <div class="card-body d-flex align-items-center">
                         <div>
-                            <img src="{{ asset('front/img/WhatsApp Image 2023-10-29 at 12.35 1.png') }}" alt="Profile Picture" class="profile-pict rounded float-left">
+                            <img src="{{ asset('img/WhatsApp Image 2023-10-29 at 12.35 1.png') }}" alt="Profile Picture" class="profile-pict rounded float-left">
                         </div>
                         <div class="media-body ms-4" style="padding-bottom: 40px;">
                             <div class="input-group">
