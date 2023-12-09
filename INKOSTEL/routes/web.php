@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('JualKos');
 });
 
 Route::get('/login', [LoginController::class, 'index']);
@@ -28,8 +28,6 @@ Route::get('/carikost', function () {
 });
 
 Route::get('/getKosData', [KosController::class,'getKosData']);
-Route::get('/jualkos', [KosController::class,'jualkos'])->name('jualkos');
-Route::post('/simpanjualkos', [KosController::class,'jualkos'])->name('simpanjualkos');
 
 
 

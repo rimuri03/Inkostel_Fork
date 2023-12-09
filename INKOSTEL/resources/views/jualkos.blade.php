@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/jualKos.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ asset('css/jualKos.css') }}">
 </head>
 <body>
   <!-- navbar start -->
@@ -118,8 +119,7 @@
         <div class="row justify-content-center my-5">
 
           <div class="col-lg-6">
-            <form action="{{ route('simpanjualkos') }}" method="post">
-                {{ csrf_field() }}
+            <form>
               <label for="Nama" class="form-label">Nama:</label>
               <div class="mb-4 input-group">
                 <span class="input-group-text">
@@ -147,6 +147,33 @@
                 <input type="text" class="form-control" id="Alamat" placeholder="e.g. Sulanjana No 45 Blok H1">
               </div>
 
+              <div class="mt-3">
+                <label for="cekkosong">Jarak:</label>
+              </div>
+              
+              
+              <div class="form-check mt-3">
+                <input type="checkbox" class="form-check-input" value="" id="cekkosong">
+                <label for="cekkosong" class="form-check-label">
+                  0-100 meter
+                </label>
+              </div>
+
+
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" value="" id="cekkosong">
+                <label for="cekkosong" class="form-check-label">
+                  100-500 meter
+                </label>
+              </div>
+              
+
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" value="" id="cekkosong">
+                <label for="cekkosong" class="form-check-label">
+                  500-1000 meter
+                </label>
+              </div>
 
               <label for="Nomor" class="form-label">Nomor Handphone:</label>
               <div class="mb-4 input-group">
@@ -155,15 +182,6 @@
                 </span>
                 <input type="text" class="form-control" id="Nomor" placeholder="">
               </div>
-              
-            
-              <label for="Ukuran" class="form-label">Pilih Ukuran Kamar:</label>
-              <select class="form-select" id="Ukuran">
-                <option value="20x30" selected>20x30</option>
-                <option value="20x40">20x40</option>
-                <option value="30x20">30x20</option>
-              </select>
-
 
               <div class="mt-3">
                 <label for="cekkosong">Fasilitas:</label>
@@ -209,6 +227,13 @@
                 </label>
               </div>
 
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" value="" id="cekkosong">
+                <label for="cekkosong" class="form-check-label">
+                  Kamar Mandi Dalam
+                </label>
+              </div>
+
               <label for="Harga" class="form-label">Tentukan Harga:</label>
               <div class="mb-4 input-group">
                 <span class="input-group-text" id="Rp">
@@ -229,7 +254,7 @@
               
               
               <div class="mb-4 text-center">
-                <button type="submit" class="btn btn-secondary">Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
               </div>
               
             </form>
