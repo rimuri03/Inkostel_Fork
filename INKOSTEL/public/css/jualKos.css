@@ -221,6 +221,12 @@ header .logo {
   font-style: unset;
 }
 
+.btn-primary{
+  background-color:#6DD6BF;
+  border: none;
+}
+
+
 /* end content */
 
 

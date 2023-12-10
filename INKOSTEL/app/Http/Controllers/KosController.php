@@ -12,7 +12,6 @@ class KosController extends Controller
     {
         $kosData = Kos::all(); // Sesuaikan dengan model dan kolom Anda
 
-
         return response()->json($kosData);
     }
 }
