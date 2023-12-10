@@ -47,7 +47,7 @@
             <div class="sidebar">
                 <div class="logo">
                     <i class='bx bx-menu menu-icon'></i>
-                    <span class="logo-name">InKostel</span>
+                    <span class="logo-name">InKosTel</span>
                 </div>
                 <div class="sidebar-content">
                     <ul class="lists">

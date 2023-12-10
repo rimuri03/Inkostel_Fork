@@ -24,7 +24,7 @@ class LoginRegis extends Controller
         $credentials = $request->only('username', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->route('home'); // Sesuaikan dengan route setelah login berhasil
+            return redirect()->route('carikost');
         }
 
         return redirect()->route('login')->with('error', 'Invalid username or password.');
@@ -45,7 +45,7 @@ class LoginRegis extends Controller
         $user->save();
 
         if(!$user){
-            return redirect(route('home'))->with("error", "Regis tidak valid, coba lagi");
+            return redirect(route('login'))->with("error", "Regis tidak valid, coba lagi");
         }
 
         return redirect()->route('login')->with('success', 'Registration successful. Please login.');

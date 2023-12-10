@@ -30,22 +30,6 @@
           @endif
           <input type="submit" value="Login" class="btn solid" id="loginButton">
 
-
-          <p class="social-text">Atau Log In dengan Platform Media Sosial</p>
-          <div class="social-media">
-            <a href="#" class="social-icon">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-google"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
         </form>
 
         <form action="{{route('registration.post')}}" method="POST" class="sign-up-form">
@@ -66,21 +50,7 @@
           </div>
           <input type="submit" value="Sign up" class="btn solid">
 
-          <p class="social-text">Atau Sign Up dengan Platform Media Sosial</p>
-          <div class="social-media">
-            <a href="#" class="social-icon">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-google"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
+        
         </form>
       </div>
     </div>
