@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\detailcontroller;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KosController;
 //use App\Http\Controllers\RegisterController;
@@ -39,9 +40,9 @@ Route::get('/login', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
-Route::get('/detailKos', function () {
-    return view('detailKos');
-});
+// Route::get('/detailKos', function () {
+//     return view('detailKos');
+// });
 
-
+Route::get('/detailKos', [detailcontroller::class, 'getKosData']);
 
