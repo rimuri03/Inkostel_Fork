@@ -111,7 +111,7 @@
     <section id="JualKosForm">
       <div class="container">
         <div class="text-center mt-5">
-          <h2>Join Sekarang Juga!</h2>
+          <h2>Iklankan Sekarang Juga!</h2>
           <p>Isi Form Untuk Mendaftar</p>
         </div>
 
