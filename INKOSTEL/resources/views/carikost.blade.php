@@ -27,8 +27,6 @@
 
                             <img src="{{ asset('img/logo_inkostel.png') }}" alt="Logo KosTel">
 
-                            <img src="{{ asset('/img/logo_inkostel.png') }}" alt="Logo KosTel">
-
                         </div>
 
                         <div class="col-md-4 text-center">
@@ -45,9 +43,6 @@
 
                               <a class="nav-link" href="../html/profile.html" id="profileButton">
                                 <img src="{{ asset('img/profile.png') }}" style="width:50px; border-radius:50%;"/>
-
-                            <a class="nav-link" href="../html/profile.html" id="profileButton">
-                                <img src="{{ asset('/img/profile.png') }}" style="width:50px; border-radius:50%;" />
 
                                 <span class="xp-user-live"></span>
                             </a>

@@ -23,12 +23,13 @@ Route::get('/', function () {
 
 Route::get('/login', [LoginController::class, 'index']);
 
+
+//
 Route::get('/carikost', function () {
     return view('carikost');
 });
 
 Route::get('/getKosData', [KosController::class,'getKosData']);
-
 
 
 Route::get('/login', function () {
