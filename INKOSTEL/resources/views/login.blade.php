@@ -11,7 +11,7 @@
   <div class="container">
     <div class="forms-container">
       <div class="signin-signup">
-        <form action="/login" method="post" class="sign-in-form">
+        <form action="{{route('loginPost')}}" method="POST" class="sign-in-form">
             @csrf 
           <img src="../img/logo_inkostel.png" alt="" class="logo">
           <h2 class="title">Log In</h2>
@@ -42,12 +42,13 @@
           </div>
         </form>
 
-        <form action="" class="sign-up-form">
+        <form action="{{route('registration.post')}}" method="POST" class="sign-up-form">
+        @csrf 
           <img src="../img/logo_inkostel.png" alt="" class="logo">
           <h2 class="title">Sign Up</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" id="username" name="name" autofocus required>
+            <input type="text" placeholder="Username" id="username" name="usernameReg" autofocus required>
           </div>
           <div class="input-field">
             <i class="fas fa-envelope"></i>
@@ -55,7 +56,7 @@
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" id="password" name="password" required>
+            <input type="password" placeholder="Password" id="password" name="passwordReg" required>
           </div>
           <input type="submit" value="Sign up" class="btn solid">
 
