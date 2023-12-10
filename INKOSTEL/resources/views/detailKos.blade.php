@@ -133,7 +133,9 @@
     <div class="container" id="conbody">
         <div class="row justify-content-center">
             <div class="col">
-                <h1>Pondok Hutan</h1>
+                @foreach($Kos as $data)
+                <h1>{{$data["NamaKos"]}}</h1>
+                @endforeach
                 <div class="card mx-auto" style="width: 851px; height: 307px;">
                     <div class="card-body">
                         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -170,29 +172,11 @@
         <div class="row justify-content-center" id="detail">
             <div class="col-sm-4">
                 <h2>Deskripsi</h2>
+                @foreach($Kos as $data)
                 <div class="info-section info-section custom-scrollbar">
-
-                    <p>Kos Pondok Teladan yang beralamat di Jalan Raya Sukabirus, dekat Lapangan Futsal IFI. Dengan luas
-                        kamar 3.5 x 3.5 mm
-                        yang tentunya luas dan kamar mandi di dalam. Mempunyai tempat parkir dan kantin yang tersedia
-                        hingga jam malam 21.00. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet, impedit
-                        deleniti tempore minus neque excepturi quam rem, nobis natus nisi quos quisquam! Reprehenderit
-                        cupiditate, ex commodi quo laboriosam alias fugit vero consequatur ipsa asperiores sit iste?
-                        Dolorum obcaecati harum, debitis reiciendis qui, et quis blanditiis nulla eaque exercitationem
-                        veniam consequatur ipsa eum quisquam est recusandae? Saepe distinctio doloremque temporibus
-                        molestias, dolor reprehenderit illo, quasi rem animi veniam quos quas, sed ex. Hic, maiores
-                        culpa quia dolorum asperiores eaque sunt quod corrupti tenetur autem dicta consequuntur, animi
-                        ipsa recusandae facilis aliquid. Dignissimos totam deserunt tenetur ratione, laborum sequi fugit
-                        quasi laboriosam. In eius nisi doloremque iusto, officia enim beatae tempora corporis omnis,
-                        nihil facilis et! Asperiores, minus voluptatum provident iusto beatae odit debitis. Consequatur
-                        atque perferendis odio, sed neque perspiciatis commodi culpa nemo quas expedita asperiores
-                        obcaecati eveniet voluptas eius corporis ex similique ea voluptatum eaque ipsa magni nesciunt at
-                        illum! Amet voluptatibus quod perspiciatis! Voluptatem tenetur, dicta veniam eveniet quis qui
-                        totam accusamus corporis minus incidunt nulla ut labore deserunt veritatis? Nemo nesciunt id
-                        reprehenderit dicta! Reprehenderit fuga rem vero voluptas culpa, consequuntur voluptates,
-                        perspiciatis dolore doloremque esse quos sunt ab distinctio. Laboriosam dolores cumque obcaecati
-                        harum enim perferendis! Obcaecati?</p>
+                    <p>{{$data["Deskripsi"]}}</p>
                 </div>
+                @endforeach
             </div>
             <div class="col-sm-4" id="fasilitas">
                 <h2>Fasilitas</h2>
