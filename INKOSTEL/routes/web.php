@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('JualKos');
+    return view('index');
 });
 
 Route::get('/login', [LoginController::class, 'index']);
