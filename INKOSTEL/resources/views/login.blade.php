@@ -23,7 +23,13 @@
             <i class="fas fa-lock"></i>
             <input type="password" placeholder="Password" id="password" name="password" required>
           </div>
-          <input type="submit" value="Login" class="btn solid" id="loginButton"> 
+          @if(session('error'))
+              <div class="alert alert-danger">
+                  {{ session('error') }}
+              </div>
+          @endif
+          <input type="submit" value="Login" class="btn solid" id="loginButton">
+
 
           <p class="social-text">Atau Log In dengan Platform Media Sosial</p>
           <div class="social-media">
