@@ -15,7 +15,71 @@
   });
 
   // Data card
-      let cardData = [];
+  const cardData = [
+    {
+        carouselId: "carouselExample1",
+        imageSrc: "../img/gambar kos.jpg",
+        title: "Kos Putra PGA",
+        cardText1: "5",
+        cardText2: "500"
+    },
+    {
+        carouselId: "carouselExample2",
+        imageSrc: "../img/gambar kos.jpg",
+        title: "Kos Putra PGA",
+        cardText1: "15",
+        cardText2: "1500"
+    },
+    {
+        carouselId: "carouselExample3",
+        imageSrc: "../img/gambar kos.jpg",
+        title: "Kos Putra PGA",
+        cardText1: "5",
+        cardText2: "600"
+    },
+    {
+        carouselId: "carouselExample4",
+        imageSrc: "../img/gambar kos.jpg",
+        title: "Kos Putra PGA",
+        cardText1: "15",
+        cardText2: "2000"
+    },
+    {
+        carouselId: "carouselExample5",
+        imageSrc: "../img/gambar kos.jpg",
+        title: "Kos Putri Permata Buah Batu",
+        cardText1: "5",
+        cardText2: "1000"
+    },
+    {
+        carouselId: "carouselExample6",
+        imageSrc: "../img/gambar kos.jpg",
+        title: "Kos Putri Permata Buah Batu",
+        cardText1: "15",
+        cardText2: "600"
+    },
+    {
+        carouselId: "carouselExample7",
+        imageSrc: "../img/gambar kos.jpg",
+        title: "Kos Putri Permata Buah Batu",
+        cardText1: "5",
+        cardText2: "1500"
+    },
+    {
+        carouselId: "carouselExample8",
+        imageSrc: "../img/gambar kos.jpg",
+        title: "Kos Putri Permata Buah Batu",
+        cardText1: "15",
+        cardText2: "1500"
+    },
+    {
+      carouselId: "carouselExample9",
+      imageSrc: "../img/gambar kos.jpg",
+      title: "Kos Putri Permata Buah Batu",
+      cardText1: "15",
+      cardText2: "1500"
+    }
+  ];
 
       // Event listener for search input
       document.getElementById('searchInput').addEventListener('keyup', (e) => {
