@@ -25,7 +25,7 @@ Route::post('/registration', [LoginRegis::class, 'registrationPost'])->name('reg
 //
 Route::get('/carikost', function () {
     return view('carikost');
-})->name('carikost');
+});
 
 Route::get('/getKosData', [KosController::class,'getKosData']);
 
