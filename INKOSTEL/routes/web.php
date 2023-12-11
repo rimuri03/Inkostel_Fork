@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DetailKontroler;
 use App\Http\Controllers\LoginRegis;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\JualController;
 //use App\Http\Controllers\RegisterController;
 
 
@@ -24,12 +25,21 @@ Route::post('/registration', [LoginRegis::class, 'registrationPost'])->name('reg
 //
 Route::get('/carikost', function () {
     return view('carikost');
-})->name('carikost');
+});
 
 Route::get('/getKosData', [KosController::class, 'getKosData']);
 
 Route::get('/profile', function () {
     return view('profile');
 });
+
+Route::get('/detailKos', function () {
+    return view('detailKos');
+});
+
+//jual Kos
+Route::get('/jualkos', [JualController::class, 'tampilregisjual']);
+Route::post('/jualkos', [JualController::class, 'prosesregisjual']);
+
 
 Route::get('/detailkos/{kos}', [DetailKontroler::class, 'show'])->name('detailKos.show');
