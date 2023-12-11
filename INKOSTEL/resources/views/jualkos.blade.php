@@ -119,7 +119,8 @@
         <div class="row justify-content-center my-5">
 
           <div class="col-lg-6">
-            <form>
+            <form action="{{ url('/jualkos') }}" method="post">
+              @csrf
               <label for="Nama" class="form-label">Nama:</label>
               <div class="mb-4 input-group">
                 <span class="input-group-text">

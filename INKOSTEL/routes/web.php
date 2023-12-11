@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\LoginRegis;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\JualController;
 //use App\Http\Controllers\RegisterController;
 
 
@@ -35,5 +36,7 @@ Route::get('/detailKos', function () {
     return view('detailKos');
 });
 
-
+//jual Kos
+Route::get('/jualkos', [JualController::class, 'tampilregisjual']);
+Route::post('/jualkos', [JualController::class, 'prosesregisjual']);
 
