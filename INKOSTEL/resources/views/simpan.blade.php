@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>InKosTel simpan kost</title>
+    <title>Simpan Kost</title>
 
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -27,8 +27,6 @@
 
                             <img src="{{ asset('img/logo_inkostel.png') }}" alt="Logo KosTel">
 
-                            <img src="{{ asset('/img/logo_inkostel.png') }}" alt="Logo KosTel">
-
                         </div>
 
                         <div class="col-md-4 text-center">
@@ -45,9 +43,6 @@
 
                               <a class="nav-link" href="../html/profile.html" id="profileButton">
                                 <img src="{{ asset('img/profile.png') }}" style="width:50px; border-radius:50%;"/>
-
-                            <a class="nav-link" href="../html/profile.html" id="profileButton">
-                                <img src="{{ asset('/img/profile.png') }}" style="width:50px; border-radius:50%;" />
 
                                 <span class="xp-user-live"></span>
                             </a>
@@ -117,7 +112,14 @@
     </header>
     <!--Navbar End-->
 
-
+    <!-- Tombol Filter Pencarian -->
+    <div class="filter-button">
+        <button type="button" class="btn" data-filter="semua">Semua</button>
+        <button type="button" class="btn" data-filter="terdekat">Terdekat</button>
+        <button type="button" class="btn" data-filter="termurah">Termurah</button>
+        <button type="button" class="btn" data-filter="putra">Putra</button>
+        <button type="button" class="btn" data-filter="putri">Putri</button>
+    </div>
 
 
     <!-- main -->
@@ -181,60 +183,6 @@
           <hr>
           <p>Copyright @ 2023 Kelompok 5 - Web Programming, InKosTel</p>
       </div>
-
-        <div class="container" id="footer">
-            <div class="row">
-
-                <div class="footer-col">
-                    <div class="logo-footer">
-                        <img src="{{ asset('/img/logo_inkostel.png') }}" alt="logofooter">
-                        <br> <br>
-                        <h5>About Us</h5>
-                        <p>InKosTel aplikasi untuk mencari informasi penjualan kos terbaik dan ternyaman di sekitar Telkom University</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="footer-col">
-                    <br> <br> <br>
-                    <h5>About</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#">About Us</a></li>
-                        <li class="mb-2"><a href="#">Product</a></li>
-                        <li class="mb-2"><a href="#">Features</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <br> <br> <br>
-                    <h5>Support</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#">FAQs</a></li>
-                        <li class="mb-2"><a href="#">Support Center</a></li>
-                        <li class="mb-2"><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <br> <br> <br>
-                    <h5>Services</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#">Help Center</a></li>
-                        <li class="mb-2"><a href="#">Text</a></li>
-                        <li class="mb-2"><a href="#">How & Works</a></li>
-                    </ul>
-                </div>
-
-            </div>
-            <hr>
-            <p>Copyright @ 2023 Kelompok 5 - Web Programming, InKosTel</p>
-        </div>
-
     </footer>
     <!--Akhir Footer-->
 
@@ -244,4 +192,5 @@
   </body>
 </html>
 
+ 
 

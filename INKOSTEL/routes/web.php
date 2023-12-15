@@ -29,6 +29,10 @@ Route::get('/carikost', function () {
 
 Route::get('/getKosData', [KosController::class, 'getKosData']);
 
+Route::get('/simpan', function () {
+    return view('simpan');
+});
+
 Route::get('/profile', function () {
     return view('profile');
 });

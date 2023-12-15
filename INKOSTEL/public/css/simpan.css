@@ -387,3 +387,20 @@ hr {
 }
 
 /*Footer End*/
+
+/* Styling pagination */
+.pagination {
+  margin-top: 20px;
+}
+
+.pagination .page-link {
+  color: #41EBC6;
+  background-color: #FFF;
+  border: 1px solid #41EBC6;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #41EBC6;
+  color: #FFF;
+  border: 1px solid #41EBC6;
+}
