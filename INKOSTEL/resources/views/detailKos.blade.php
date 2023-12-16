@@ -133,9 +133,7 @@
     <div class="container" id="conbody">
         <div class="row justify-content-center">
             <div class="col">
-                @foreach($Kos as $data)
-                <h1>{{$data["NamaKos"]}}</h1>
-                @endforeach
+                <h1>{{ $kos->NamaKos }}</h1>
                 <div class="card mx-auto" style="width: 851px; height: 307px;">
                     <div class="card-body">
                         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -172,11 +170,12 @@
         <div class="row justify-content-center" id="detail">
             <div class="col-sm-4">
                 <h2>Deskripsi</h2>
-                @foreach($Kos as $data)
+
                 <div class="info-section info-section custom-scrollbar">
-                    <p>{{$data["Deskripsi"]}}</p>
+                    <p>{{ $kos->Deskripsi }}</p>
                 </div>
-                @endforeach
+
+
             </div>
             <div class="col-sm-4" id="fasilitas">
                 <h2>Fasilitas</h2>
