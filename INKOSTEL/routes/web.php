@@ -8,9 +8,6 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JualController;
 //use App\Http\Controllers\RegisterController;
 
-
-
-
 Route::get('/', function () {
     return view('index');
 })->name('home');
@@ -20,12 +17,10 @@ Route::get('/login', [LoginRegis::class, 'login'])->name('login');
 Route::post('/login', [LoginRegis::class, 'loginPost'])->name('loginPost');
 Route::post('/registration', [LoginRegis::class, 'registrationPost'])->name('registration.post');
 
-
-
 //
 Route::get('/carikost', function () {
     return view('carikost');
-});
+})->name('carikost');
 
 Route::get('/getKosData', [KosController::class,'getKosData']);
 
@@ -39,4 +34,16 @@ Route::get('/detailKos', function () {
 //jual Kos
 Route::get('/jualkos', [JualController::class, 'tampilregisjual']);
 Route::post('/jualkos', [JualController::class, 'prosesregisjual']);
+
+
+
+//LayOut --> Hapus saat versi final
+
+Route::get('/layout', function () {
+    return view('layout');
+});
+
+Route::get('/navbar', function () {
+    return view('partial.navbar');
+});
 

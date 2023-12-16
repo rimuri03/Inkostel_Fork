@@ -16,7 +16,13 @@ return new class extends Migration
             $table->string('nama_kos');
             $table->decimal('harga_kos');
             $table->integer('jarak_kos');
-            $table->string('gambar_kos');
+            $table->mediumText('gambar_kos');
+            $table->string('alamat');
+            $table->string('jarak');
+            $table->string('Deskripsi');
+            $table->string('Fasilitas');
+            $table->string('ContactPerson');
+            $table->integer('KamarKosong');
             $table->timestamps();
         });
     }

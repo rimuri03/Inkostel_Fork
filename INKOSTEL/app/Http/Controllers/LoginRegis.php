@@ -50,9 +50,7 @@ class LoginRegis extends Controller
 
         return redirect()->route('login')->with('success', 'Registration successful. Please login.');
     }
-
-    
-    
+  
     public function logout(){
         Session::flush() ;
         Auth::logout();
