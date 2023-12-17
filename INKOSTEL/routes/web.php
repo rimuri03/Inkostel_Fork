@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\KosController;
+use App\Http\Controllers\SimpanController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DetailKontroler;
 use App\Http\Controllers\LoginRegis;
@@ -24,9 +25,10 @@ Route::get('/carikost', function () {
 
 Route::get('/getKosData', [KosController::class, 'getKosData']);
 
-Route::get('/simpan', function () {
-    return view('simpan');
-});
+//Simpan Kost
+Route::get('/simpan', [SimpanController::class, 'tampilkanHalamanSimpan'])->name('simpan.halaman');
+Route::delete('/kos/delete/{id}', [SimpanController::class, 'delete'])->name('kos.delete');
+//akhir simpan kost
 
 Route::get('/profile', function () {
     return view('profile');

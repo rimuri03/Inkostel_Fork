@@ -112,21 +112,35 @@
     </header>
     <!--Navbar End-->
 
-    <!-- Tombol Filter Pencarian -->
-    <div class="filter-button">
-        <button type="button" class="btn" data-filter="semua">Semua</button>
-        <button type="button" class="btn" data-filter="terdekat">Terdekat</button>
-        <button type="button" class="btn" data-filter="termurah">Termurah</button>
-        <button type="button" class="btn" data-filter="putra">Putra</button>
-        <button type="button" class="btn" data-filter="putri">Putri</button>
-    </div>
-
-
     <!-- main -->
     <div class="container my-5" id="conmain">
-        <div class="row row-cols-1 row-cols-md-3 g-0" id="card"></div>
+        <div class="row row-cols-1 row-cols-md-3 g-0" id="card">
+            @foreach ($dataKos as $kos)
+                <div class="col">
+                    <div class="card">
+                        <!-- Mengasumsikan Anda memiliki field gambar dalam database -->
+                        <img src="{{ $kos->gambar_kos }}" class="card-img-top" alt="Gambar Kos">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $kos->nama_kos }}</h5>
+                            <p class="card-text">Harga: {{ $kos->harga_kos }}</p>
+                            <p class="card-text">Jarak: {{ $kos->jarak_kos }} km</p>
+                            <!-- Tambahkan field lain sesuai kebutuhan -->
+
+                        <form id="delete-form-{{ $kos->id_kos }}" action="{{ route('kos.delete', ['id' => $kos->id_kos]) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+
+                            <!-- Bidang formulir lainnya atau tombol submit bisa ditempatkan di sini -->
+                            <button type="submit" class="btn btn-danger">Hapus</button>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </div>
     <!-- end main -->
+
 
     <!--Footer-->
     <footer class="footer">
