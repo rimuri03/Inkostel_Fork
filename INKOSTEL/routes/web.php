@@ -52,3 +52,14 @@ Route::get('/navbar', function () {
     return view('partial.navbar');
 });
 
+Route::get('/footer', function () {
+    return view('partial.footer');
+});
+
+Route::get('/val', function () {
+    return view('validasi');
+});
+
+Route::get('/acc', function () {
+    return view('accept');
+});

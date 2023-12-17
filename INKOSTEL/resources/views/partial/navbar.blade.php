@@ -119,6 +119,8 @@
 
     <script src="{{ asset('js/layout.js') }}"></script>
     @yield('script')
+
+    @extends('partial.footer')
   </body>
 </html>
 

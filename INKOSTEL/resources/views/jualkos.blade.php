@@ -173,11 +173,15 @@
       </div>
     </section>
     @endsection
-    
+
+
+
     @section('script')
     <script src="../Bootstrap/js/bootstrap.min.js"></script>
     <script src="../js/jualKos.js"></script>
     @endsection
-    
+
+
+       
 </body>
 </html>
