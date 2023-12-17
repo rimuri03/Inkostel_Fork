@@ -228,12 +228,27 @@ header .logo {
   width: 200px;
 }
 
+#coba{
+  background-color: red ;
+}
+
+#rowcard{
+  background-color: gray;
+  padding-left:20px;
+  padding-left:20px;
+}
+
 /*container card */
 #conmain{
-  margin-left: 140px;
-  padding: 15px;  
+  /* margin-left: 140px; */
+  padding: 20px;  
   height: auto;
   padding-bottom: 30px;
+  background-color: #000088;
+}
+
+#concard{
+  background-color:pink;
 }
 
 /*ukuran card */

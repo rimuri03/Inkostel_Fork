@@ -6,6 +6,8 @@ use App\Http\Controllers\DetailKontroler;
 use App\Http\Controllers\LoginRegis;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JualController;
+
+use App\Http\Controllers\CariKosController;
 //use App\Http\Controllers\RegisterController;
 
 Route::get('/', function () {
@@ -17,12 +19,16 @@ Route::get('/login', [LoginRegis::class, 'login'])->name('login');
 Route::post('/login', [LoginRegis::class, 'loginPost'])->name('loginPost');
 Route::post('/registration', [LoginRegis::class, 'registrationPost'])->name('registration.post');
 
-//
-Route::get('/carikost', function () {
-    return view('carikost');
-})->name('carikost');
+
+
+// Cari Kost
+Route::get('/carikost',[CariKosController::class,'index']);
 
 Route::get('/getKosData', [KosController::class, 'getKosData']);
+
+
+
+
 
 Route::get('/simpan', function () {
     return view('simpan');
