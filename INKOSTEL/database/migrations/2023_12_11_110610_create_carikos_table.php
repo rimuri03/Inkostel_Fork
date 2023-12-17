@@ -18,7 +18,6 @@ return new class extends Migration
             $table->integer('jarak_kos');
             $table->mediumText('gambar_kos');
             $table->string('alamat');
-            $table->string('jarak');
             $table->string('Deskripsi');
             $table->string('Fasilitas');
             $table->string('ContactPerson');
