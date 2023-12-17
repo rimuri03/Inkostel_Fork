@@ -28,11 +28,33 @@
         <button type="button" class="btn" data-filter="putri">Putri</button>
     </div>
 
-
     <!-- main -->
-    <div class="container my-5" id="conmain">
-        <div class="row row-cols-1 row-cols-md-3 g-0" id="card"></div>
-    </div>
+    <div id="conmain">
+        <div class="row" id="rowcard">
+            <!-- akan di foreach -->
+            @foreach($carikos as $data)
+                <div class="col-md-3 mb-4" id="coba">
+                <div class="card" id=cobacard>
+                    <div class="border-image" id="carouselIdValue">
+                    <div class="carousel inner">
+                        <div class="carousel-item active">
+                        <img src="imageSrcValue" class="d-block w-100" alt="">
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="card-body">
+                    <h5 class="card-title">{{ $data->nama_kos}}</h5>
+                    <p class="card-text1">{{ $data->harga_kos}} </p>
+                    <p class="card-text2">{{ $data->jarak_kos}} Meter</p>
+                    <i class="bi bi-bookmark" style="position: relative; font-size: 30px; color: #41EBC6; margin-left: 180px; top: -100px;"></i>
+                    </div>
+                </div>
+                </div>
+                @endforeach
+=        </div>
+     </div>
+
     <!-- end main -->
     @endsection
 
