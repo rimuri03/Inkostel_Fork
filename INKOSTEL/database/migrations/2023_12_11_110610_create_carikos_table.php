@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('nama_kos');
             $table->decimal('harga_kos');
             $table->integer('jarak_kos');
-            $table->mediumText('gambar_kos');
+            $table->string('gambar_kos');
             $table->string('alamat');
             $table->string('Deskripsi');
-            $table->string('Fasilitas');
+            $table->string('Fasilitas')->nullable();
             $table->string('ContactPerson');
             $table->integer('KamarKosong');
             $table->timestamps();
