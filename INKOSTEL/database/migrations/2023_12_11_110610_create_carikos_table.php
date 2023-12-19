@@ -16,14 +16,14 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('nama_kos');
-            $table->decimal('harga_kos');
-            $table->integer('jarak_kos');
+            $table->string('harga_kos');
+            $table->string('jarak_kos');
             $table->string('gambar_kos');
             $table->string('alamat');
             $table->string('Deskripsi');
             $table->string('Fasilitas')->nullable();
             $table->string('ContactPerson');
-            $table->integer('KamarKosong');
+            $table->integer('KamarKosong')->nullable();
             $table->timestamps();
         });
     }
