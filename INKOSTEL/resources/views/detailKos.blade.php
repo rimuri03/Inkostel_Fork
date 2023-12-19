@@ -22,118 +22,14 @@
 </head>
 
 <body>
-    <!-- navbar start -->
-    <header>
-        <nav>
-            <div class="logo" id="logoHeader">
-                <i class='bx bx-menu menu-icon'></i>
+    @extends('partial.navbar')
 
-                <div class="container" id="conHeader">
-                    <div class="row">
-
-                        <div class="col-md-4 logo">
-                            <a href="index.html">
-                                <img src="../img/logo_inkostel.png" alt="logo KosTel" id="logo_header">
-                            </a>
-                        </div>
-
-                        <div class="col-md-4 text-center">
-                            <div class="search">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Cari Kos disini..!" aria-label="Cari">
-                                <button type="button" class="btn">
-                                    <i class="bi bi-search"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 text-end" id="button-container">
-                            <button type="button" class="btn btn-success custom-button1" id="loginButton">Login</button>
-                        </div>
-
-                    </div>
-                </div>
-                <!-- SideBar Menu -->
-                <div class="sidebar">
-                    <div class="logo">
-                        <i class='bx bx-menu menu-icon'></i>
-                        <span class="logo-name">InKosTel</span>
-                    </div>
-                    <div class="sidebar-content">
-                        <ul class="lists">
-                            <li class="list">
-                                <a href="index.html" class="nav-link">
-                                    <i class='bx bx-home-alt icon'></i>
-                                    <span class="link">Home</span>
-                                </a>
-                            </li>
-
-                            <li class="list">
-                                <a href="carikost.html" class="nav-link">
-                                    <i class='bx bx-search icon'></i>
-                                    <span class="link">Cari Kos</span>
-                                </a>
-                            </li>
-
-                            <li class="list">
-                                <a href="simpan.html" class="nav-link">
-                                    <i class='bx bx-archive-in icon'></i>
-                                    <span class="link">Kos Tersimpan</span>
-                                </a>
-                            </li>
-
-                            <li class="list">
-                                <a href="jualKos.html" class="nav-link">
-                                    <i class='bx bx-message-square-add icon'></i>
-                                    <span class="link">Jual Kos</span>
-                                </a>
-                            </li>
-
-                            <li class="list">
-                                <a href="profile.html" class="nav-link">
-                                    <i class='bx bx-user-circle icon'></i>
-                                    <span class="link">Profile</span>
-                                </a>
-                            </li>
-                        </ul>
-
-                        <div class="bottom-content">
-                            <li class="list">
-                                <a href="#" class="nav-link">
-                                    <i class='bx bx-log-out icon'></i>
-                                    <span class="link">Log Out</span>
-                                </a>
-                            </li>
-                        </div>
-                    </div>
-                </div>
-        </nav>
-
-        <!-- Overlay -->
-        <script>
-            const navBar = document.querySelector("nav"),
-                menuBtn = document.querySelectorAll(".menu-icon"),
-                overlay = document.querySelector(".overlay");
-            console.log(navBar, menuBtn, overlay);
-
-            menuBtn.forEach(menuBtn => {
-                menuBtn.addEventListener("click", () => {
-                    navBar.classList.toggle("open");
-                });
-            });
-
-            overlay.addEventListener("click", () => {
-                navBar.classList.remove("open");
-            });
-        </script>
-        <section class="overlay">
-        </section>
-    </header>
-    <!--Navbar End-->
+    @section('isi')
     <!-- body -->
     <div class="container" id="conbody">
         <div class="row justify-content-center">
             <div class="col">
-                <h1>{{ $kos->NamaKos }}</h1>
+                <h1>{{ $details->first()->nama_kos }}</h1>
                 <div class="card mx-auto" style="width: 851px; height: 307px;">
                     <div class="card-body">
                         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -142,17 +38,19 @@
                                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
                                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                             </div>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="../img/gambar kos.jpg" class="card-img-top" style="height: 270px;;" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="../img/gambar kos.jpg" class="card-img-top" style="height: 270px;" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="../img/gambar kos.jpg" class="card-img-top" style="height: 270px;" alt="...">
+                            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    @foreach($details as $index => $detail)
+                                    @if ($detail->gambar_kos)
+                                    <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                        <img src="{{ asset($detail->gambar_kos) }}" class="d-block w-100" style="height: 270px;" alt="...">
+                                    </div>
+                                    @endif
+                                    @endforeach
                                 </div>
                             </div>
+
+
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
@@ -166,15 +64,18 @@
                 </div>
             </div>
         </div>
-
         <div class="row justify-content-center" id="detail">
             <div class="col-sm-4">
                 <h2>Deskripsi</h2>
-
                 <div class="info-section info-section custom-scrollbar">
-                    <p>{{ $kos->Deskripsi }}</p>
+                    @if ($details->isNotEmpty())
+                    @foreach ($details as $detail)
+                    <p>{{ $detail->Deskripsi }}</p>
+                    @endforeach
+                    @else
+                    <p>No details available.</p>
+                    @endif
                 </div>
-
 
             </div>
             <div class="col-sm-4" id="fasilitas">
@@ -305,65 +206,13 @@
     <!-- body end -->
     <br>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+    @endsection
+    @section('script')
+    <script src="../Bootstrap/js/bootstrap.min.js"></script>
     <script src="../js/detailKos.js"></script>
-    <!-- footer -->
-    <footer class="footer">
-        <div class="container" id="footer">
-            <div class="row">
-
-                <div class="footer-col">
-                    <div class="logo-footer">
-                        <img src="../img/logo_inkostel.png" alt="logofooter">
-                        <br> <br>
-                        <h5>About Us</h5>
-                        <p>InKosTel aplikasi untuk mencari informasi penjualan kos terbaik dan ternyaman di sekitar
-                            Telkom
-                            University</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
+    @endsection
 
 
-                <div class="footer-col">
-                    <br> <br> <br>
-                    <h5>About</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#">About Us</a></li>
-                        <li class="mb-2"><a href="#">Product</a></li>
-                        <li class="mb-2"><a href="#">Features</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <br> <br> <br>
-                    <h5>Support</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#">FAQs</a></li>
-                        <li class="mb-2"><a href="#">Support Center</a></li>
-                        <li class="mb-2"><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <br> <br> <br>
-                    <h5>Services</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#">Help Center</a></li>
-                        <li class="mb-2"><a href="#">Text</a></li>
-                        <li class="mb-2"><a href="#">How & Works</a></li>
-                    </ul>
-                </div>
-
-            </div>
-            <hr>
-            <p>Copyright @ 2023 Kelompok 5 - Web Programming, InKosTel</p>
-        </div>
-    </footer>
 </body>
 <!-- footer end -->
 

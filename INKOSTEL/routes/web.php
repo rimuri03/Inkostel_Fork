@@ -23,7 +23,7 @@ Route::post('/registration', [LoginRegis::class, 'registrationPost'])->name('reg
 
 
 // Cari Kost
-Route::get('/carikost',[CariKosController::class,'index']);
+Route::get('/carikost', [CariKosController::class, 'index']);
 
 Route::get('/getKosData', [KosController::class, 'getKosData']);
 
@@ -39,10 +39,7 @@ Route::delete('/kos/delete/{id}', [SimpanController::class, 'delete'])->name('ko
 Route::get('/profile', function () {
     return view('profile');
 });
-
-Route::get('/detailKos', function () {
-    return view('detailKos');
-});
+Route::get('/detailkos/{Detail}', [DetailKontroler::class, 'show'])->name('detailkos.show');
 
 //jual Kos
 Route::get('/jualkos', [JualController::class, 'tampilregisjual']);
