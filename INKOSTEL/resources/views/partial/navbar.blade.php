@@ -119,7 +119,10 @@
 
     <script src="{{ asset('js/layout.js') }}"></script>
     @yield('script')
-
+    <br>
+    <br>
+    <br>
+    <br>
     @extends('partial.footer')
   </body>
 </html>

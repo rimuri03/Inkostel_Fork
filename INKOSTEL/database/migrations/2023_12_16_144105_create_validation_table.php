@@ -12,12 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('validation', function (Blueprint $table) {
+            $table->bigIncrements('id_kos');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('nama_kos');
             $table->decimal('harga_kos');
             $table->integer('jarak_kos');
             $table->mediumText('gambar_kos');
             $table->string('alamat');
-            $table->string('jarak');
             $table->string('Deskripsi');
             $table->string('Fasilitas');
             $table->string('ContactPerson');

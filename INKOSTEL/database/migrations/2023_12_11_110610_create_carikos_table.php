@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('carikos', function (Blueprint $table) {
             $table->bigIncrements('id_kos');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('nama_kos');
             $table->decimal('harga_kos');
             $table->integer('jarak_kos');
