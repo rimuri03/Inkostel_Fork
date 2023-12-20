@@ -174,7 +174,7 @@
     </section>
     @endsection
 
-
+  
 
     @section('script')
     <script src="../Bootstrap/js/bootstrap.min.js"></script>
