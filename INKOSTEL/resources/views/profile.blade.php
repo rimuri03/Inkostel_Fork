@@ -21,6 +21,8 @@
             <div class="row no-gutters row-bordered row-border-light">
                 <div class="col-md-12 pt-10">
                     <form action="/update" method="post">
+                        @csrf
+                        @foreach ($profil as $p)
                         <div class="container-fluid">
                             <h1 class="font-weight-bold" style="padding-bottom: 50px;padding-top: 20px;">Hai, Supri Kowalski</h1>
                             <h4 class="font-weight-bold">Profile Picture</h4>
@@ -78,7 +80,8 @@
                             <div style="padding-bottom: 50px; padding-top: 25px;">
                                 <button type="button" class="btn btn-outline-primary2" id="saveButton" onclick="saveForm()">Simpan</button>
                             </div>
-                        </div>                  
+                        </div>
+                        @endforeach                  
                     </form>  
                 </div>
             </div>
