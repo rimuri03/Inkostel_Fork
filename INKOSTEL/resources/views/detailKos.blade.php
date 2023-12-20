@@ -177,13 +177,13 @@
 
                     if (isTahunan) {
                         // Memperbarui judul kartu dengan harga bulanan
-                        document.getElementById("harga-tahun").innerText = "RP " + "{{$detail->nama_kos}}";
+                        document.getElementById("{{$detail->nama_kos}}").innerText = "RP " + "{{$detail->nama_kos}}";
 
                         // Memperbarui teks tombol dropdown
                         document.querySelector(".dropdown-toggle span.text-color").innerText = "Perbulan";
                     } else {
                         // Memperbarui judul kartu dengan harga tahunan
-                        document.getElementById("harga-tahun").innerText = "RP " + "{{$detail->harga_kos}}";
+                        document.getElementById("{{$detail->harga_kos}}").innerText = "RP " + "{{$detail->harga_kos}}";
 
                         // Memperbarui teks tombol dropdown
                         document.querySelector(".dropdown-toggle span.text-color").innerText = "Pertahun";
