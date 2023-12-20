@@ -22,20 +22,20 @@ function formatPhoneNumber() {
 }
 
 function changeButtonColor() {
-    const nameInput = document.getElementById("nameInput");
-    const usernameInput = document.getElementById("usernameInput");
-    const emailInput = document.getElementById("emailInput");
-    const phoneInput = document.getElementById("phone");
+    const nama_lengkap = document.getElementById("nama_lengkap");
+    const username = document.getElementById("username");
+    const email = document.getElementById("email");
+    const nomor_telpon = document.getElementById("nomor_telpon");
 
     const nameWarning = document.getElementById("nameWarning");
     const usernameWarning = document.getElementById("usernameWarning");
     const emailWarning = document.getElementById("emailWarning");
     const phoneWarning = document.getElementById("phoneWarning");
 
-    const nameValue = nameInput.value;
-    const usernameValue = usernameInput.value;
-    const emailValue = emailInput.value;
-    const phoneValue = phoneInput.value;
+    const nameValue = nama_lengkap.value;
+    const usernameValue = username.value;
+    const emailValue = email.value;
+    const phoneValue = nomor_telpon.value;
 
     if (nameValue === "" || usernameValue === "" || emailValue === "" || phoneValue === "") {
         document.getElementById("saveButton").style.backgroundColor = "#595959";

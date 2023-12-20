@@ -39,6 +39,7 @@ Route::delete('/kos/delete/{id}', [SimpanController::class, 'delete'])->name('ko
 Route::get('/profile', function () {
     return view('profile');
 });
+
 Route::get('/detailkos/{Detail}', [DetailKontroler::class, 'show'])->name('detailkos.show');
 
 //jual Kos
