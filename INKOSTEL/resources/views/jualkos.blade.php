@@ -139,18 +139,32 @@
 
               <label for="Harga" class="form-label">Tahunan</label>
               <div class="mb-4 input-group">
+<<<<<<< Updated upstream
                 <span class="input-group-text" id="harga_kos_pertahun">
                   <i> Rp </i>
                 </span>
                 <input type="text" class="form-control" name="harga_kos" id="harga_kos_pertahun" placeholder="e.g. 1.000.000." required>
+=======
+                <span class="input-group-text" id="harga_kos">
+                  <i> Rp </i>
+                </span>
+                <input type="text" class="form-control" name="harga_kos" id="harga_kos" placeholder="e.g. 1.000.000." required>
+>>>>>>> Stashed changes
               </div>
 
               <label for="Harga" class="form-label">Bulanan</label>
               <div class="mb-4 input-group">
+<<<<<<< Updated upstream
                 <span class="input-group-text" id="harga_kos_perbulan">
                   <i> Rp </i>
                 </span>
                 <input type="text" class="form-control" name="harga_kos" id="harga_kos_perbulan" placeholder="e.g. 1.000.000.">
+=======
+                <span class="input-group-text" id="harga_kos">
+                  <i> Rp </i>
+                </span>
+                <input type="text" class="form-control" name="harga_kos" id="harga_kos" placeholder="e.g. 1.000.000.">
+>>>>>>> Stashed changes
               </div>
             </div>
 
