@@ -27,7 +27,7 @@
                         </div>
                         <div class="card-body d-flex align-items-center">
                             <div>
-                                <img src="{{ asset('img/WhatsApp Image 2023-10-29 at 12.35 1.png') }}" alt="Profile Picture" class="profile-pict rounded float-left">
+                                <img src="{{ asset('img/WhatsApp Image 2023-10-29 at 12.35 1.png') }}" name="" alt="Profile Picture" class="profile-pict rounded float-left">
                             </div>
                             <div class="media-body ms-4" style="padding-bottom: 40px;">
                                 <div class="input-group">
