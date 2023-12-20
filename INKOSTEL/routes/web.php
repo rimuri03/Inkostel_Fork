@@ -7,6 +7,7 @@ use App\Http\Controllers\DetailKontroler;
 use App\Http\Controllers\LoginRegis;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JualController;
+use App\Http\Controllers\ProfileController;
 
 use App\Http\Controllers\CariKosController;
 //use App\Http\Controllers\RegisterController;
@@ -26,18 +27,17 @@ Route::post('/registration', [LoginRegis::class, 'registrationPost'])->name('reg
 Route::get('/carikost', [CariKosController::class, 'index'])->name('carikost');
 
 
-
-
-
-
 //Simpan Kost
 Route::get('/simpan', [SimpanController::class, 'tampilkanHalamanSimpan'])->name('simpan.halaman');
 Route::delete('/kos/delete/{id}', [SimpanController::class, 'delete'])->name('kos.delete');
 //akhir simpan kost
 
+
 Route::get('/profile', function () {
     return view('profile');
 });
+
+
 
 Route::get('/detailkos/{Detail}', [DetailKontroler::class, 'show'])->name('detailkos.show');
 
