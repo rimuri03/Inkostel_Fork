@@ -45,14 +45,14 @@
 
                     <div class="card-body">
                     <h5 class="card-title">{{ $data->nama_kos}}</h5>
-                    <p class="card-text1">{{ $data->harga_kos}} </p>
-                    <p class="card-text2">{{ $data->jarak_kos}} Meter</p>
+                    <p class="card-text1">{{ $data->harga_kos_pertahun}} </p>
+                    <p class="card-text2">{{ $data->jarak_kos}}</p>
                     <i class="bi bi-bookmark" style="position: relative; font-size: 30px; color: #41EBC6; margin-left: 180px; top: -100px;"></i>
                     </div>
                 </div>
                 </div>
                 @endforeach
-=        </div>
+         </div>
      </div>
 
     <!-- end main -->
