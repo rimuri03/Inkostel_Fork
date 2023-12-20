@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\jual;
 
+
 class JualController extends Controller
 {
     public function tampilregisjual()
@@ -16,37 +17,39 @@ class JualController extends Controller
     {
          // Validate the form data
         $request->validate([
-            "NamaKos" => 'required|string|max:255',
-            // "email" => 'required|email|unique:sellers|max:255',
+            "nama_kos" => 'required|string|max:255',
             "alamat" => 'required|string|max:255',
-            "Jarak" => 'required|string',
+            "jarak_kos" => 'required|string',
             "ContactPerson" => 'required|numeric',
             "Fasilitas" => 'required|array',
-            "Harga" => 'required|numeric',
-            "KosID" => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            "harga_kos" => 'required|numeric',
+            "gambar_kos" => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             "Deskripsi" => 'required|string',
-            "KamarKosong" => 'required|string',
         ]);
 
         // Store the seller information to the database
         $jual = new jual();
-        $jual->name = $request->input('NamaKos'); 
+        $jual->name = $request->input('nama_kos'); 
         // $jual->email = $request->input('email');
         $jual->alamat = $request->input('alamat');
-        $jual->jarak = $request->input('Jarak');
+        $jual->jarak = $request->input('jarak_kos');
         $jual->nomor_telepon = $request->input('ContactPerson');
         $jual->fasilitas = implode(',', $request->input('Fasilitas'));
-        $jual->harga = $request->input('Harga');
+        $jual->harga = $request->input('harga_kos');
 
         // Handle image upload
-        $imagePath = $request->file('KosID')->store('jual_image', 'public');
+        $imagePath = $request->file('gambar_kos')->store('jual_image', 'public');
         $jual->image = $imagePath;
 
-        $jual->description = $request->input('deskripsi');
+        $jual->description = $request->input('Deskripsi');
         $jual->simpan();
 
         // Redirect to a success page or back to the form with a success message
         //belum terlaksana
-        // return redirect('/jual/register')->with('sukses', 'Registrasi sukses!');
+        return redirect('/jualkos')->with('sukses', 'Registrasi sukses!');
     }
+
+    // public function submit(Request $request){
+        
+    // }
 }

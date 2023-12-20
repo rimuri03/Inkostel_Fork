@@ -25,7 +25,6 @@ Route::post('/registration', [LoginRegis::class, 'registrationPost'])->name('reg
 // Cari Kost
 Route::get('/carikost', [CariKosController::class, 'index']);
 
-Route::get('/getKosData', [KosController::class, 'getKosData']);
 
 
 
