@@ -9,7 +9,15 @@ class jual extends Model
 {
     use HasFactory;
 
+    protected $table = 'validation';
     protected $fillable = [
-    "NamaKos","Harga","alamat","Jarak","Deskripsi","Fasilitas","ContactPerson","KosID",
-    ] ;
+<<<<<<< Updated upstream
+        'nama_kos','user_id', 'harga_kos_perbulan', 'harga_kos_pertahun', 'jarak_kos', 'gambar_kos', 'alamat', 'Deskripsi', 'Fasilitas', 'ContactPerson',
+=======
+        'nama_kos', 'harga_kos_pertahun','harga_kos_perbulan', 'jarak_kos', 'gambar_kos', 'alamat','Deskripsi', 'Fasilitas', 'ContactPerson'
+>>>>>>> Stashed changes
+    ];
+
+
+    protected $primaryKey = 'id_kos';
 }
