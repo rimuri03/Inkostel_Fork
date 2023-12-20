@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\CariKos;
+use App\Helpers\Helpers;
 
 class CariKosController extends Controller
 {
@@ -12,6 +13,7 @@ class CariKosController extends Controller
         $carikos = CariKos::all();
         return view('carikost', compact(['carikos']));
     }
+    
 
     public function simpan(){
         //
