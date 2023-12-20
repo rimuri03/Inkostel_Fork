@@ -16,7 +16,8 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('nama_kos');
-            $table->string('harga_kos');
+            $table->string('harga_kos_pertahun');
+            $table->string('harga_kos_perbulan')->nullable();
             $table->string('jarak_kos');
             $table->string('gambar_kos');
             $table->string('alamat');

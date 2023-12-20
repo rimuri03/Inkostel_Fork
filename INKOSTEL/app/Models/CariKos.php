@@ -13,7 +13,7 @@ class CariKos extends Model
     protected $fillable =[
         'id_kos',
         'nama_kos',
-        'harga_kos',
+        'harga_kos_pertahun',
         'jarak_kos'
     ];
 }
