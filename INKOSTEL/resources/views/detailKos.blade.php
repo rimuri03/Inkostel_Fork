@@ -78,7 +78,7 @@
                 </div>
 
             </div>
-            <div class="col-sm-4" id="fasilitas">
+            <!-- <div class="col-sm-4" id="fasilitas">
                 <h2>Fasilitas</h2>
                 <div class="row">
                     <div class="col-sm-6">
@@ -134,16 +134,16 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="col-md-6 offset-sm-6" id="harga">
+            <div class="col-sm-4" id="harga">
                 <div class="card" id="cardHarga" style="width: 390px; height: 194px;">
                     <div class="card-body">
-                        <h5 class="card-title" style="text-align: center;" id="harga-tahun">RP 15.000.000</h5>
+                        <h5 class="card-title" style="text-align: center;" id="harga-tahun">RP {{$detail->harga_kos}}</h5>
                         <div class="row ">
                             <div class="col-md-6">
                                 <div class="dropdown">
-                                    <button class="btn btn-outline-secondary  dropdown-toggle " style="width: 10rem; color: #6DD6BF; border-color: #6DD6BF;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" style="width: 10rem; color: #6DD6BF; border-color: #6DD6BF;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <span class="text-color"> Pertahun</span>
                                     </button>
                                     <ul class="dropdown-menu">
@@ -153,7 +153,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="dropdown">
-                                    <button class="btn btn-outline-secondary dropdown-toggle " style="width: 10rem; border-color: #6DD6BF;" type a="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" style="width: 10rem; border-color: #6DD6BF;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <span class="text-color"> kamar</span>
                                     </button>
                                     <ul class="dropdown-menu">
@@ -168,10 +168,34 @@
                     </div>
                 </div>
             </div>
+
+
             <script>
+                function ubahHarga() {
+                    // Memeriksa apakah tampilan saat ini adalah tahunan atau bulanan dan beralih sesuai
+                    var isTahunan = document.querySelector(".dropdown-toggle span.text-color").innerText.trim() === "Pertahun";
+
+                    if (isTahunan) {
+                        // Memperbarui judul kartu dengan harga bulanan
+                        document.getElementById("harga-tahun").innerText = "RP " + "{{$detail->nama_kos}}";
+
+                        // Memperbarui teks tombol dropdown
+                        document.querySelector(".dropdown-toggle span.text-color").innerText = "Perbulan";
+                    } else {
+                        // Memperbarui judul kartu dengan harga tahunan
+                        document.getElementById("harga-tahun").innerText = "RP " + "{{$detail->harga_kos}}";
+
+                        // Memperbarui teks tombol dropdown
+                        document.querySelector(".dropdown-toggle span.text-color").innerText = "Pertahun";
+                    }
+                }
+            </script>
+
+
+            <!-- <script>
                 // Simpan harga perbulan dan harga pertahun dalam variabel
-                var hargaPerbulan = "1.250.000";
-                var hargaPertahun = "15.000.000";
+                var hargaPerbulan = "{{$detail->nama}}";
+                var hargaPertahun = "{{$detail->harga_kos}}";
                 var tampilkanHargaPertahun = false; // Menggunakan variabel untuk melacak tampilan harga
 
                 function tampilkanHarga() {
@@ -200,7 +224,7 @@
                     // Tampilkan harga yang sesuai
                     tampilkanHarga();
                 }
-            </script>
+            </script> -->
         </div>
     </div>
     <!-- body end -->
