@@ -250,13 +250,14 @@ h1{
 }
 
 #detail{
-    padding-top:20px;
-    padding-left:20px;
+    padding-top:30px;
+   
 }
 
 /* Menyembunyikan scrollbar pada elemen saat tidak dihover */
 .custom-scrollbar::-webkit-scrollbar {
     width: 0.5em;
+    overflow-y: auto;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
@@ -295,7 +296,8 @@ h1{
 */
 
 #harga{
-    margin-top: 30px;
+   
+   
 }
 .dropdown {
   margin: 5px; /* Atur margin untuk elemen dropdown */

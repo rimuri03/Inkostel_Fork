@@ -15,3 +15,4 @@ class KosController extends Controller
         return response()->json($kosData);
     }
 }
+
