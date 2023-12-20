@@ -13,16 +13,17 @@ class JualController extends Controller
         return view("jualkos");
     }
 
-    public function prosesregisjual(Request $request)
+    public function store(Request $request)
     {
          // Validate the form data
         $request->validate([
             "nama_kos" => 'required|string|max:255',
             "alamat" => 'required|string|max:255',
             "jarak_kos" => 'required|string',
-            "ContactPerson" => 'required|numeric',
+            "ContactPerson" => 'required|string',
             "Fasilitas" => 'required|array',
-            "harga_kos" => 'required|numeric',
+            "harga_kos_perbulan" => 'required|string',
+            "harga_kos_pertahun" => 'required|string',
             "gambar_kos" => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             "Deskripsi" => 'required|string',
         ]);
@@ -30,26 +31,21 @@ class JualController extends Controller
         // Store the seller information to the database
         $jual = new jual();
         $jual->name = $request->input('nama_kos'); 
-        // $jual->email = $request->input('email');
         $jual->alamat = $request->input('alamat');
         $jual->jarak = $request->input('jarak_kos');
         $jual->nomor_telepon = $request->input('ContactPerson');
-        $jual->fasilitas = implode(',', $request->input('Fasilitas'));
-        $jual->harga = $request->input('harga_kos');
+        $jual->harga_kos_pertahun = $request->input('harga_kos_pertahun');
+        $jual->harga_kos_perbulan = $request->input('harga_kos_perbulan');
 
         // Handle image upload
         $imagePath = $request->file('gambar_kos')->store('jual_image', 'public');
-        $jual->image = $imagePath;
+        $jual->gambar_kos = $imagePath;
 
         $jual->description = $request->input('Deskripsi');
-        $jual->simpan();
+        $jual->save();
 
         // Redirect to a success page or back to the form with a success message
         //belum terlaksana
         return redirect('/jualkos')->with('sukses', 'Registrasi sukses!');
     }
-
-    // public function submit(Request $request){
-        
-    // }
 }

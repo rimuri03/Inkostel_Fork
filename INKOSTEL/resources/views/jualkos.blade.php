@@ -39,7 +39,7 @@
               <span class="input-group-text">
                 <i class="bi bi-person-fill"></i>
               </span>
-              <input type="text" class="form-control" name="name" id="Nama" placeholder="e.g. Kosan bargetot">
+              <input type="text" class="form-control" name="name_kos" id="name_kos" placeholder="e.g. Kosan bargetot">
             </div>
 
 
@@ -48,27 +48,27 @@
               <span class="input-group-text">
                 <i class="bi bi-geo-alt-fill"></i>
               </span>
-              <input type="text" class="form-control" id="Alamat" placeholder="e.g. Sulanjana No 45 Blok H1">
+              <input type="text" class="form-control" name="alamat" id="alamat" placeholder="e.g. Sulanjana No 45 Blok H1">
             </div>
 
             <label for="jarak_kos" class="form-label">Jarak:</label>
             <div class="form-check">
-              
+
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <input class="form-check-input" type="radio" name="jarak_kos" value="0-100_meter" id="0-100">
                 <label class="form-check-label" for="flexRadioDefault1">
                   0-100 meter
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
+                <input class="form-check-input" type="radio" name="jarak_kos" value="100-500_meter" id="100-500">
+                <label class="form-check-label" for="flexRadioDefault2">
                   100-500 meter
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
+                <input class="form-check-input" type="radio" name="jarak_kos" value="500-1000_meter" id="500-1000" checked>
+                <label class="form-check-label" for="flexRadioDefault3">
                   500-1000 meter
                 </label>
               </div>
@@ -77,10 +77,10 @@
 
             <label for="Nomor" class="form-label">Nomor Handphone:</label>
             <div class="mb-4 input-group">
-              <span class="input-group-text" id="noHP">
+              <span class="input-group-text" id="ContactPerson">
                 <i> +62 </i>
               </span>
-              <input type="text" class="form-control" id="Nomor" placeholder="">
+              <input type="text" class="form-control" name="ContactPerson" id="ContactPerson" placeholder="">
             </div>
 
             <!-- <div class="mt-3">
@@ -139,27 +139,27 @@
 
               <label for="Harga" class="form-label">Tahunan</label>
               <div class="mb-4 input-group">
-                <span class="input-group-text" id="Rp">
+                <span class="input-group-text" id="harga_kos_pertahun">
                   <i> Rp </i>
                 </span>
-                <input type="text" class="form-control" id="Harga" placeholder="e.g. 1.000.000.">
+                <input type="text" class="form-control" name="harga_kos" id="harga_kos_pertahun" placeholder="e.g. 1.000.000." required>
               </div>
 
               <label for="Harga" class="form-label">Bulanan</label>
               <div class="mb-4 input-group">
-                <span class="input-group-text" id="Rp">
+                <span class="input-group-text" id="harga_kos_perbulan">
                   <i> Rp </i>
                 </span>
-                <input type="text" class="form-control" id="Harga" placeholder="e.g. 1.000.000.">
+                <input type="text" class="form-control" name="harga_kos" id="harga_kos_perbulan" placeholder="e.g. 1.000.000.">
               </div>
             </div>
 
             <label for="InputGambar" class="form-label">Unggah Tampilan Kamar</label>
-            <input class="form-control" type="file" id="InputGambar" multiple>
+            <input class="form-control" type="file" name="gambar_kos" id="gambar_kos" multiple>
 
 
             <div class="form-floating mb-4 mt-4">
-              <textarea id="Deskripsi" class="form-control" style="height: 140px;"></textarea>
+              <textarea id="Deskripsi" class="form-control" style="height: 140px;" name="Deskripsi" id="Deskripsi"></textarea>
               <label for="Deskripsi" class="form-label">Deskripsi...</label>
             </div>
 

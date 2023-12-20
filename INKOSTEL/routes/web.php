@@ -43,7 +43,7 @@ Route::get('/detailkos/{Detail}', [DetailKontroler::class, 'show'])->name('detai
 
 //jual Kos
 Route::get('/jualkos', [JualController::class, 'tampilregisjual']);
-Route::post('/jualkos', [JualController::class, 'prosesregisjual']);
+Route::post('/jualkos', [JualController::class, 'store']);
 
 
 

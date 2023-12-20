@@ -9,9 +9,9 @@ class jual extends Model
 {
     use HasFactory;
 
-    protected $table = 'carikos';
+    protected $table = 'validation';
     protected $fillable = [
-        'nama_kos', 'harga_kos', 'jarak_kos', 'gambar_kos', 'alamat', 'jarak', 'Deskripsi', 'Fasilitas', 'ContactPerson',
+        'nama_kos','user_id', 'harga_kos_perbulan', 'harga_kos_pertahun', 'jarak_kos', 'gambar_kos', 'alamat', 'Deskripsi', 'Fasilitas', 'ContactPerson',
     ];
 
 
