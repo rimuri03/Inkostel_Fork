@@ -154,7 +154,7 @@
                                         <span class="text-color"> kamar</span>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">10 tersedia</a></li>
+                                        <li><a class="dropdown-item" href="#">{{$detail->KamarKosong}}</a></li>
                                     </ul>
                                 </div>
                             </div>
