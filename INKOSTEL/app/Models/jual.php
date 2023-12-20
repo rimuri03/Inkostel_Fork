@@ -9,7 +9,12 @@ class jual extends Model
 {
     use HasFactory;
 
+    protected $table = 'validation';
     protected $fillable = [
-    "NamaKos","Harga","alamat","Jarak","Deskripsi","Fasilitas","ContactPerson","KosID",
-    ] ;
+
+        'nama_kos','user_id', 'harga_kos_perbulan', 'harga_kos_pertahun', 'jarak_kos', 'gambar_kos', 'alamat', 'Deskripsi', 'Fasilitas', 'ContactPerson',
+    ];
+
+
+    protected $primaryKey = 'id_kos';
 }

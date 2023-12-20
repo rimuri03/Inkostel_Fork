@@ -246,17 +246,18 @@ h1{
 }
  .custom-scrollbar {
     max-height: 500px; /* Sesuaikan dengan tinggi maksimal yang Anda inginkan */
-    overflow-y: auto;
+    overflow-y: 500px;
 }
 
 #detail{
-    padding-top:20px;
-    padding-left:20px;
+    padding-top:30px;
+   
 }
 
 /* Menyembunyikan scrollbar pada elemen saat tidak dihover */
 .custom-scrollbar::-webkit-scrollbar {
     width: 0.5em;
+    overflow-y: auto;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
@@ -295,7 +296,8 @@ h1{
 */
 
 #harga{
-    margin-top: 30px;
+   padding-left: 40px;
+   
 }
 .dropdown {
   margin: 5px; /* Atur margin untuk elemen dropdown */

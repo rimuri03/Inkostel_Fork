@@ -68,13 +68,8 @@
             <div class="col-sm-4">
                 <h2>Deskripsi</h2>
                 <div class="info-section info-section custom-scrollbar">
-                    @if ($details->isNotEmpty())
-                    @foreach ($details as $detail)
                     <p>{{ $detail->Deskripsi }}</p>
-                    @endforeach
-                    @else
-                    <p>No details available.</p>
-                    @endif
+
                 </div>
 
             </div>
@@ -136,18 +131,20 @@
                 </div>
             </div> -->
 
+
             <div class="col-sm-4" id="harga">
                 <div class="card" id="cardHarga" style="width: 390px; height: 194px;">
                     <div class="card-body">
-                        <h5 class="card-title" style="text-align: center;" id="harga-tahun">RP {{$detail->harga_kos}}</h5>
+                        <h5 class="card-title" style="text-align: center;" id="harga-tahun">Rp. <span id="harga-pertahun">{{ number_format(floatval(str_replace(",", "", $detail->harga_kos_pertahun)), 2) }}</span></h5>
                         <div class="row ">
                             <div class="col-md-6">
                                 <div class="dropdown">
                                     <button class="btn btn-outline-secondary dropdown-toggle" style="width: 10rem; color: #6DD6BF; border-color: #6DD6BF;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <span class="text-color"> Pertahun</span>
+                                        <span class="text-color"> Harga</span>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#" onclick="ubahHarga()">Perbulan</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="ubahHarga('pertahun')">Pertahun</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="ubahHarga('perbulan')">Perbulan</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -157,7 +154,7 @@
                                         <span class="text-color"> kamar</span>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">10 tersedia</a></li>
+                                        <li><a class="dropdown-item" href="#">{{$detail->KamarKosong}}</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -171,25 +168,32 @@
 
 
             <script>
-                function ubahHarga() {
-                    // Memeriksa apakah tampilan saat ini adalah tahunan atau bulanan dan beralih sesuai
-                    var isTahunan = document.querySelector(".dropdown-toggle span.text-color").innerText.trim() === "Pertahun";
+                function ubahHarga(jenisHarga) {
+                    var hargaTahunElement = document.getElementById('harga-tahun');
+                    var hargaPerBulan = parseFloat("{{$detail->harga_kos_perbulan}}".replace(",", ""));
+                    var hargaPerTahun = parseFloat("{{$detail->harga_kos_pertahun}}".replace(",", ""));
 
-                    if (isTahunan) {
-                        // Memperbarui judul kartu dengan harga bulanan
-                        document.getElementById("harga-tahun").innerText = "RP " + "{{$detail->nama_kos}}";
-
-                        // Memperbarui teks tombol dropdown
-                        document.querySelector(".dropdown-toggle span.text-color").innerText = "Perbulan";
-                    } else {
-                        // Memperbarui judul kartu dengan harga tahunan
-                        document.getElementById("harga-tahun").innerText = "RP " + "{{$detail->harga_kos}}";
-
-                        // Memperbarui teks tombol dropdown
-                        document.querySelector(".dropdown-toggle span.text-color").innerText = "Pertahun";
+                    if (jenisHarga === 'pertahun') {
+                        hargaTahunElement.innerText = formatRupiah(hargaPerTahun);
+                    } else if (jenisHarga === 'perbulan') {
+                        hargaTahunElement.innerText = formatRupiah(hargaPerBulan);
                     }
                 }
+
+                function formatRupiah(angka) {
+                    var formatter = new Intl.NumberFormat('id-ID', {
+                        style: 'currency',
+                        currency: 'IDR'
+                    });
+
+                    return formatter.format(angka);
+                }
             </script>
+
+
+
+
+
 
 
             <!-- <script>

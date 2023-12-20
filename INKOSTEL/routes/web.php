@@ -7,6 +7,7 @@ use App\Http\Controllers\DetailKontroler;
 use App\Http\Controllers\LoginRegis;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JualController;
+use App\Http\Controllers\ProfileController;
 
 use App\Http\Controllers\CariKosController;
 //use App\Http\Controllers\RegisterController;
@@ -23,12 +24,7 @@ Route::post('/registration', [LoginRegis::class, 'registrationPost'])->name('reg
 
 
 // Cari Kost
-Route::get('/carikost', [CariKosController::class, 'index']);
-
-Route::get('/getKosData', [KosController::class, 'getKosData']);
-
-
-
+Route::get('/carikost', [CariKosController::class, 'index'])->name('carikost');
 
 
 //Simpan Kost
@@ -36,14 +32,18 @@ Route::get('/simpan', [SimpanController::class, 'tampilkanHalamanSimpan'])->name
 Route::delete('/kos/delete/{id}', [SimpanController::class, 'delete'])->name('kos.delete');
 //akhir simpan kost
 
+
 Route::get('/profile', function () {
     return view('profile');
 });
+
+
+
 Route::get('/detailkos/{Detail}', [DetailKontroler::class, 'show'])->name('detailkos.show');
 
 //jual Kos
 Route::get('/jualkos', [JualController::class, 'tampilregisjual']);
-Route::post('/jualkos', [JualController::class, 'prosesregisjual']);
+Route::post('/jualkos', [JualController::class, 'store']);
 
 
 

@@ -20,64 +20,66 @@
         <div class="card">
             <div class="row no-gutters row-bordered row-border-light">
                 <div class="col-md-12 pt-10">
-                    <div class="container-fluid">
-                        <h1 class="font-weight-bold" style="padding-bottom: 50px;padding-top: 20px;">Hai, Supri Kowalski</h1>
-                        <h4 class="font-weight-bold">Profile Picture</h4>
-                    </div>
-                    <div class="card-body d-flex align-items-center">
-                        <div>
-                            <img src="{{ asset('img/WhatsApp Image 2023-10-29 at 12.35 1.png') }}" alt="Profile Picture" class="profile-pict rounded float-left">
+                    <form action="/update" method="post">
+                        <div class="container-fluid">
+                            <h1 class="font-weight-bold" style="padding-bottom: 50px;padding-top: 20px;">Hai, Supri Kowalski</h1>
+                            <h4 class="font-weight-bold">Profile Picture</h4>
                         </div>
-                        <div class="media-body ms-4" style="padding-bottom: 40px;">
-                            <div class="input-group">
-                                <label class="input-group-btn">
-                                    <form>
-                                        <label class="btn btn-outline-primary">
-                                            <span class="bi bi-pencil-square"></span>
-                                            <span class="text-color">Edit</span>
-                                            <input type="file" style="display: none;">
-                                        </label>
-                                    </form>                                    
-                                    <p class="p">Foto harus berformat .png/.jpg</p>
-                                </label>                                
+                        <div class="card-body d-flex align-items-center">
+                            <div>
+                                <img src="{{ asset('img/WhatsApp Image 2023-10-29 at 12.35 1.png') }}" alt="Profile Picture" class="profile-pict rounded float-left">
+                            </div>
+                            <div class="media-body ms-4" style="padding-bottom: 40px;">
+                                <div class="input-group">
+                                    <label class="input-group-btn">
+                                        <form>
+                                            <label class="btn btn-outline-primary">
+                                                <span class="bi bi-pencil-square"></span>
+                                                <span class="text-color">Edit</span>
+                                                <input type="file" style="display: none;">
+                                            </label>
+                                        </form>                                    
+                                        <p class="p">Foto harus berformat .png/.jpg</p>
+                                    </label>                                
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="container-fluid">
-                        <h4 class="font-weight-bold">Profil</h4>
-                    </div>
-                    <div class="card-body">
-                        <label class="form-label"><h6 class="font-weight-bold" style="padding-top: 10px;">Nama Lengkap</h6></label>
-                        <div class="form-group">
-                            <input type="text" class="form-control mb-1" value="Supri Makmur" id="nameInput" oninput="changeButtonColor()">
+                        <div class="container-fluid">
+                            <h4 class="font-weight-bold">Profil</h4>
                         </div>
-                        <div id="nameWarning" class="text-danger" style="padding-top: 10px;"></div>
-                    
-                        <label class="form-label"><h6 class="font-weight-bold" style="padding-top: 15px;">Username</h6></label>
-                        <div class="form-group">
-                            <input type="text" class="form-control mb-1" value="supri.maklo" id="usernameInput" oninput="changeButtonColor()">
-                        </div>
-                        <div id="usernameWarning" class="text-danger" style="padding-top: 10px;"></div>
-                    
-                        <label class="form-label"><h6 class="font-weight-bold"  style="padding-top: 15px;">Alamat Email</h6></label>
-                        <div class="form-group">
-                            <input type="text" id="emailInput" class="form-control" value="supri.maklo@gmail.com" oninput="changeButtonColor()">
-                        </div>
-                        <div id="emailWarning" class="text-danger" style="padding-top: 10px;"></div>
-                    
-                        <label class="form-label"><h6 class="font-weight-bold"  style="padding-top: 15px;">Nomor Telepon</h6></label>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-default">+62</span>
+                        <div class="card-body">
+                            <label class="form-label"><h6 class="font-weight-bold" style="padding-top: 10px;">Nama Lengkap</h6></label>
+                            <div class="form-group">
+                                <input type="text" class="form-control mb-1" value="Supri Makmur" id="nameInput" oninput="changeButtonColor()">
                             </div>
-                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" value="895 329 917 984" id="phone" oninput="runtwofunction()">
-                        </div>
-                        <div id="phoneWarning" class="text-danger" style="padding-top: 10px;"></div>
+                            <div id="nameWarning" class="text-danger" style="padding-top: 10px;"></div>
                         
-                        <div style="padding-bottom: 50px; padding-top: 25px;">
-                            <button type="button" class="btn btn-outline-primary2" id="saveButton" onclick="saveForm()">Simpan</button>
-                        </div>
-                    </div>                    
+                            <label class="form-label"><h6 class="font-weight-bold" style="padding-top: 15px;">Username</h6></label>
+                            <div class="form-group">
+                                <input type="text" class="form-control mb-1" value="supri.maklo" id="usernameInput" oninput="changeButtonColor()">
+                            </div>
+                            <div id="usernameWarning" class="text-danger" style="padding-top: 10px;"></div>
+                        
+                            <label class="form-label"><h6 class="font-weight-bold"  style="padding-top: 15px;">Alamat Email</h6></label>
+                            <div class="form-group">
+                                <input type="text" id="emailInput" class="form-control" value="supri.maklo@gmail.com" oninput="changeButtonColor()">
+                            </div>
+                            <div id="emailWarning" class="text-danger" style="padding-top: 10px;"></div>
+                        
+                            <label class="form-label"><h6 class="font-weight-bold"  style="padding-top: 15px;">Nomor Telepon</h6></label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">+62</span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" value="895 329 917 984" id="phone" oninput="runtwofunction()">
+                            </div>
+                            <div id="phoneWarning" class="text-danger" style="padding-top: 10px;"></div>
+                            
+                            <div style="padding-bottom: 50px; padding-top: 25px;">
+                                <button type="button" class="btn btn-outline-primary2" id="saveButton" onclick="saveForm()">Simpan</button>
+                            </div>
+                        </div>                  
+                    </form>  
                 </div>
             </div>
         </div>
