@@ -10,15 +10,14 @@ class ProfileController extends Controller
 {
     public function profile(Request $request)
     {
-        $profil = Profile::all;
+        $profil = Profile::all();
         return view('profile', compact(["profil"]));
     }
     public function update(Request $request){
         try{
             $request->validate([
-                'nama_lengkap' => 'required',
-                'nomor_telepon' => 'required',
-                'foto_profil' => 'required',
+                'username' => 'required',
+                'email' => 'required',
             ]);
             $profil = Profile::where('username', $request->input('username'))->orWhere('email', $request->input('email'))->firstOrFail();
             $profil -> update([
