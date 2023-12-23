@@ -135,7 +135,21 @@
             <div class="col-sm-4" id="harga">
                 <div class="card" id="cardHarga" style="width: 390px; height: 194px;">
                     <div class="card-body">
-                        <h5 class="card-title" style="text-align: center;" id="harga-tahun">Rp. <span id="harga-pertahun">{{ number_format(floatval(str_replace(",", "", $detail->harga_kos_pertahun)), 2) }}</span></h5>
+                        <h5 class="card-title" style="text-align: center;" id="harga-tahun">
+                            Rp. <span id="harga-pertahun">
+                                <?php
+                                $harga_pertahun = $detail->harga_kos_pertahun;
+
+                                // Membersihkan string dari tanda titik ribuan dan mengubahnya ke float
+                                $harga_pertahun_float = floatval(str_replace(",", "", str_replace(".", "", $harga_pertahun)));
+
+                                // Menggunakan number_format untuk format angka
+                                echo number_format($harga_pertahun_float, 2, ',', '.');
+                                ?>
+                            </span>
+                        </h5>
+
+                        </h5>
                         <div class="row ">
                             <div class="col-md-6">
                                 <div class="dropdown">
@@ -154,7 +168,7 @@
                                         <span class="text-color"> kamar</span>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">10 tersedia</a></li>
+                                        <li><a class="dropdown-item" href="#">{{$detail->KamarKosong}}</a></li>
                                     </ul>
                                 </div>
                             </div>

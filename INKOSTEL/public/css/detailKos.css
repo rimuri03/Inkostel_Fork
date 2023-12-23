@@ -246,7 +246,7 @@ h1{
 }
  .custom-scrollbar {
     max-height: 500px; /* Sesuaikan dengan tinggi maksimal yang Anda inginkan */
-    overflow-y: auto;
+    overflow-y: 500px;
 }
 
 #detail{
@@ -296,7 +296,7 @@ h1{
 */
 
 #harga{
-   
+   padding-left: 40px;
    
 }
 .dropdown {
