@@ -29,7 +29,6 @@ Route::get('/carikost', [CariKosController::class, 'index'])->name('carikost');
 
 //Simpan Kost
 Route::get('/simpan', [SimpanController::class, 'tampilkanHalamanSimpan'])->name('simpan.halaman');
-Route::delete('/kos/delete/{id}', [SimpanController::class, 'delete'])->name('kos.delete');
 //akhir simpan kost
 
 
