@@ -21,6 +21,7 @@
             <div class="row no-gutters row-bordered row-border-light">
                 <div class="col-md-12 pt-10">
                     <form action="/update" method="post">
+                        @foreach($profil as $p)
                         <div class="container-fluid">
                             <h1 class="font-weight-bold" style="padding-bottom: 50px;padding-top: 20px;">Hai, Supri Kowalski</h1>
                             <h4 class="font-weight-bold">Profile Picture</h4>
@@ -50,19 +51,19 @@
                         <div class="card-body">
                             <label class="form-label"><h6 class="font-weight-bold" style="padding-top: 10px;">Nama Lengkap</h6></label>
                             <div class="form-group">
-                                <input type="text" class="form-control mb-1" value="Supri Makmur" id="nameInput" oninput="changeButtonColor()">
+                                <input type="text" class="form-control mb-1" name="nama_panjang" value="{{ $p->nama_lengkap }}" id="nameInput" oninput="changeButtonColor()">
                             </div>
                             <div id="nameWarning" class="text-danger" style="padding-top: 10px;"></div>
                         
                             <label class="form-label"><h6 class="font-weight-bold" style="padding-top: 15px;">Username</h6></label>
                             <div class="form-group">
-                                <input type="text" class="form-control mb-1" value="supri.maklo" id="usernameInput" oninput="changeButtonColor()">
+                                <input type="text" class="form-control mb-1" name="username" value="{{ $p->username }}" id="usernameInput" oninput="changeButtonColor()" readonly>
                             </div>
                             <div id="usernameWarning" class="text-danger" style="padding-top: 10px;"></div>
                         
                             <label class="form-label"><h6 class="font-weight-bold"  style="padding-top: 15px;">Alamat Email</h6></label>
                             <div class="form-group">
-                                <input type="text" id="emailInput" class="form-control" value="supri.maklo@gmail.com" oninput="changeButtonColor()">
+                                <input type="text" id="emailInput" class="form-control" name="email" value="{{ $p->email }}" oninput="changeButtonColor()" readonly>
                             </div>
                             <div id="emailWarning" class="text-danger" style="padding-top: 10px;"></div>
                         
@@ -71,14 +72,15 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroup-sizing-default">+62</span>
                                 </div>
-                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" value="895 329 917 984" id="phone" oninput="runtwofunction()">
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nomor_telepon" value="{{ $p->nomor_telepon }}" id="phone" oninput="runtwofunction()">
                             </div>
                             <div id="phoneWarning" class="text-danger" style="padding-top: 10px;"></div>
                             
                             <div style="padding-bottom: 50px; padding-top: 25px;">
                                 <button type="button" class="btn btn-outline-primary2" id="saveButton" onclick="saveForm()">Simpan</button>
                             </div>
-                        </div>                  
+                        </div>
+                        @endforeach                  
                     </form>  
                 </div>
             </div>
