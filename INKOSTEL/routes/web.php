@@ -28,9 +28,6 @@ Route::get('/carikost',[CariKosController::class,'index']);
 Route::get('/getKosData', [KosController::class, 'getKosData']);
 
 
-
-
-
 //Simpan Kost
 Route::get('/simpan', [SimpanController::class, 'tampilkanHalamanSimpan'])->name('simpan.halaman');
 Route::delete('/kos/delete/{id}', [SimpanController::class, 'delete'])->name('kos.delete');
