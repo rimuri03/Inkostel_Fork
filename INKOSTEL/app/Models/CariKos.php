@@ -14,6 +14,7 @@ class CariKos extends Model
         'id_kos',
         'nama_kos',
         'harga_kos',
-        'jarak_kos'
+        'jarak_kos',
+        'gambar_kos'
     ];
 }

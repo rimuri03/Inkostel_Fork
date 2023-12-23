@@ -228,12 +228,19 @@ header .logo {
   width: 200px;
 }
 
-#coba{
-  background-color: red ;
+/*ukuran card */
+#cobacard{
+  position: relative;
+  display: flex;
+  border-radius: 10px;
+  flex-direction: column;
+  z-index: 99;
+  border: 3px solid #41EBC6;
+  width: 250px;
+  height: 370px;
 }
 
 #rowcard{
-  background-color: gray;
   padding-left:20px;
   padding-left:20px;
 }
@@ -244,7 +251,6 @@ header .logo {
   padding: 20px;  
   height: auto;
   padding-bottom: 30px;
-  background-color: #000088;
 }
 
 #concard{
@@ -252,7 +258,7 @@ header .logo {
 }
 
 /*ukuran card */
-.card {
+/* .card {
   position: relative;
   display: flex;
   border-radius: 10px;
@@ -261,7 +267,7 @@ header .logo {
   border: 3px solid #41EBC6;
   width: 250px;
   height: 370px;
-}
+} */
 
 /* batas per card */
 .col-md-3 {
@@ -297,10 +303,10 @@ header .logo {
   color: #41EBC6;
 }
 
-.card-text1::after {
+/* .card-text1::after {
   content: "jt/thn ";
   color: #41EBC6;
-}
+} */
 
 /* end card */
 
