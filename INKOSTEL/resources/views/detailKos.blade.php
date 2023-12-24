@@ -16,14 +16,10 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{{ asset('front/css/detailKos.css') }}">
-
-
     <title>details</title>
 </head>
-
 <body>
     @extends('partial.navbar')
-
     @section('isi')
     <!-- body -->
     <div class="container" id="conbody">
@@ -62,9 +58,6 @@
                                     @endforeach
                                 </div>
                             </div>
-
-
-
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
@@ -83,69 +76,9 @@
                 <h2>Deskripsi</h2>
                 <div class="info-section info-section custom-scrollbar">
                     <p>{{ $detail->Deskripsi }}</p>
-
                 </div>
 
             </div>
-            <!-- <div class="col-sm-4" id="fasilitas">
-                <h2>Fasilitas</h2>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="info-section2">
-                            <i class="bi bi-wifi bordered-icon colored-icon"> <span class="text-color"> WIFI</span></i>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="info-section3">
-                            <i class="bi bi-wifi bordered-icon colored-icon"> <span class="text-color"> WIFI</span></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="info-section2">
-                            <i class="bi bi-moisture bordered-icon colored-icon"> <span class="text-color"> Water
-                                    Heater</span></i>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="info-section3">
-                            <i class="bi bi-moisture bordered-icon colored-icon"> <span class="text-color"> Water
-                                    Heater</span></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="info-section2">
-                            <i class="bi bi-align-start bordered-icon colored-icon"> <span class="text-color">
-                                    Kasur</span></i>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="info-section3">
-                            <i class="bi bi-align-start bordered-icon colored-icon"> <span class="text-color">
-                                    Kasur</span></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="info-section2">
-                            <i class="bi bi-building bordered-icon colored-icon"> <span class="text-color">
-                                    Lemari</span></i>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="info-section3">
-                            <i class="bi bi-building bordered-icon colored-icon"> <span class="text-color">
-                                    Lemari</span></i>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
-
             <div class="col-sm-4" id="harga">
                 <div class="card" id="cardHarga" style="width: 390px; height: 194px;">
                     <div class="card-body">
@@ -162,7 +95,6 @@
                                 ?>
                             </span>
                         </h5>
-
                         </h5>
                         <div class="row ">
                             <div class="col-md-6">
@@ -193,8 +125,6 @@
                     </div>
                 </div>
             </div>
-
-
             <script>
                 function ubahHarga(jenisHarga) {
                     var hargaTahunElement = document.getElementById('harga-tahun');
@@ -217,46 +147,6 @@
                     return formatter.format(angka);
                 }
             </script>
-
-
-
-
-
-
-
-            <!-- <script>
-                // Simpan harga perbulan dan harga pertahun dalam variabel
-                var hargaPerbulan = "{{$detail->nama}}";
-                var hargaPertahun = "{{$detail->harga_kos}}";
-                var tampilkanHargaPertahun = false; // Menggunakan variabel untuk melacak tampilan harga
-
-                function tampilkanHarga() {
-                    // Mengambil elemen tombol "Perbulan" dan "Pertahun" berdasarkan class
-                    var tombolPerbulan = document.querySelector('.dropdown-item');
-                    var tombolPertahun = document.querySelector('.dropdown-toggle .text-color');
-
-                    // Mengambil elemen harga berdasarkan id
-                    var hargaElement = document.getElementById("harga-tahun");
-
-                    if (tampilkanHargaPertahun) {
-                        // Menampilkan harga pertahun
-                        hargaElement.innerHTML = "RP " + hargaPertahun;
-                        tombolPerbulan.textContent = "Perbulan";
-                        tombolPertahun.textContent = "Pertahun";
-                    } else {
-                        // Menampilkan harga perbulan
-                        hargaElement.innerHTML = "RP " + hargaPerbulan;
-                        tombolPerbulan.textContent = "Pertahun";
-                        tombolPertahun.textContent = "Perbulan";
-                    }
-                }
-
-                function ubahHarga() {
-                    tampilkanHargaPertahun = !tampilkanHargaPertahun; // Toggle variabel
-                    // Tampilkan harga yang sesuai
-                    tampilkanHarga();
-                }
-            </script> -->
         </div>
     </div>
     <!-- body end -->
