@@ -3,15 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Models\profile;
+use app\Models\Profile;
 use function laravel\prompts\info;
 
 class ProfileController extends Controller
 {
     public function profile(Request $request)
     {
-        $profil = Profile::all();
-        return view('profile', compact(["profil"]));
+        return view('profile');
     }
     public function update(Request $request){
         $request->validate([
