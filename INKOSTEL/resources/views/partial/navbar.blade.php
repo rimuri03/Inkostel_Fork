@@ -60,35 +60,35 @@
                         <ul class="lists">
 
                             <li class="list">
-                                <a href="../html/index.html" class="nav-link">
+                                <a href="/" class="nav-link">
                                     <i class='bx bx-home-alt icon'></i>
                                     <span class="link">Home</span>
                                 </a>
                             </li>
 
                             <li class="list">
-                                <a href="../html/carikost.html" class="nav-link">
+                                <a href="/carikost" class="nav-link">
                                     <i class='bx bx-search icon'></i>
                                     <span class="link">Cari Kost</span>
                                 </a>
                             </li>
 
                             <li class="list">
-                                <a href="../html/simpan.html" class="nav-link">
+                                <a href="/simpan" class="nav-link">
                                     <i class='bx bx-archive-in icon'></i>
                                     <span class="link">Kos Tersimpan</span>
                                 </a>
                             </li>
 
                             <li class="list">
-                                <a href="../html/jualKos.html" class="nav-link">
+                                <a href="/jualkos" class="nav-link">
                                     <i class='bx bx-message-square-add icon'></i>
                                     <span class="link">Iklankan Kos</span>
                                 </a>
                             </li>
 
                             <li class="list">
-                                <a href="../html/profile.html" class="nav-link">
+                                <a href="/profile" class="nav-link">
                                     <i class='bx bx-user-circle icon'></i>
                                     <span class="link">Profile</span>
                                 </a>
