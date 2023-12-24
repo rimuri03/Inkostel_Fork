@@ -20,10 +20,10 @@ return new class extends Migration
             $table->string('harga_kos_perbulan')->nullable();
             $table->string('jarak_kos');
             $table->string('gambar_kos1');
-            $table->string('gambar_kos2');
-            $table->string('gambar_kos3');
-            $table->string('gambar_kos4');
-            $table->string('gambar_kos5');
+            $table->string('gambar_kos2')->nullable();
+            $table->string('gambar_kos3')->nullable();
+            $table->string('gambar_kos4')->nullable();
+            $table->string('gambar_kos5')->nullable();
             $table->string('alamat');
             $table->string('Deskripsi');
             $table->string('Fasilitas')->nullable();
