@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>InKosTel jual Kost</title>
+  <title>InKosTel Iklan Kost</title>
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -48,7 +48,8 @@
               <span class="input-group-text">
                 <i class="bi bi-geo-alt-fill"></i>
               </span>
-              <input type="text" class="form-control" name="alamat" id="alamat" placeholder="e.g. Sulanjana No 45 Blok H1">
+              <input type="text" class="form-control" name="alamat" id="alamat"
+                placeholder="e.g. Sulanjana No 45 Blok H1">
             </div>
 
             <label for="jarak_kos" class="form-label">Jarak:</label>
@@ -67,7 +68,8 @@
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="jarak_kos" value="500-1000_meter" id="500-1000" checked>
+                <input class="form-check-input" type="radio" name="jarak_kos" value="500-1000_meter" id="500-1000"
+                  checked>
                 <label class="form-check-label" for="flexRadioDefault3">
                   500-1000 meter
                 </label>
@@ -142,27 +144,41 @@
                 <span class="input-group-text" id="harga_kos_pertahun">
                   <i> Rp </i>
                 </span>
-                <input type="text" class="form-control" name="harga_kos_pertahun" id="harga_kos_pertahun" placeholder="e.g. 1.000.000." required>
+                <input type="text" class="form-control" name="harga_kos_pertahun" id="harga_kos_pertahun"
+                  placeholder="e.g. 1.000.000." required>
               </div>
 
-              <label for="Harga" class="form-label">Bulanan</label>
+              <label for="Harga" class="form-label">Bulanan (Opsional)</label>
               <div class="mb-4 input-group">
                 <span class="input-group-text" id="harga_kos_perbulan">
                   <i> Rp </i>
                 </span>
-                <input type="text" class="form-control" name="harga_kos_perbulan" id="harga_kos_perbulan" placeholder="e.g. 1.000.000.">
+                <input type="text" class="form-control" name="harga_kos_perbulan" id="harga_kos_perbulan"
+                  placeholder="e.g. 1.000.000.">
               </div>
             </div>
 
             <label for="InputGambar" class="form-label">Unggah Tampilan Kamar</label>
-            <input class="form-control" type="file" name="gambar_kos" id="gambar_kos" multiple>
+            <div class="mb-4 input-group">
+              <span class="input-group-text">
+                <input class="form-control" type="file" name="gambar_kos" id="gambar_kos">
+                <br>
+                <input class="form-control" type="file" name="gambar_kos" id="gambar_kos">
+                <br>
+                <input class="form-control" type="file" name="gambar_kos" id="gambar_kos">
+                <br>
+                <input class="form-control" type="file" name="gambar_kos" id="gambar_kos">
+                <br>
+                <input class="form-control" type="file" name="gambar_kos" id="gambar_kos">
+              </span>
+            </div>
 
 
             <div class="form-floating mb-4 mt-4">
-              <textarea id="Deskripsi" class="form-control" style="height: 140px;" name="Deskripsi" id="Deskripsi"></textarea>
+              <textarea id="Deskripsi" class="form-control" style="height: 140px;" name="Deskripsi"
+                id="Deskripsi"></textarea>
               <label for="Deskripsi" class="form-label">Deskripsi...</label>
             </div>
-
 
             <div class="mb-4 text-center">
               <button type="submit" class="btn btn-primary">Submit</button>
