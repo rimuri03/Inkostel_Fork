@@ -27,7 +27,7 @@ class JualController extends Controller
             "harga_kos_pertahun" => 'required|string',
             'harga_kos_perbulan'=> 'string',
 
-            "gambar_kos" => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            // "gambar_kos" => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             "Deskripsi" => 'required|string',
         ]);
 
@@ -49,8 +49,8 @@ class JualController extends Controller
         $jual->harga_kos_perbulan = $request->input('harga_kos_perbulan');
 
         // Handle image upload
-        $imagePath = $request->file('gambar_kos')->store('jual_image', 'public');
-        $jual->gambar_kos = $imagePath;
+        // $imagePath = $request->file('gambar_kos')->store('jual_image', 'public');
+        // $jual->gambar_kos = $imagePath;
 
         $jual->description = $request->input('Deskripsi');
         $jual->save();
