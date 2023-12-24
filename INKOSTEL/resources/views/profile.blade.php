@@ -50,19 +50,20 @@
                         <div class="card-body">
                             <label class="form-label"><h6 class="font-weight-bold" style="padding-top: 10px;">Nama Lengkap</h6></label>
                             <div class="form-group">
-                                <input type="text" class="form-control mb-1" name="nama_lengkap" placeholder="Isi nama lengkap anda..." id="nameInput" oninput="changeButtonColor()">
+                            <div id="usernameWarning" class="text-danger" style="padding-top: 10px;"></div>
+                                <input type="text" class="form-control mb-1" name="nama_panjang" placeholder="Isi nama lengkap anda..." id="nameInput" oninput="changeButtonColor()" value="{{ $profileData->nama_panjang }}">
                             </div>
                             <div id="nameWarning" class="text-danger" style="padding-top: 10px;"></div>
             
                             <label class="form-label"><h6 class="font-weight-bold" style="padding-top: 15px;">Username</h6></label>
                             <div class="form-group">
-                                <input type="text" class="form-control mb-1" name="username" value="" id="usernameInput" oninput="changeButtonColor()" readonly>
+                                <input type="text" class="form-control mb-1" name="username" placeholder="isi username anda..." id="usernameInput" oninput="changeButtonColor()" readonly value="{{ $profileData->username }}">
                             </div>
                             <div id="usernameWarning" class="text-danger" style="padding-top: 10px;"></div>
                         
                             <label class="form-label"><h6 class="font-weight-bold"  style="padding-top: 15px;">Alamat Email</h6></label>
                             <div class="form-group">
-                                <input type="text" id="emailInput" class="form-control" name="email" value="" oninput="changeButtonColor()" readonly>
+                                <input type="text" id="emailInput" class="form-control" placeholder="isi alamat email anda..." name="email" oninput="changeButtonColor()" readonly value="{{ $profileData->email }}">
                             </div>
                             <div id="emailWarning" class="text-danger" style="padding-top: 10px;"></div>
                         
@@ -71,7 +72,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroup-sizing-default">+62</span>
                                 </div>
-                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nomor_telepon" placeholder="Isi nomor telepon anda..." value="" id="phone" oninput="runtwofunction()">
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nomor_telepon" placeholder="Isi nomor telepon anda..." id="phone" oninput="runtwofunction()" value="{{ $profileData->nomor_telpon }}">
                             </div>
                             <div id="phoneWarning" class="text-danger" style="padding-top: 10px;"></div>
                             
