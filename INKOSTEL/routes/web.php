@@ -32,8 +32,8 @@ Route::get('/simpan', [SimpanController::class, 'tampilkanHalamanSimpan'])->name
 //akhir simpan kost
 
 
-Route::get('/profile', [ProfileController::class, 'profile']);
-
+Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
+Route::post('/update', [ProfileController::class, 'update']);
 
 
 Route::get('/detailkos/{Detail}', [DetailKontroler::class, 'show'])->name('detailkos.show');
