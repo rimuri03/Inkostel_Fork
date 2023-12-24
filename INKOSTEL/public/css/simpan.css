@@ -25,6 +25,7 @@ header {
   align-items: center;
   margin-top: 1px;
   margin-left: -60px;
+  padding-top:10px;
 }
 
 .search input {
@@ -159,19 +160,6 @@ nav.open .sidebar {
   background-color: #6DD6BF;
 }
 
-.lists .nav-link:hover .icon,
-.lists .nav-link:hover .link {
-  color: #FFF;
-}
-
-.nav-link:hover {
-  background-color: #E44E4E;
-}
-
-.nav-link:hover .icon,
-.nav-link:hover .link {
-  color: #FFF;
-}
 
 .overlay {
   position: fixed;
@@ -213,11 +201,9 @@ header .logo {
   gap: 20px; 
 }
 
-.custom-button1 {
-  width: 100px; 
-  height: 40px; 
-  background-color: #85DAC8;
-  border : transparent;
+#username{
+  color :black;
+  padding-top: 15px;
 }
 
 .custom-button2 {
@@ -229,10 +215,10 @@ header .logo {
 
 /*Header End*/
 
-/* button dibawah search */
+/* filter button */
 .filter-button {
   text-align: center; 
-  margin-top: 10px; 
+  margin-top: 30px; 
 }
 
 .filter-button button {
@@ -242,15 +228,8 @@ header .logo {
   width: 200px;
 }
 
-/*container card */
-#conmain{
-  margin-left: 140px;
-  padding: 15px;  
-  height: 700px;
-}
-
 /*ukuran card */
-.card {
+#cobacard{
   position: relative;
   display: flex;
   border-radius: 10px;
@@ -258,20 +237,45 @@ header .logo {
   z-index: 99;
   border: 3px solid #41EBC6;
   width: 250px;
-  height: 350px;
+  height: 370px;
 }
 
+#rowcard{
+  padding-left:20px;
+  padding-left:20px;
+}
+
+/*container card */
+#conmain{
+  /* margin-left: 140px; */
+  padding: 20px;  
+  height: auto;
+  padding-bottom: 30px;
+}
+
+#concard{
+  background-color:pink;
+}
+
+/*ukuran card */
+/* .card {
+  position: relative;
+  display: flex;
+  border-radius: 10px;
+  flex-direction: column;
+  z-index: 99;
+  border: 3px solid #41EBC6;
+  width: 250px;
+  height: 370px;
+} */
+
+/* batas per card */
 .col-md-3 {
   margin: -5px;
+  height: auto;
 }
 
 /* Aturan CSS untuk border dan gambar di dalamnya */
-.border-image {
-  border: 3px solid #ccc; 
-  padding: 0; 
-  border-radius: 10px;
-  margin: 5px;
-}
 
 .border-image img{
   width: 150px;
@@ -299,10 +303,10 @@ header .logo {
   color: #41EBC6;
 }
 
-.card-text1::after {
+/* .card-text1::after {
   content: "jt/thn ";
   color: #41EBC6;
-}
+} */
 
 /* end card */
 
@@ -311,9 +315,8 @@ header .logo {
 .footer{
 	  background-color: #E7FAF6;
     color: #000000;
-    padding: 55px 0;
-    position: static; 
-    bottom: 0;
+    padding: 20px 0;
+   
 }
 
 .logo-footer img {
@@ -364,7 +367,7 @@ header .logo {
 }
 
 hr {
-    border: 1px solid #000; /* Ganti warna, lebar, dan gaya garis sesuai kebutuhan */
+    border: 1px solid #000; 
 }
 
 .social-links a {
@@ -388,19 +391,144 @@ hr {
 
 /*Footer End*/
 
-/* Styling pagination */
-.pagination {
-  margin-top: 20px;
-}
+/* responsive */
+@media (max-width: 768px) {
+  header {
+    height: auto;
+    flex-direction: column;
+  }
 
-.pagination .page-link {
-  color: #41EBC6;
-  background-color: #FFF;
-  border: 1px solid #41EBC6;
-}
+  .search {
+    width: 100%;
+    margin-left: 0;
+  }
 
-.pagination .page-item.active .page-link {
-  background-color: #41EBC6;
-  color: #FFF;
-  border: 1px solid #41EBC6;
+  .search input {
+    width: 100%;
+  }
+
+  .search .btn {
+    width: 80px;
+    height: 40px;
+  }
+
+  #logoHeader,
+  #conheader,
+  body header {
+    background-color: #E7FAF6;
+  }
+
+  nav .logo {
+    margin: 0 10px;
+  }
+
+  .logo .menu-icon {
+    font-size: 20px;
+  }
+
+  .logo .logo-name {
+    font-size: 18px;
+  }
+
+  nav .sidebar {
+    width: 200px;
+    padding: 10px 0;
+  }
+
+  .sidebar-content .list .nav-link {
+    padding: 10px;
+  }
+
+  .custom-button1,
+  .custom-button2 {
+    width: 80px;
+    height: 30px;
+  }
+
+  .filter-button {
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  .filter-button button {
+    color: white;
+    background-color: #41EBC6;
+    margin: 0 5px;
+    width: 100px; 
+  }
+
+  #conmain {
+    margin-left: 0;
+    height: 900px;
+  }
+
+  .col-md-3 {
+    margin: 10px;
+  }
+
+  .card {
+    width: 100%;
+    height: 250px;
+    margin: 10px 0;
+    padding: 10px;
+    border: 2px solid #41EBC6;
+  }
+
+  .border-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-title {
+    font-weight: bold;
+    font-size: 14px; 
+    color: #000000;
+  }
+
+  .card-text1,
+  .card-text2 {
+    font-weight: bold;
+    font-size: 12px; 
+    color: #41EBC6;
+    margin-top: 5px; 
+  }
+
+  .card-body {
+    position: relative;
+  }
+
+  .card-body .bi-bookmark {
+    position: absolute;
+    right: 70px;
+    font-size: 10px;
+  }
+
+  .card-body .bi-bookmark:hover {
+    color: #41EBC6;
+  }
+
+  .footer {
+    padding: 30px 0;
+  }
+
+  .logo-footer img {
+    width: 100px;
+    margin-bottom: 10px;
+  }
+
+  .footer-col {
+    flex: 1;
+    margin: 0 10px;
+  }
+
+  .footer-col h4 {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .social-links a {
+    font-size: 14px;
+    height: 30px;
+    width: 30px;
+  }
 }
