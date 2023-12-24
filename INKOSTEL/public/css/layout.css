@@ -177,6 +177,11 @@ body{
     pointer-events: auto;
   }
   
+  .lists .nav-link.active {
+    background-color: #6DD6BF;
+    color: #fff; /* Ganti warna teks jika diperlukan */
+  }
+  
   /*sidebar end*/
   
   img {
