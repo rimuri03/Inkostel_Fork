@@ -51,7 +51,7 @@
                         <div class="card-body">
                             <label class="form-label"><h6 class="font-weight-bold" style="padding-top: 10px;">Nama Lengkap</h6></label>
                             <div class="form-group">
-                                <input type="text" class="form-control mb-1" name="nama_panjang" value="{{ $p->nama_lengkap }}" id="nameInput" oninput="changeButtonColor()">
+                                <input type="text" class="form-control mb-1" name="nama_lengkap" value="{{ $p->nama_lengkap }}" id="nameInput" oninput="changeButtonColor()" placeholder="Isi nama lengkap anda...">
                             </div>
                             <div id="nameWarning" class="text-danger" style="padding-top: 10px;"></div>
                         
@@ -89,7 +89,6 @@
     <!--Akhir Isi-->
     @endsection
     @section('script')
-
     <script src="../Bootstrap/js/bootstrap.min.js"></script>
     <script src="../js/profile.js"></script>
     @endsection
