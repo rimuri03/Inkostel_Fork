@@ -145,7 +145,7 @@
                 <input type="text" class="form-control" name="harga_kos_pertahun" id="harga_kos_pertahun" placeholder="e.g. 1.000.000." required>
               </div>
 
-              <label for="Harga" class="form-label">Bulanan</label>
+              <label for="Harga" class="form-label">Bulanan (Opsional)</label>
               <div class="mb-4 input-group">
                 <span class="input-group-text" id="harga_kos_perbulan">
                   <i> Rp </i>
