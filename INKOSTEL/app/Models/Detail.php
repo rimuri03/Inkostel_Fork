@@ -10,7 +10,8 @@ class Detail extends Model
     use HasFactory;
     protected $table = 'carikos';
     protected $fillable = [
-        'nama_kos', 'harga_kos', 'jarak_kos', 'gambar_kos', 'alamat', 'jarak', 'Deskripsi', 'Fasilitas', 'ContactPerson', 'KamarKosong'
+        'nama_kos', 'harga_kos', 'jarak_kos', 'gambar_kos1', 'gambar_kos2', 'gambar_kos3', 'gambar_kos4', 'gambar_kos5',
+        'alamat', 'jarak', 'Deskripsi', 'Fasilitas', 'ContactPerson', 'KamarKosong'
     ];
 
 
