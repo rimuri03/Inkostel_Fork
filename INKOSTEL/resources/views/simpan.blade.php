@@ -15,185 +15,42 @@
     <link rel="stylesheet" href="{{ asset('css/simpan.css') }}">
   </head>
   <body>
+    @extends('partial.navbar')
 
-    <!-- navbar start -->
-    <header>
-        <nav>
-            <div class="logo" id="logoHeader">
-                <i class='bx bx-menu menu-icon'></i>
-                <div class="container" id="conHeader">
-                    <div class="row">
-                        <div class="col-md-4 logo">
-
-                            <img src="{{ asset('img/logo_inkostel.png') }}" alt="Logo KosTel">
-
-                        </div>
-
-                        <div class="col-md-4 text-center">
-                            <div class="search">
-                                <input class="form-control mr-sm-2" id="searchInput" type="search" placeholder="Cari Kos disini..!" aria-label="Cari">
-                                <button type="button" class="btn">
-                                    <i class="bi bi-search"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 text-end" id="button-container">
-                            <h5 id="username">Supri</h5>
-
-                              <a class="nav-link" href="../html/profile.html" id="profileButton">
-                                <img src="{{ asset('img/profile.png') }}" style="width:50px; border-radius:50%;"/>
-
-                                <span class="xp-user-live"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- SideBar Menu -->
-                <div class="sidebar">
-                    <div class="logo">
-                        <i class='bx bx-menu menu-icon'></i>
-                        <span class="logo-name">InKosTel</span>
-                    </div>
-
-                    <div class="sidebar-content">
-                        <ul class="lists">
-
-                            <li class="list">
-                                <a href="../html/index.html" class="nav-link">
-                                    <i class='bx bx-home-alt icon'></i>
-                                    <span class="link">Home</span>
-                                </a>
-                            </li>
-
-                            <li class="list">
-                                <a href="../html/carikost.html" class="nav-link">
-                                    <i class='bx bx-search icon'></i>
-                                    <span class="link">Cari Kost</span>
-                                </a>
-                            </li>
-
-                            <li class="list">
-                                <a href="../html/simpan.html" class="nav-link">
-                                    <i class='bx bx-archive-in icon'></i>
-                                    <span class="link">Kos Tersimpan</span>
-                                </a>
-                            </li>
-
-                            <li class="list">
-                                <a href="../html/jualKos.html" class="nav-link">
-                                    <i class='bx bx-message-square-add icon'></i>
-                                    <span class="link">Jual Kos</span>
-                                </a>
-                            </li>
-
-                            <li class="list">
-                                <a href="../html/profile.html" class="nav-link">
-                                    <i class='bx bx-user-circle icon'></i>
-                                    <span class="link">Profile</span>
-                                </a>
-                            </li>
-                        </ul>
-
-                        <div class="bottom-content">
-                            <li class="list">
-                                <a href="#" class="nav-link">
-                                    <i class='bx bx-log-out icon'></i>
-                                    <span class="link">Log Out</span>
-                                </a>
-                            </li>
-                        </div>
-                    </div>
-                </div>
-        </nav>
-
-        <!-- Overlay -->
-        <section class="overlay"></section>
-    </header>
-    <!--Navbar End-->
+    @section('isi')
 
     <!-- main -->
     <div class="container my-5" id="conmain">
         <div class="row row-cols-1 row-cols-md-3 g-0" id="card">
-            @foreach ($dataKos as $kos)
-                <div class="col">
-                    <div class="card">
-                        <img src="{{ $kos->gambar_kos }}" class="card-img-top" alt="Gambar Kos">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $kos->nama_kos }}</h5>
-                            <p class="card-text">Harga: {{ $kos->harga_kos_pertahun }}</p>
-                            <p class="card-text">Jarak: {{ $kos->jarak_kos }}</p>
-                        </form>
+            <!-- akan di foreach -->
+            @foreach($dataKos as $kos)
+            <div class="col-md-3 mb-4" id="coba">
+                <div class="card" id=cobacard>
+                    <div class="border-image" id="carouselIdValue">
+                        <div class="carousel inner">
+                            <div class="carousel-item active">
+                            <img src="{{ $kos->gambar_kos }}" class="d-block w-100" alt="">
+                            </div>
                         </div>
                     </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $kos->nama_kos}}</h5>
+                        <p class="card-text1">{{ $kos->harga_kos }} </p>
+                        <p id="jarak-{{ $kos->id }}" class="card-text2">{{ $kos->jarak_kos}}</p>
+                        <i class="bi bi-bookmark" style="position: relative; font-size: 30px; color: #41EBC6; margin-left: 180px; top: -100px;"></i>
+                    </div>
                 </div>
-            @endforeach
+            </div>
+             @endforeach
         </div>
     </div>
     <!-- end main -->
 
-
-    <!--Footer-->
-    <footer class="footer">
-
-      <div class="container" id="footer">
-          <div class="row">
-  
-              <div class="footer-col">
-                  <div class="logo-footer">
-                      <img src="{{ asset('img/logo_inkostel.png') }}" alt="logofooter" >
-                      <br> <br>
-                      <h5>About Us</h5>
-                      <p>InKosTel aplikasi untuk mencari informasi penjualan kos terbaik dan ternyaman di sekitar Telkom University</p>
-                      <div class="social-links">
-                          <a href="#"><i class="fab fa-facebook-f"></i></a>
-                          <a href="#"><i class="fab fa-twitter"></i></a>
-                          <a href="#"><i class="fab fa-instagram"></i></a>
-                      </div>
-                  </div>
-              </div>
-  
-              
-              <div class="footer-col">
-                  <br> <br> <br>
-                  <h5>About</h5>
-                  <ul class="list-unstyled">
-                      <li class="mb-2"><a href="#">About Us</a></li>
-                      <li class="mb-2"><a href="#">Product</a></li>
-                      <li class="mb-2"><a href="#">Features</a></li>
-                  </ul>
-              </div>
-  
-              <div class="footer-col">
-                  <br> <br> <br>
-                  <h5>Support</h5>
-                  <ul class="list-unstyled">
-                      <li class="mb-2"><a href="#">FAQs</a></li>
-                      <li class="mb-2"><a href="#">Support Center</a></li>
-                      <li class="mb-2"><a href="#">Contact Us</a></li>
-                  </ul>
-              </div>
-  
-              <div class="footer-col">
-                  <br> <br> <br>
-                  <h5>Services</h5>
-                  <ul class="list-unstyled">
-                      <li class="mb-2"><a href="#">Help Center</a></li>
-                      <li class="mb-2"><a href="#">Text</a></li>
-                      <li class="mb-2"><a href="#">How & Works</a></li>
-                  </ul>
-              </div>
-  
-          </div>
-          <hr>
-          <p>Copyright @ 2023 Kelompok 5 - Web Programming, InKosTel</p>
-      </div>
-    </footer>
-    <!--Akhir Footer-->
-
     <!-- script js -->
 
     <script src="{{ asset('js/simpan.js') }}"></script>
+    @endsection
   </body>
 </html>
 

@@ -48,6 +48,42 @@
                                     @endif
                                     @endforeach
                                 </div>
+                                <div class="carousel-inner">
+                                    @foreach($details as $index => $detail)
+                                    @if ($detail->gambar_kos)
+                                    <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                        <img src="{{ asset($detail->gambar_kos) }}" class="d-block w-100" style="height: 270px;" alt="...">
+                                    </div>
+                                    @endif
+                                    @endforeach
+                                </div>
+                                <div class="carousel-inner">
+                                    @foreach($details as $index => $detail)
+                                    @if ($detail->gambar_kos)
+                                    <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                        <img src="{{ asset($detail->gambar_kos) }}" class="d-block w-100" style="height: 270px;" alt="...">
+                                    </div>
+                                    @endif
+                                    @endforeach
+                                </div>
+                                <div class="carousel-inner">
+                                    @foreach($details as $index => $detail)
+                                    @if ($detail->gambar_kos)
+                                    <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                        <img src="{{ asset($detail->gambar_kos) }}" class="d-block w-100" style="height: 270px;" alt="...">
+                                    </div>
+                                    @endif
+                                    @endforeach
+                                </div>
+                                <div class="carousel-inner">
+                                    @foreach($details as $index => $detail)
+                                    @if ($detail->gambar_kos)
+                                    <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                        <img src="{{ asset($detail->gambar_kos) }}" class="d-block w-100" style="height: 270px;" alt="...">
+                                    </div>
+                                    @endif
+                                    @endforeach
+                                </div>
                             </div>
 
 
