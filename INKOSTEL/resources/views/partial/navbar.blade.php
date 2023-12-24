@@ -41,7 +41,7 @@
                         <div class="col-md-4 text-end" id="button-container">
                             <h5 id="username">Supri</h5>
 
-                              <a class="nav-link" href="../html/profile.html" id="profileButton">
+                              <a class="nav-link" href="/profile" id="profileButton">
                                 <img src="{{ asset('img/profile.png') }}" style="width:50px; border-radius:50%;"/>
 
                                 <span class="xp-user-live"></span>
