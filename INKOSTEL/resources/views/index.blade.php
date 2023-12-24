@@ -73,7 +73,7 @@
                         </li>
 
                         <li class="list">
-                            <a href="jualkos" class="nav-link">
+                            <a href="/jualkos" class="nav-link">
                                 <i class='bx bx-message-square-add icon'></i>
                                 <span class="link">Jual Kos</span>
                             </a>
