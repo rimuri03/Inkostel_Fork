@@ -60,7 +60,7 @@
     <script src="{{ asset('js/carikost.js') }}"></script>
     <script>
         // Panggil fungsi untuk menetapkan jarak
-        setDistanceText({{ $data->id }}, {{ $data->jarak_kos }});
+
     </script>
 
     @endsection
