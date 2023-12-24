@@ -32,7 +32,7 @@
       <div class="row justify-content-center my-5">
 
         <div class="col-lg-6">
-          <form action="{{ url('/jualkos') }}" method="post">
+          <form action="{{route('/jualkos') }}" method="post">
             @csrf
             <label for="Nama" class="form-label">Nama Kosan/Tempat Tinggal:</label>
             <div class="mb-4 input-group">
