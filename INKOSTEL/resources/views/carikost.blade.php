@@ -45,9 +45,9 @@
 
                     <div class="card-body">
                         <h5 class="card-title">{{ $data->nama_kos}}</h5>
-                        <p class="card-text1">{{ $data->harga_kos }} </p>
+                        <p class="card-text1" data-harga="{{ $data->harga_kos }}">{{ $data->harga_kos }}</p>
                         <p id="jarak-{{ $data->id }}" class="card-text2">{{ $data->jarak_kos}}</p>
-                        <i class="bi bi-bookmark" style="position: relative; font-size: 30px; color: #41EBC6; margin-left: 180px; top: -100px;"></i>
+                        <i class="bi bi-bookmark" id="bookmarkIcon" style="position: relative; font-size: 30px; color: #41EBC6; margin-left: 180px; top: -100px;"></i>
                     </div>
                 </div>
             </div>
@@ -58,10 +58,9 @@
     
     <!-- script js -->
     <script src="{{ asset('js/carikost.js') }}"></script>
-    <script>
-        // Panggil fungsi untuk menetapkan jarak
+    <!-- <script>
         setDistanceText({{ $data->id }}, {{ $data->jarak_kos }});
-    </script>
+    </script> -->
 
     @endsection
   </body>

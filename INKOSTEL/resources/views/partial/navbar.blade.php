@@ -115,9 +115,10 @@
     <section>
         @yield('isi')
     </section>
-    <!-- script js -->
 
+    <!-- script js -->
     <script src="{{ asset('js/layout.js') }}"></script>
+    
     @yield('script')
     <br>
     <br>
