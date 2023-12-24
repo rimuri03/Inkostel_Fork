@@ -32,9 +32,7 @@ Route::get('/simpan', [SimpanController::class, 'tampilkanHalamanSimpan'])->name
 //akhir simpan kost
 
 
-Route::get('/profile', function () {
-    return view('profile');
-});
+Route::get('/profile', [ProfileController::class, 'profile']);
 
 
 
