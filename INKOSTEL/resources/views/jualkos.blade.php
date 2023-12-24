@@ -32,7 +32,7 @@
       <div class="row justify-content-center my-5">
 
         <div class="col-lg-6">
-          <form action="{{ url('/jualkos') }}" method="post">
+          <form action="{{route('/jualkos') }}" method="post">
             @csrf
             <label for="Nama" class="form-label">Nama Kosan/Tempat Tinggal:</label>
             <div class="mb-4 input-group">
@@ -161,15 +161,15 @@
             <label for="InputGambar" class="form-label">Unggah Tampilan Kamar</label>
             <div class="mb-4 input-group">
               <span class="input-group-text">
-                <input class="form-control" type="file" name="gambar_kos" id="gambar_kos">
+                <input class="form-control" type="file" name="gambar_kos1" id="gambar_kos1">
                 <br>
-                <input class="form-control" type="file" name="gambar_kos" id="gambar_kos">
+                <input class="form-control" type="file" name="gambar_kos2" id="gambar_kos2">
                 <br>
-                <input class="form-control" type="file" name="gambar_kos" id="gambar_kos">
+                <input class="form-control" type="file" name="gambar_kos3" id="gambar_kos3">
                 <br>
-                <input class="form-control" type="file" name="gambar_kos" id="gambar_kos">
+                <input class="form-control" type="file" name="gambar_kos4" id="gambar_kos4">
                 <br>
-                <input class="form-control" type="file" name="gambar_kos" id="gambar_kos">
+                <input class="form-control" type="file" name="gambar_kos5" id="gambar_kos5">
               </span>
             </div>
 

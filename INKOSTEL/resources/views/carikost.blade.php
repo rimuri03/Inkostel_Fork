@@ -58,9 +58,10 @@
     
     <!-- script js -->
     <script src="{{ asset('js/carikost.js') }}"></script>
-    <!-- <script>
+    <script>
+        // Panggil fungsi untuk menetapkan jarak
         setDistanceText({{ $data->id }}, {{ $data->jarak_kos }});
-    </script> -->
+    </script>
 
     @endsection
   </body>
