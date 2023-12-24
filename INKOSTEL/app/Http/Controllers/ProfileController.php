@@ -3,26 +3,38 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Models\Profile;
-use function laravel\prompts\info;
+use App\Models\Profile;
 
 class ProfileController extends Controller
 {
-    public function profile(Request $request)
+    public function profile()
     {
-        return view('profile');
+        $profileData = Profile::first();
+
+        return view('profile', ['profileData' => $profileData]);
     }
-    public function update(Request $request){
+    public function update(Request $request)
+    {
+        // Validasi data input hanya untuk username dan email
         $request->validate([
-            'username' => 'required',
-            'email' => 'required',
+            'username' => 'required|string',
+            'email' => 'required|email',
         ]);
-        $profil = Profile::where('username', $request->input('username'))->orWhere('email', $request->input('email'))->firstOrFail();
-        $profil -> update([
-            'nama_lengkap' => $request -> input('nama_lengkap'),
-            'nomor_telepon' => $request -> input('nomor_telpon'),
-            'foto_profil' => $request -> input('foto_profil'),
+
+        // Ambil data dari formulir
+        $username = $request->input('username');
+        $email = $request->input('email');
+
+        // Update data profil di database
+        Profile::update([
+            'username' => $username,
+            'email' => $email,
+            'nama_panjang' => $nama_panjang,
+            'nomor_telpon' => $nomor_telpon,
+            // Tambahkan kolom-kolom lain yang perlu diupdate
         ]);
-        return redirect('/profil')->with('success', 'Data sudah berhasil diupdate');
+
+        // Redirect atau kirim respons sesuai kebutuhan Anda
+        return redirect()->route('profile')->with('success', 'Profil berhasil diperbarui');
     }
 }
