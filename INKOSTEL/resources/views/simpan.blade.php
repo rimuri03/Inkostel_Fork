@@ -118,20 +118,11 @@
             @foreach ($dataKos as $kos)
                 <div class="col">
                     <div class="card">
-                        <!-- Mengasumsikan ada field gambar dalam database -->
                         <img src="{{ $kos->gambar_kos }}" class="card-img-top" alt="Gambar Kos">
                         <div class="card-body">
                             <h5 class="card-title">{{ $kos->nama_kos }}</h5>
-                            <p class="card-text">Harga: {{ $kos->harga_kos }}</p>
+                            <p class="card-text">Harga: {{ $kos->harga_kos_pertahun }}</p>
                             <p class="card-text">Jarak: {{ $kos->jarak_kos }}</p>
-                            <!-- Tambahkan field lain sesuai kebutuhan -->
-
-                        <form id="delete-form-{{ $kos->id_kos }}" action="{{ route('kos.delete', ['id' => $kos->id_kos]) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-
-                            <!-- Bidang formulir lainnya atau tombol submit bisa ditempatkan di sini -->
-                            <button type="submit" class="btn btn-danger">Hapus</button>
                         </form>
                         </div>
                     </div>
