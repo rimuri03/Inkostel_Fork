@@ -38,7 +38,7 @@
                     <div class="border-image" id="carouselIdValue">
                         <div class="carousel inner">
                             <div class="carousel-item active">
-                                <img src="imageSrcValue" class="d-block w-100" alt="">
+                            <img src="{{ $data->gambar_kos }}" class="d-block w-100" alt="">
                             </div>
                         </div>
                     </div>
