@@ -308,8 +308,7 @@ header .logo {
   position: relative;
   font-size: 30px;
   color: #41EBC6;
-  margin-left: 180px;
-  top: -100px;
+  cursor: pointer;
 }
 
 
@@ -503,19 +502,6 @@ hr {
     margin-top: 5px; 
   }
 
-  .card-body {
-    position: relative;
-  }
-
-  .card-body .bi-bookmark {
-    position: absolute;
-    right: 70px;
-    font-size: 10px;
-  }
-
-  .card-body .bi-bookmark:hover {
-    color: #41EBC6;
-  }
 
   .footer {
     padding: 30px 0;
