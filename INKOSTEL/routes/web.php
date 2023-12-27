@@ -21,7 +21,8 @@ Route::get('/login', [LoginRegis::class, 'login'])->name('login');
 Route::post('/login', [LoginRegis::class, 'loginPost'])->name('loginPost');
 Route::post('/registration', [LoginRegis::class, 'registrationPost'])->name('registration.post');
 
-
+//Logout
+Route::post('/logout', [LoginRegis::class, 'logout'])->name('logout');
 
 // Cari Kost
 Route::get('/carikost', [CariKosController::class, 'index'])->name('carikost');

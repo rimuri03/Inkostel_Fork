@@ -124,7 +124,7 @@
                                 </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="../img/gambar kos.jpg" class="card-img-top" style="height: 270px;;"
+                                        <img src="../img/kos1.jpg" class="card-img-top" style="height: 270px;;"
                                             alt="...">
                                     </div>
                                     <div class="carousel-item">

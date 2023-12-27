@@ -39,7 +39,9 @@
                         </div>
 
                         <div class="col-md-4 text-end" id="button-container">
-                            <h5 id="username">Supri</h5>
+                        @if(Auth::check())
+                            <h5 id="username">{{ Auth::user()->username }}</h5>
+                        @endif
 
                               <a class="nav-link" href="/profile" id="profileButton">
                                 <img src="{{ asset('img/profile.png') }}" style="width:50px; border-radius:50%;"/>
@@ -96,12 +98,13 @@
                         </ul>
 
                         <div class="bottom-content">
-                            <li class="list">
-                                <a href="#" class="nav-link">
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="nav-link">
                                     <i class='bx bx-log-out icon'></i>
                                     <span class="link">Log Out</span>
-                                </a>
-                            </li>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
