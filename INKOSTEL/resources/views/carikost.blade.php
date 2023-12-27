@@ -7,15 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>InKosTel Cari Kost</title>
 
-    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="{{ asset('css/carikost.css') }}">
-</head>
-
-<body>
+  </head>
+  <body>
 
     @extends('partial.navbar')
 
@@ -39,31 +38,32 @@
                     <div class="border-image" id="carouselIdValue">
                         <div class="carousel inner">
                             <div class="carousel-item active">
-                                <img src="{{ $data->gambar_kos1 }}" class="d-block w-100"  alt="">
+                                <img src="{{ $data->gambar_kos1 }}" class="d-block w-100" alt="">
                             </div>
                         </div>
                     </div>
 
                     <div class="card-body">
-                        <form action="/detailkos/{{$data->id_kos}}" method="get">
-                            <button type="submit" class="btn btn-primary">detail</button>
-                        </form>
                         <h5 class="card-title">{{ $data->nama_kos}}</h5>
-                        <p class="card-text1" data-harga="{{ $data->harga_kos_pertahun }}">{{ $data->harga_kos_pertahun }}</p>
+                        <p class="card-text1" data-harga="{{ $data->harga_kos_pertahun }}">{{ $data->harga_kos }}</p>
                         <p id="jarak-{{ $data->id }}" class="card-text2">{{ $data->jarak_kos}}</p>
-                        <i class="bi bi-bookmark" id="bookmarkIcon" style="position: relative; font-size: 30px; color: #41EBC6; margin-left: 180px; top: -100px;"></i>
+                        <button class="bookmark-btn" data-kos-id="{{ $data->id_kos }}" onclick="toggleBookmark(this)">
+                            <i class="bi bi-bookmark"></i>
+                        </button>
+                        <form action="/detailkos/{{$data->id_kos}}" method="get" id="btnDetail">
+                            <button type="submit" class="btn">detail</button>
+                        </form>
                     </div>
                 </div>
             </div>
-            @endforeach
+             @endforeach
         </div>
     </div>
     <!-- end main -->
-
+    
     <!-- script js -->
     <script src="{{ asset('js/carikost.js') }}"></script>
 
     @endsection
-</body>
-
+  </body>
 </html>

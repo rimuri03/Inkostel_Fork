@@ -11,6 +11,13 @@
   border: white;
 }
 
+#btnDetail {
+  margin-top: -50px;
+  color: #41EBC6;
+}
+
+
+
 
 body{
   overflow-x: hidden;
