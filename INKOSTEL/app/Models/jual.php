@@ -12,9 +12,22 @@ class jual extends Model
     protected $table = 'validation';
     protected $fillable = [
 
-        'nama_kos','user_id', 'harga_kos_perbulan', 'harga_kos_pertahun', 'jarak_kos', 'gambar_kos1', 'gambar_kos2', 'gambar_kos3', 'gambar_kos4', 'gambar_kos5', 'alamat', 'Deskripsi', 'Fasilitas', 'ContactPerson',
+        'nama_kos',
+        'harga_kos_perbulan', 
+        'harga_kos_pertahun', 
+        'jarak_kos', 
+        'gambar_kos1', 
+        'gambar_kos2', 
+        'gambar_kos3', 
+        'gambar_kos4', 
+        'gambar_kos5', 
+        'alamat', 
+        'Deskripsi', 
+        'Fasilitas', 
+        'ContactPerson',
     ];
 
 
-    protected $primaryKey = 'id_kos';
+    // protected $primaryKey = 'id_kos';
+    
 }
