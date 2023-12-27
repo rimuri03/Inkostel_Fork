@@ -52,28 +52,19 @@
             </div>
 
             <label for="jarak_kos" class="form-label">Jarak:</label>
-            <div class="form-check">
-
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="jarak_kos" value="0-100_meter" id="0-100">
-                <label class="form-check-label" for="flexRadioDefault1">
-                  0-100 meter
-                </label>
+            <div class="row g-3 align-items-center">
+              <div class="col-auto">
+                <input type="text" id="jarak_kos" name="jarak_kos" class="form-control">
               </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="jarak_kos" value="100-500_meter" id="100-500">
-                <label class="form-check-label" for="flexRadioDefault2">
-                  100-500 meter
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="jarak_kos" value="500-1000_meter" id="500-1000"
-                  checked>
-                <label class="form-check-label" for="flexRadioDefault3">
-                  500-1000 meter
-                </label>
+              <div class="col-auto">
+                <span id="jarak_kos" class="form-text">
+                  / Meter
+                </span>
               </div>
             </div>
+
+
+
             <br>
 
             <label for="Nomor" class="form-label">Nomor Handphone:</label>
