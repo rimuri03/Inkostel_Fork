@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener('click', () => {
       const filterType = button.getAttribute('data-filter');
       // Lakukan pemfilteran berdasarkan jenis filter
-      const cardItems = document.querySelectorAll('.card');
+      const cardItems = document.querySelectorAll('#coba');
 
       cardItems.forEach(card => {
         const cardData = {
@@ -64,8 +64,22 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// icon Bookmark
+function toggleBookmark(button) {
+  // Mengganti warna saat diklik
+  if (button.classList.contains('bookmarked')) {
+      button.style.backgroundColor = '';
+      button.style.color = '#41EBC6';
+      button.style.borderColor = '#41EBC6';
+      button.classList.remove('bookmarked');
+  } else {
+      button.style.backgroundColor = '#41EBC6';
+      button.style.color = 'white';
+      button.style.borderColor = '#41EBC6';
+      button.classList.add('bookmarked');
+  }
+}
 
-  
 
   
  
