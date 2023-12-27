@@ -1,5 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
+/* Di dalam file carikost.css */
+.bookmark-btn {
+  position: relative;
+  color: #41EBC6;
+  margin-left: 180px;
+  top: -100px;
+  border: 2px solid #41EBC6;
+}
+
+.bookmark-btn:hover,
+.bookmark-btn:active {
+  background-color: #41EBC6;
+  color: white;
+  border-color: #41EBC6;
+}
+
 body{
   overflow-x: hidden;
 }
