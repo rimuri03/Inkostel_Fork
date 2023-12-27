@@ -33,14 +33,14 @@ Route::get('/simpan', [SimpanController::class, 'tampilkanHalamanSimpan'])->name
 //akhir simpan kost
 
 
-
+//profile
 Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
-Route::post('/update', [ProfileController::class, 'update']);
-
-
+Route::post('/store', [ProfileController::class, 'store'])->name('store');
 
 
 Route::get('/detailkos/{Detail}', [DetailKontroler::class, 'show'])->name('detailkos.show');
+
+
 
 //jual Kos
 Route::get('/jualkos', [JualController::class, 'tampilregisjual']);
