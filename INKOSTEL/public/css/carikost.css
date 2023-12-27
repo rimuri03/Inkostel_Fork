@@ -228,6 +228,7 @@ header .logo {
   width: 200px;
 }
 
+
 /*ukuran card */
 #cobacard{
   position: relative;
@@ -302,6 +303,14 @@ header .logo {
   font-size: larger;
   color: #41EBC6;
 }
+
+#bookmarkIcon {
+  position: relative;
+  font-size: 30px;
+  color: #41EBC6;
+  cursor: pointer;
+}
+
 
 /* .card-text1::after {
   content: "jt/thn ";
@@ -493,19 +502,6 @@ hr {
     margin-top: 5px; 
   }
 
-  .card-body {
-    position: relative;
-  }
-
-  .card-body .bi-bookmark {
-    position: absolute;
-    right: 70px;
-    font-size: 10px;
-  }
-
-  .card-body .bi-bookmark:hover {
-    color: #41EBC6;
-  }
 
   .footer {
     padding: 30px 0;

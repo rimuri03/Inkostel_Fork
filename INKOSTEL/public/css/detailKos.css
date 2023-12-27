@@ -245,8 +245,8 @@ h1{
   display: inline; /* Memastikan teks tetap berada di sebelah ikon */
 }
  .custom-scrollbar {
-    max-height: 500px; /* Sesuaikan dengan tinggi maksimal yang Anda inginkan */
-    overflow-y: 500px;
+    max-height: 350px; /* Sesuaikan dengan tinggi maksimal yang Anda inginkan */
+    overflow-y: auto;
 }
 
 #detail{
@@ -257,7 +257,7 @@ h1{
 /* Menyembunyikan scrollbar pada elemen saat tidak dihover */
 .custom-scrollbar::-webkit-scrollbar {
     width: 0.5em;
-    overflow-y: auto;
+    overflow-y: 350px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
@@ -322,7 +322,7 @@ h1{
 	background-color: #E7FAF6;
     color: #000000;
     padding: 20px 0;
-    margin-top: 120px;
+    margin-top: 50px;
     position: static; 
     bottom: 0;
 }

@@ -1,79 +1,79 @@
-  // navBar
-  const navBar = document.querySelector("nav"),
-  menuBtn = document.querySelectorAll(".menu-icon"),
-  overlay = document.querySelector(".overlay");
-  console.log(navBar, menuBtn, overlay);
-
-  menuBtn.forEach(menuBtn => {
-  menuBtn.addEventListener("click", () => {
-    navBar.classList.toggle("open");
-  });
-  });
-
-  overlay.addEventListener("click", () => {
-  navBar.classList.remove("open");
-  });
-
-
-      // Event listener for search input
-      document.getElementById('searchInput').addEventListener('keyup', (e) => {
-      const searchData = e.target.value.toLowerCase();
-      const filteredData = cardData.filter((item) => {
-        return (
-          item.title.toLowerCase().includes(searchData)
-        );
-      });
-      displayItems(filteredData);
+ // convert harga
+document.addEventListener("DOMContentLoaded", function() {
+    var cardText1Elements = document.querySelectorAll('.card-text1');
+    cardText1Elements.forEach(function(cardText1Element) {
+        var hargaValue = parseFloat(cardText1Element.getAttribute('data-harga'));
+        cardText1Element.textContent = formatHarga(hargaValue);
     });
-    
-    // Function to display filtered items
-    function displayItems(data) {
-      const cardContainer = document.querySelector("#conmain .row");
-      cardContainer.innerHTML = ""; // Clear the existing items
-    
-      data.forEach((item) => {
-        createCard(item);
-      });
-    }
+  });
 
+
+// Fungsi untuk mengonversi harga
+function formatHarga(harga) {
+  if (harga >= 1000000) {
+    return (harga / 1000000)+ " jt/thn";
+  } else {
+      return harga + " /thn";
+  }
+}
+
+
+// fungsi untuk mengetahui terdekat
+var cardText2Elements = document.querySelectorAll('.card-text2');
+cardText2Elements.forEach(function(cardText2Element) {
+  var cardText2Value = parseFloat(cardText2Element.textContent);
+  // Memeriksa dan mengupdate nilai sesuai kondisi
+    if (cardText2Value >= 1000) {
+      cardText2Element.textContent = (cardText2Value / 1000) + " KM";
+    } else {
+      cardText2Element.textContent = cardText2Value + " Meter";
+    }
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
   // Ambil semua tombol filter
   const filterButtons = document.querySelectorAll('.filter-button .btn');
 
   // Tambahkan event listener pada setiap tombol filter
   filterButtons.forEach(button => {
     button.addEventListener('click', () => {
-      const filterType = button.getAttribute('data-filter'); 
-
+      const filterType = button.getAttribute('data-filter');
       // Lakukan pemfilteran berdasarkan jenis filter
-      const filteredData = cardData.filter(item => {
-        if (filterType === 'semua') {
-          return true; 
-        } else if (filterType === 'putra') {
-          return item.title.includes('Putra'); 
-        } else if (filterType === 'putri') {
-          return item.title.includes('Putri'); 
-        } else if (filterType === 'termurah') {
-          return parseInt(item.cardText1) <= 10; 
-        }else if (filterType === 'terdekat') {
-          return parseInt(item.cardText2) < 1000; 
+      const cardItems = document.querySelectorAll('.card');
+
+      cardItems.forEach(card => {
+        const cardData = {
+          harga: parseFloat(card.querySelector('.card-text1').getAttribute('data-harga')),
+          jarak: parseInt(card.querySelector('.card-text2').textContent),
+          jenis: card.querySelector('.card-title').textContent.toLowerCase(),
+        };
+
+        if (filterType === 'semua' ||
+          (filterType === 'terdekat' && cardData.jarak < 1000) ||
+          (filterType === 'termurah' && cardData.harga <= 5000000) ||
+          (filterType === 'putra' && cardData.jenis.includes('putra')) ||
+          (filterType === 'putri' && cardData.jenis.includes('putri'))) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
         }
       });
-      // Tampilkan data yang telah difilter
-      displayItems(filteredData);
     });
   });
+});
 
 
-  // untuk mengetahui terdekat
-  function setDistanceText(id, cardText2Value) {
-    const cardText2 = document.getElementById(`jarak-${id}`);
+
   
-    if (cardText2Value >= 1000) {
-        cardText2.textContent = (cardText2Value / 1000) + " KM";
-    } else {
-        cardText2.textContent = (cardText2Value + " Meter");
-    }
-}
+
+  
+ 
+  
+
+  
+
+
 
   
 
