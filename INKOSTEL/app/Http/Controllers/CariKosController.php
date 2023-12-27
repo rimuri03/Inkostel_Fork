@@ -13,6 +13,14 @@ class CariKosController extends Controller
         $carikos = CariKos::all();
         return view('carikost', compact(['carikos']));
     }
+
+    public function detailkos($id)
+    {
+        // Menggunakan findOrFail untuk mencari detail kos berdasarkan ID
+        $carikos = CariKos::find($id);
+
+        return view('detailKos', compact('carikos'));
+    }
     
 
     public function simpan(){

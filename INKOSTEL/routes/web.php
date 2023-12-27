@@ -39,7 +39,7 @@ Route::post('/update', [ProfileController::class, 'update']);
 
 
 
-Route::get('/detailkos/{Detail}', [DetailKontroler::class, 'show'])->name('detailkos.show');
+Route::get('/detailkos/{id_kos}', [CariKosController::class, 'detailKos']);
 
 //jual Kos
 Route::get('/jualkos', [JualController::class, 'tampilregisjual']);
