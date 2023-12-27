@@ -38,7 +38,7 @@ Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
 Route::post('/store', [ProfileController::class, 'store'])->name('store');
 
 
-Route::get('/detailkos/{Detail}', [DetailKontroler::class, 'show'])->name('detailkos.show');
+Route::get('/detailkos/{id_kos}', [CariKosController::class, 'detailKos']);
 
 
 
