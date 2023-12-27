@@ -20,8 +20,9 @@
         <div class="card">
             <div class="row no-gutters row-bordered row-border-light">
                 <div class="col-md-12 pt-10">
-                    <form action="/update" method="post">
+                    <form action="{{ route('store') }}" method="post">
                         @csrf
+                        @method('put')
                         <div class="container-fluid">
                             <h1 class="font-weight-bold" style="padding-bottom: 50px;padding-top: 20px;">Hai, Supri Kowalski</h1>
                             <h4 class="font-weight-bold">Profile Picture</h4>
@@ -77,7 +78,7 @@
                             <div id="phoneWarning" class="text-danger" style="padding-top: 10px;"></div>
                             
                             <div style="padding-bottom: 50px; padding-top: 25px;">
-                                <button type="submit" class="btn btn-outline-primary2" id="saveButton">Simpan</button>
+                                <button type="submit" class="btn btn-outline-primary2" id="store" name="store">Simpan</button>
                             </div>
                         </div>                
                     </form>  

@@ -32,14 +32,14 @@
       <div class="row justify-content-center my-5">
 
         <div class="col-lg-6">
-          <form action="{{url('/jualkos')}}" method="post">
+          <form action="{{ route('jualkos') }}" method="post" enctype="multipart/form-data">
             @csrf
-            <label for="Nama" class="form-label">Nama Kosan/Tempat Tinggal:</label>
+            <label for="exampleInputEmail1" class="form-label">Nama Kost</label>
             <div class="mb-4 input-group">
               <span class="input-group-text">
                 <i class="bi bi-person-fill"></i>
               </span>
-              <input type="text" class="form-control" name="name_kos" id="name_kos" placeholder="e.g. Kosan bargetot">
+              <input type="text" class="form-control" name="nama_kos" id="nama_kos" placeholder="e.g. Kost Putra">
             </div>
 
             <label for="Alamat" class="form-label">Alamat:</label>
