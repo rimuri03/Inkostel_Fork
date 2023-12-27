@@ -38,14 +38,14 @@
                     <div class="border-image" id="carouselIdValue">
                         <div class="carousel inner">
                             <div class="carousel-item active">
-                                <img src="{{ $data->gambar_kos }}" class="d-block w-100" alt="">
+                                <img src="{{ $data->gambar_kos1 }}" class="d-block w-100"  alt="">
                             </div>
                         </div>
                     </div>
 
                     <div class="card-body">
                         <h5 class="card-title">{{ $data->nama_kos}}</h5>
-                        <p class="card-text1" data-harga="{{ $data->harga_kos }}">{{ $data->harga_kos }}</p>
+                        <p class="card-text1" data-harga="{{ $data->harga_kos_pertahun }}">{{ $data->harga_kos_pertahun }}</p>
                         <p id="jarak-{{ $data->id }}" class="card-text2">{{ $data->jarak_kos}}</p>
                         <i class="bi bi-bookmark" id="bookmarkIcon" style="position: relative; font-size: 30px; color: #41EBC6; margin-left: 180px; top: -100px;"></i>
                     </div>

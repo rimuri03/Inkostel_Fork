@@ -9,6 +9,7 @@
 </head>
 <body>
   <div class="container">
+    <!-- Login Start-->
     <div class="forms-container">
       <div class="signin-signup">
         <form action="{{route('loginPost')}}" method="POST" class="sign-in-form">
@@ -29,9 +30,8 @@
               </div>
           @endif
           <input type="submit" value="Login" class="btn solid" id="loginButton">
-
         </form>
-
+        <!-- Login End , Registration Start-->
         <form action="{{route('registration.post')}}" method="POST" class="sign-up-form">
         @csrf 
           <img src="../img/logo_inkostel.png" alt="" class="logo">
@@ -48,13 +48,10 @@
             <i class="fas fa-lock"></i>
             <input type="password" placeholder="Password" id="password" name="passwordReg" required>
           </div>
-          <input type="submit" value="Sign up" class="btn solid">
-
-        
+          <input type="submit" value="Sign up" class="btn solid">        
         </form>
       </div>
     </div>
-
     <div class="panels-container">
       <div class="panel left-panel">
         <div class="content">
@@ -62,7 +59,6 @@
           <p>Klik Sign Up dibawah ini untuk membuat akun dan bergabung dengan InKosTel</p>
           <button class="btn transparent" id="sign-up-btn">Sign up</button>
         </div>
-
         <img src="../img/signin.svg" class="image" alt="">
       </div>
 
@@ -72,11 +68,9 @@
           <p>Klik Log In dibawah dengan akun yang pernah dibuat sebelumnya</p>
           <button class="btn transparent" id="sign-in-btn">Sign in</button>
         </div>
-
         <img src="../img/signup.svg" class="image" alt="">
     </div>
   </div>
-
   <script src="../js/login.js"></script>
 </body>
 </html>
