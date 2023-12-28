@@ -11,7 +11,7 @@ use App\Http\Controllers\JualController;
 use App\Http\Controllers\ProfileController;
 
 use App\Http\Controllers\CariKosController;
-
+use App\Http\Controllers\ValidationController;
 
 //use App\Http\Controllers\RegisterController;
 
@@ -42,6 +42,8 @@ Route::post('/store', [ProfileController::class, 'store'])->name('store');
 
 
 Route::get('/detailkos/{id_kos}', [CariKosController::class, 'detailKos']);
+
+Route::get('/acc/{id_kos}', [ValidationController::class,'acceptkos']);
 
 
 
@@ -88,10 +90,15 @@ Route::get('/footer', function () {
     return view('partial.footer');
 });
 
+// Validasi dan Accept
 Route::get('/val', function () {
     return view('validasi');
 });
 
+
 Route::get('/acc', function () {
     return view('accept');
 });
+
+Route::get('/val', [ValidationController::class,'index']);
+Route::post('/accept', [ValidationController::class, 'update']);
