@@ -5,7 +5,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Inkostel</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('front/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css">
@@ -75,7 +74,7 @@
                 <div class="card" id="cardHarga" style="width: 390px; height: 194px;">
                     <div class="card-body">
                         <h5 class="card-title" style="text-align: center;" id="harga-tahun">
-                            Rp. <span id="harga-pertahun">
+                            Rp <span id="harga-pertahun">
                                 <?php
                                 $harga_pertahun = $carikos->harga_kos_pertahun;
 
@@ -103,26 +102,19 @@
                             <div class="col-md-6">
                                 <div class="dropdown">
                                     <button class="btn btn-outline-secondary dropdown-toggle" style="width: 10rem; border-color: #6DD6BF;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <span class="text-color"> kamar</span>
+                                        <span class="text-color"> Jarak</span>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">{{$carikos->KamarKosong}}</a></li>
+                                        <li><a class="dropdown-item" href="#"> {{number_format($carikos->jarak_kos / 1000, 2) }} km</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <br>
-                        <a href="https://wa.me/{{ $carikos->ContactPerson }}" class="btn btn-outline-success d-block mx-auto bi bi-whatsapp">WhatsApp</a>
+                        <a href="https://wa.me/{{ $carikos->ContactPerson }}" target="_blank" class="btn btn-outline-success d-block mx-auto bi bi-whatsapp">WhatsApp</a>
                         <!-- Menggunakan "d-block mx-auto" untuk mengatur tombol di tengah -->
                     </div>
                 </div>
-                <div class="col-sm-6">
-                    <h4>
-                        Jarak: {{ number_format($carikos->jarak_kos / 1000, 2) }} km
-                    </h4>
-                </div>
-
-
             </div>
 
 

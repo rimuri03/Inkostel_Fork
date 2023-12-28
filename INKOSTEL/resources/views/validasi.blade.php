@@ -17,32 +17,22 @@
                     <th scope="col">ID Kos</th>
                     <th scope="col">ID User</th>
                     <th scope="col">Nama Kos</th>
-                    <th scope="col">Gambar</th>
+                    <th scope="col">Harga Pertahun</th>
                     <th scope="col">Aksi</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>ID Kosnya</td>
-                    <td >ID Usernya</td>
-                    <td>Nama Kosnya</td>
-                    <td>Gambarnya</td>
-                    <td><button class="btn btn-primary" type="submit">Cek</button></td>
-                </tr>
-                <tr>
-                    <td>ID Kosnya</td>
-                    <td >ID Usernya</td>
-                    <td>Nama Kosnya</td>
-                    <td>Gambarnya</td>
-                    <td><button class="btn btn-primary" type="submit">Cek</button></td>
-                </tr>
-                <tr>
-                    <td>ID Kosnya</td>
-                    <td >ID Usernya</td>
-                    <td>Nama Kosnya</td>
-                    <td>Gambarnya</td>
-                    <td><button class="btn btn-primary" type="submit">Cek</button></td>
-                </tr>
+                @foreach($validation as $data)
+                <form action="/updateData/{{ $data->id_kos }}" method="get">
+                    <tr>
+                        <td>{{ $data->id_kos }}</td>
+                        <td >Idnya user</td>
+                        <td>{{ $data->nama_kos}}</td>
+                        <td>{{ $data->harga_kos_pertahun }}</td>
+                        <td><button class="btn btn-primary" type="submit">Cek</button></td>
+                    </tr>
+                </form>
+                @endforeach
             </tbody>
         </table>
     </div>
