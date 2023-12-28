@@ -23,7 +23,7 @@ var cardText2Elements = document.querySelectorAll('.card-text2');
 cardText2Elements.forEach(function(cardText2Element) {
   var cardText2Value = parseFloat(cardText2Element.textContent);
   // Memeriksa dan mengupdate nilai sesuai kondisi
-    if (cardText2Value >= 1000) {
+    if (cardText2Value < 1000) {
       cardText2Element.textContent = (cardText2Value / 1000) + " KM";
     } else {
       cardText2Element.textContent = cardText2Value + " Meter";
