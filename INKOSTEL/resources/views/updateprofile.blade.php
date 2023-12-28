@@ -20,7 +20,7 @@
         <div class="card">
             <div class="row no-gutters row-bordered row-border-light">
                 <div class="col-md-12 pt-10">
-                <form action="/updated/{{ $profileData->id }}" method="get">
+                <form action="/update" method="post">
                         @csrf
                         <input type="hidden" name="id" value="{{ $profileData->id }}">
                         <div class="container-fluid">
@@ -52,7 +52,7 @@
                         <div class="card-body">
                             <label class="form-label"><h6 class="font-weight-bold" style="padding-top: 10px;">Nama Lengkap</h6></label>
                             <div class="form-group">
-                                <input type="text" class="form-control mb-1" name="nama_panjang" placeholder="Isi nama lengkap anda..." id="nameInput" oninput="changeButtonColor()" value="{{ $profileData->nama_panjang }}" readonly>
+                                <input type="text" class="form-control mb-1" name="nama_panjang" placeholder="Isi nama lengkap anda..." id="nameInput" oninput="changeButtonColor()" value="{{ $profileData->nama_panjang }}">
                             </div>
                             <div id="nameWarning" class="text-danger" style="padding-top: 10px;"></div>
             
@@ -73,12 +73,12 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroup-sizing-default">+62</span>
                                 </div>
-                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nomor_telepon" placeholder="Isi nomor telepon anda..." id="phone" oninput="runtwofunction()" value="{{ $profileData->nomor_telpon }}" readonly>
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nomor_telepon" placeholder="Isi nomor telepon anda..." id="phone" oninput="runtwofunction()" value="{{ $profileData->nomor_telpon }}">
                             </div>
                             <div id="phoneWarning" class="text-danger" style="padding-top: 10px;"></div>
                             
                             <div style="padding-bottom: 50px; padding-top: 25px;">
-                                <button type="submit" class="btn btn-outline-success" name="submit">Update</button>
+                                <button type="submit" class="btn btn-outline-success" id="update" name="update">Simpan</button>
                             </div>
                         </div>                
                     </form>  
