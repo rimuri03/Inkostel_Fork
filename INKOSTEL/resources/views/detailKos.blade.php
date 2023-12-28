@@ -75,7 +75,7 @@
                 <div class="card" id="cardHarga" style="width: 390px; height: 194px;">
                     <div class="card-body">
                         <h5 class="card-title" style="text-align: center;" id="harga-tahun">
-                            Rp. <span id="harga-pertahun">
+                            Rp <span id="harga-pertahun">
                                 <?php
                                 $harga_pertahun = $carikos->harga_kos_pertahun;
 
