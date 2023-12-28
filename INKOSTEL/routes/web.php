@@ -16,7 +16,7 @@ use App\Http\Controllers\CariKosController;
 //use App\Http\Controllers\RegisterController;
 
 Route::get('/', function () {
-    return view('index');
+    return view('index');   
 })->name('home');
 
 //Login and Registration
@@ -37,8 +37,10 @@ Route::get('/simpan', [SimpanController::class, 'tampilkanHalamanSimpan'])->name
 
 
 //profile
-Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
-Route::post('/store', [ProfileController::class, 'store'])->name('store');
+Route::get('/profile', [ProfileController::class,'profile']); 
+Route::get('/profile/updated/{id}', [ProfileController::class,'updateData']); 
+Route::post('/store', [ProfileController::class,'store']);
+
 
 
 Route::get('/detailkos/{id_kos}', [CariKosController::class, 'detailKos']);
