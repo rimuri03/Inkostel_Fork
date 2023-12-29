@@ -38,8 +38,7 @@ Route::get('/simpan', [SimpanController::class, 'tampilkanHalamanSimpan'])->name
 
 //profile
 Route::get('/profile', [ProfileController::class,'profile']); 
-Route::get('/profile/updated/{id}', [ProfileController::class,'updateData']); 
-Route::post('/store', [ProfileController::class,'store']);
+Route::post('/update/{id}', [ProfileController::class,'update']);
 
 
 
