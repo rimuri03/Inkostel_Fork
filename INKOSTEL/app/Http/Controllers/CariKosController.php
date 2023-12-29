@@ -16,7 +16,7 @@ class CariKosController extends Controller
 
     public function detailkos($id)
     {
-        // Menggunakan findOrFail untuk mencari detail kos berdasarkan ID
+       
         $carikos = CariKos::find($id);
 
         return view('detailKos', compact('carikos'));
