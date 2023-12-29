@@ -29,6 +29,5 @@ class ProfileController extends Controller
         $profileData->save();
 
         return redirect('profile')->with('success', 'Data Berhasil Diperbarui');
-        
     }
 }
