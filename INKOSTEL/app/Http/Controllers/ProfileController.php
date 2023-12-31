@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Profile;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Routing\Controller as BaseController;
 
 
 class ProfileController extends Controller
@@ -12,22 +12,22 @@ class ProfileController extends Controller
     public function profile()
     {
         $profileData = Profile::first();
-        return view('profile', compact('profileData'));
+        return view('profile', compact(['profileData']));
     }
-    public function store(Request $request)
+    
+    public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
-            'username' => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email',
-            'nama_panjang' => 'required|string|max:255',
-            'nomor_telpon' => 'required|string|max:20',
-        ]);
-
+        $profileData = Profile::where('id', $id)->first();
+        
+        $img = $request->file("file");
+        $img -> move("img",$img->getClientOriginalName());
+        $profileData->username = $request->username;
+        $profileData->email = $request->email;
+        $profileData->nama_panjang = $request->nama_panjang;
+        $profileData->nomor_telpon = $request->nomor_telpon;
+        $profileData->foto_profil = $img->getClientOriginalName();
         $profileData->save();
 
-        // $profileData = Profile::create($validatedData);
-
-        // return redirect('profile')->back()->with('success', 'Data user berhasil disimpan!');
-        return redirect('profile');
+        return redirect('profile')->with('success', 'Data Berhasil Diperbarui');
     }
 }

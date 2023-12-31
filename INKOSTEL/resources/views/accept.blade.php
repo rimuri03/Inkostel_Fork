@@ -3,6 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="{{ asset('front/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/detailKos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{ asset('front/css/detailKos.css') }}">
     <title>Accept</title>
 </head>
 <body>
@@ -13,37 +23,28 @@
     <div class="container" id="conbody">
         <div class="row justify-content-center">
             <div class="col">
-                <h1>{{ $details->first()->nama_kos }}</h1>
+                <h1>{{ $validation->nama_kos }}</h1>
                 <div class="card mx-auto" style="width: 851px; height: 307px;">
                     <div class="card-body">
                         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                             <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner">
-                                    @foreach($details as $index => $detail)
-                                    <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                                        <img src="{{ asset($detail->gambar_kos1) }}" class="d-block w-100" style="height: 270px;" alt="...">
+                                    <div class="carousel-item active">
+                                        <img src="{{ asset($validation->gambar_kos1) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 1">
                                     </div>
-                                    @if ($detail->gambar_kos2)
                                     <div class="carousel-item">
-                                        <img src="{{ asset($detail->gambar_kos2) }}" class="d-block w-100" style="height: 270px;" alt="...">
+                                        <img src="{{ asset($validation->gambar_kos2) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 2">
                                     </div>
-                                    @endif
-                                    @if ($detail->gambar_kos3)
                                     <div class="carousel-item">
-                                        <img src="{{ asset($detail->gambar_kos3) }}" class="d-block w-100" style="height: 270px;" alt="...">
+                                        <img src="{{ asset($validation->gambar_kos3) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 3">
                                     </div>
-                                    @endif
-                                    @if ($detail->gambar_kos4)
+
                                     <div class="carousel-item">
-                                        <img src="{{ asset($detail->gambar_kos4) }}" class="d-block w-100" style="height: 270px;" alt="...">
+                                        <img src="{{ asset($validation->gambar_kos4) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 4">
                                     </div>
-                                    @endif
-                                    @if ($detail->gambar_kos5)
                                     <div class="carousel-item">
-                                        <img src="{{ asset($detail->gambar_kos5) }}" class="d-block w-100" style="height: 270px;" alt="...">
+                                        <img src="{{ asset($validation->gambar_kos5) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 5">
                                     </div>
-                                    @endif
-                                    @endforeach
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -63,7 +64,7 @@
             <div class="col-sm-4">
                 <h2>Deskripsi</h2>
                 <div class="info-section info-section custom-scrollbar">
-                    <p>{{ $detail->Deskripsi }}</p>
+                    <p>{{ $validation->Deskripsi }}</p>
                 </div>
 
             </div>
@@ -73,7 +74,7 @@
                         <h5 class="card-title" style="text-align: center;" id="harga-tahun">
                             Rp. <span id="harga-pertahun">
                                 <?php
-                                $harga_pertahun = $detail->harga_kos_pertahun;
+                                $harga_pertahun = $validation->harga_kos_pertahun;
 
                                 // Membersihkan string dari tanda titik ribuan dan mengubahnya ke float
                                 $harga_pertahun_float = floatval(str_replace(",", "", str_replace(".", "", $harga_pertahun)));
@@ -102,22 +103,31 @@
                                         <span class="text-color"> kamar</span>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">{{$detail->KamarKosong}}</a></li>
+                                        <li><a class="dropdown-item" href="#">{{$validation->KamarKosong}}</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <br>
-                        <a href="https://wa.me/62895621914880" class="btn btn-outline-success d-block mx-auto bi bi-whatsapp">WhatsApp</a>
+                        <a href="https://wa.me/{{ $validation->ContactPerson }}" class="btn btn-outline-success d-block mx-auto bi bi-whatsapp">WhatsApp</a>
                         <!-- Menggunakan "d-block mx-auto" untuk mengatur tombol di tengah -->
                     </div>
                 </div>
+                <div class="col-sm-6">
+                    <h4>
+                        Jarak: {{ number_format($validation->jarak_kos / 1000, 2) }} km
+                    </h4>
+                </div>
+
+
             </div>
+
+
             <script>
                 function ubahHarga(jenisHarga) {
                     var hargaTahunElement = document.getElementById('harga-tahun');
-                    var hargaPerBulan = parseFloat("{{$detail->harga_kos_perbulan}}".replace(",", ""));
-                    var hargaPerTahun = parseFloat("{{$detail->harga_kos_pertahun}}".replace(",", ""));
+                    var hargaPerBulan = parseFloat("{{$validation->harga_kos_perbulan}}".replace(",", ""));
+                    var hargaPerTahun = parseFloat("{{$validation->harga_kos_pertahun}}".replace(",", ""));
 
                     if (jenisHarga === 'pertahun') {
                         hargaTahunElement.innerText = formatRupiah(hargaPerTahun);
@@ -137,6 +147,7 @@
             </script>
         </div>
     </div>
+
     <!-- body end -->
     <br>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

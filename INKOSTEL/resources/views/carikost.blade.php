@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>InKosTel Cari Kost</title>
 
-    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
@@ -47,11 +47,9 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="/detailkos/{{$data->id_kos}}" method="get">
-                            <button type="submit" class="btn btn-primary">detail</button>
-                        </form>
+                        <p style="display: none;">{{ $data->id_kos }}</p>
                         <h5 class="card-title">{{ $data->nama_kos}}</h5>
-                        <p class="card-text1" data-harga="{{ $data->harga_kos_pertahun }}">{{ $data->harga_kos_pertahun }}</p>
+                        <p class="card-text1" data-harga="{{ $data->harga_kos_pertahun }}">{{ $data->harga_kos }}</p>
                         <p id="jarak-{{ $data->id }}" class="card-text2">{{ $data->jarak_kos}}</p>
                         <button class="bookmark-btn" data-id="{{ $data->id_kos }}" onclick="bookmarkKost(this)">
                             <i class="bi bi-bookmark"></i>
@@ -59,15 +57,14 @@
                     </div>
                 </div>
             </div>
-            @endforeach
+             @endforeach
         </div>
     </div>
     <!-- end main -->
-
+    
     <!-- script js -->
     <script src="{{ asset('js/carikost.js') }}"></script>
 
     @endsection
-</body>
-
+  </body>
 </html>
