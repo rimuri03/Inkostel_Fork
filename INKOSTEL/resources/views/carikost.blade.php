@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="{{ asset('css/carikost.css') }}">
+    <!-- Sertakan token CSRF dalam meta tag -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
 <body>
@@ -39,7 +41,7 @@
                     <div class="border-image" id="carouselIdValue">
                         <div class="carousel inner">
                             <div class="carousel-item active">
-                                <img src="{{ $data->gambar_kos1 }}" class="d-block w-100"  alt="">
+                                <img src="{{ $data->gambar_kos1 }}" class="d-block w-100" alt="">
                             </div>
                         </div>
                     </div>
@@ -51,7 +53,9 @@
                         <h5 class="card-title">{{ $data->nama_kos}}</h5>
                         <p class="card-text1" data-harga="{{ $data->harga_kos_pertahun }}">{{ $data->harga_kos_pertahun }}</p>
                         <p id="jarak-{{ $data->id }}" class="card-text2">{{ $data->jarak_kos}}</p>
-                        <i class="bi bi-bookmark" id="bookmarkIcon" style="position: relative; font-size: 30px; color: #41EBC6; margin-left: 180px; top: -100px;"></i>
+                        <button class="bookmark-btn" data-id="{{ $data->id_kos }}" onclick="bookmarkKost(this)">
+                            <i class="bi bi-bookmark"></i>
+                        </button>
                     </div>
                 </div>
             </div>

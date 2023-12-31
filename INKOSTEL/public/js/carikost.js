@@ -63,24 +63,89 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Simpan Kos
+function bookmarkKost(button) {
+                const kostId = button.getAttribute('data-id');
+                const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-// icon Bookmark
-function toggleBookmark(button) {
-  // Mengganti warna saat diklik
-  if (button.classList.contains('bookmarked')) {
-      button.style.backgroundColor = '';
-      button.style.color = '#41EBC6';
-      button.style.borderColor = '#41EBC6';
-      button.classList.remove('bookmarked');
-  } else {
-      button.style.backgroundColor = '#41EBC6';
-      button.style.color = 'white';
-      button.style.borderColor = '#41EBC6';
-      button.classList.add('bookmarked');
-  }
-}
+                // Mengganti warna saat diklik
+                if (button.classList.contains('bookmarked')) {
+                    button.style.backgroundColor = '';
+                    button.style.color = '#41EBC6';
+                    button.style.borderColor = '#41EBC6';
+                    button.classList.remove('bookmarked');
+                } else {
+                    button.style.backgroundColor = '#41EBC6';
+                    button.style.color = 'white';
+                    button.style.borderColor = '#41EBC6';
+                    button.classList.add('bookmarked');
+                }
 
+                // Kirim AJAX request ke server untuk menyimpan kost
+                fetch(`/simpan/${kostId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': csrfToken,
+                    },
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data.success) {
+                            alert('Kost berhasil disimpan!');
+                        } else {
+                            alert('Gagal menyimpan kost!');
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
 
+            function bookmarkKost(button) {
+              const kostId = button.getAttribute('data-id');
+              const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+              // Mengganti warna saat diklik
+              if (button.classList.contains('bookmarked')) {
+                  button.style.backgroundColor = '';
+                  button.style.color = '#41EBC6';
+                  button.style.borderColor = '#41EBC6';
+                  button.classList.remove('bookmarked');
+              } else {
+                  button.style.backgroundColor = '#41EBC6';
+                  button.style.color = 'white';
+                  button.style.borderColor = '#41EBC6';
+                  button.classList.add('bookmarked');
+              }
+
+              // Kirim AJAX request ke server untuk menyimpan kost
+              fetch(`/simpan/${kostId}`, {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json',
+                      'X-CSRF-TOKEN': csrfToken,
+                  },
+              })
+                  .then(response => {
+                      if (!response.ok) {
+                          throw new Error('Network response was not ok');
+                      }
+                      return response.json();
+                  })
+                  .then(data => {
+                      if (data.success) {
+                          alert('Kost berhasil disimpan!');
+                      } else {
+                          alert('Gagal menyimpan kost!');
+                      }
+                  })
+                  .catch(error => console.error('Error:', error));
+          }
+//akhir simpan kos
   
  
   
