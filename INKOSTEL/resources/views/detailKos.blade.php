@@ -119,18 +119,6 @@
 
 
             <script>
-                function ubahHarga(jenisHarga) {
-                    var hargaTahunElement = document.getElementById('harga-tahun');
-                    var hargaPerBulan = parseFloat("{{$carikos->harga_kos_perbulan}}".replace(",", ""));
-                    var hargaPerTahun = parseFloat("{{$carikos->harga_kos_pertahun}}".replace(",", ""));
-
-                    if (jenisHarga === 'pertahun') {
-                        hargaTahunElement.innerText = formatRupiah(hargaPerTahun);
-                    } else if (jenisHarga === 'perbulan') {
-                        hargaTahunElement.innerText = formatRupiah(hargaPerBulan);
-                    }
-                }
-
                 function formatRupiah(angka) {
                     var formatter = new Intl.NumberFormat('id-ID', {
                         style: 'currency',
@@ -138,6 +126,20 @@
                     });
 
                     return formatter.format(angka);
+                }
+
+                function ubahHarga(jenisHarga) {
+                    var HargaElement = document.getElementById('harga-tahun');
+                    var HargaPerbulan = parseFloat("{{$carikos->harga_kos_perbulan}}".replace(",", ""))
+                    var HargaPertahun = parseFloat("{{$carikos->harga_kos_pertahun}}".replace(",", ""))
+
+                    if (jenisHarga === 'pertahun') {
+                        HargaElement.innerText = formatRupiah(HargaPertahun)
+                    } else if (jenisHarga === 'perbulan') {
+                        HargaElement.innerText = formatRupiah(HargaPerbulan)
+                    }
+
+
                 }
             </script>
         </div>
