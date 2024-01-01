@@ -41,8 +41,8 @@ Route::get('/profile', [ProfileController::class,'profile']);
 Route::post('/update/{id}', [ProfileController::class,'update']);
 
 
-
-Route::get('/detailkos/{id_kos}', [CariKosController::class, 'detailKos']);
+// detailkos
+Route::get('/detailkos/{id_kos}', [CariKosController::class, 'detailKos'])->name('detailkos.show');
 
 Route::get('/acc/{id_kos}', [ValidationController::class,'acceptkos']);
 

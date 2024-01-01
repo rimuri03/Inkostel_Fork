@@ -63,6 +63,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+function handleCardClick(element) {
+
+  // Mengambil URL dari atribut data-href
+  var href = element.closest('.card-body').getAttribute('data-href');
+
+  // Mengarahkan pengguna ke halaman detailKos.blade.php
+  window.location.href = href;
+}
+
 
 // icon Bookmark
 function toggleBookmark(button) {
@@ -79,3 +88,21 @@ function toggleBookmark(button) {
       button.classList.add('bookmarked');
   }
 }
+
+
+  
+ 
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+  
+

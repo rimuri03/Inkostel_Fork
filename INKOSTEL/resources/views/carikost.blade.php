@@ -43,7 +43,7 @@
                         </div>
                     </div>
 
-                    <div class="card-body">
+                    <div class="card-body" data-href="{{ route('detailkos.show', ['id_kos' => $data->id_kos]) }}" onclick="handleCardClick(this)">
                         <p style="display: none;">{{ $data->id_kos }}</p>
                         <h5 class="card-title">{{ $data->nama_kos}}</h5>
                         <p class="card-text1" data-harga="{{ $data->harga_kos_pertahun }}">{{ $data->harga_kos }}</p>
@@ -51,9 +51,6 @@
                         <button class="bookmark-btn" data-kos-id="{{ $data->id_kos }}" onclick="toggleBookmark(this)">
                             <i class="bi bi-bookmark"></i>
                         </button>
-                        <form action="/detailkos/{{$data->id_kos}}" method="get" id="btnDetail">
-                            <button type="submit" class="btn">detail</button>
-                        </form>
                     </div>
                 </div>
             </div>
