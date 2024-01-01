@@ -22,7 +22,5 @@ class CariKosController extends Controller
         return view('detailKos', compact('carikos'));
     }
     
-    public function simpan(){
-        //
-    }
+    
 }

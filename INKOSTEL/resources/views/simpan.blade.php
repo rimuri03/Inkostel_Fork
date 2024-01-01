@@ -29,16 +29,20 @@
                     <div class="border-image" id="carouselIdValue">
                         <div class="carousel inner">
                             <div class="carousel-item active">
-                            <img src="{{ $kos->gambar_kos }}" class="d-block w-100" alt="">
+                            <img src="{{ $kos->gambar_kos1 }}" class="d-block w-100" alt="">
                             </div>
                         </div>
                     </div>
 
                     <div class="card-body">
                         <h5 class="card-title">{{ $kos->nama_kos}}</h5>
-                        <p class="card-text1">{{ $kos->harga_kos }} </p>
+                        <p class="card-text1">{{ $kos->harga_kos_pertahun }} </p>
                         <p id="jarak-{{ $kos->id }}" class="card-text2">{{ $kos->jarak_kos}}</p>
-                        <i class="bi bi-bookmark" style="position: relative; font-size: 30px; color: #41EBC6; margin-left: 180px; top: -100px;"></i>
+                        <form action="{{ route('hapus.simpan', ['id' => $kos->id]) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Hapus</button>
+                        </form>
                     </div>
                 </div>
             </div>
