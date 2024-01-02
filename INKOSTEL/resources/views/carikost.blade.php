@@ -46,12 +46,12 @@
                         </div>
                     </div>
 
-                    <div class="card-body" data-href="{{ route('detailkos.show', ['id_kos' => $data->id_kos]) }}" onclick="handleCardClick(this)">
-                        <p style="display: none;">{{ $data->id_kos }}</p>
-                        <h5 class="card-title">{{ $data->nama_kos}}</h5>
-                        <p class="card-text1" data-harga="{{ $data->harga_kos_pertahun }}">{{ $data->harga_kos }}</p>
-                        <p id="jarak-{{ $data->id }}" class="card-text2">{{ $data->jarak_kos}}</p>
-                        <button class="bookmark-btn" data-id="{{ $data->id_kos }}" onclick="bookmarkKost(this)">
+                    <div class="card-body">
+                        <p style="display: none;" >{{ $data->id_kos }}</p>
+                        <h5 class="card-title" data-href="{{ route('detailkos', ['id_kos' => $data->id_kos]) }}" onclick="handleCardClick(this)">{{ $data->nama_kos}}</h5>
+                        <p class="card-text1" data-harga="{{ $data->harga_kos_pertahun }}" data-href="{{ route('detailkos', ['id_kos' => $data->id_kos]) }}" onclick="handleCardClick(this)">{{ $data->harga_kos }}</p>
+                        <p id="jarak-{{ $data->id }}" class="card-text2" data-href="{{ route('detailkos', ['id_kos' => $data->id_kos]) }}" onclick="handleCardClick(this)">{{ $data->jarak_kos}}</p>
+                        <button class="bookmark-btn" data-id="{{ $data->id_kos }}" onclick="toggleBookmark(this)">
                             <i class="bi bi-bookmark"></i>
                         </button>
                     </div>
