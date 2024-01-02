@@ -90,18 +90,13 @@ function handleCardClick(element) {
 function toggleBookmark(button) {
   // Mengganti warna saat diklik
   if (button.classList.contains('bookmarked')) {
-      button.style.backgroundColor = '';
-      button.style.color = '#41EBC6';
-      button.style.borderColor = '#41EBC6';
-      button.classList.remove('bookmarked');
+    button.innerHTML = '<i class="bi bi-bookmark"></i>';
+    button.classList.remove('bookmarked');
   } else {
-      button.style.backgroundColor = '#41EBC6';
-      button.style.color = 'white';
-      button.style.borderColor = '#41EBC6';
-      button.classList.add('bookmarked');
+    button.innerHTML = '<i class="bi bi-bookmark-fill"></i>';
+    button.classList.add('bookmarked');
   }
 }
-
 
   
  

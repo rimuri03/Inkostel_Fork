@@ -38,9 +38,9 @@
             @foreach($carikos as $data)
             <div class="col-md-3 mb-4" id="coba">
                 <div class="card" id=cobacard>
-                    <div class="border-image" id="carouselIdValue">
+                    <div class="border-image" id="carouselIdValue" >
                         <div class="carousel inner">
-                            <div class="carousel-item active">
+                            <div class="carousel-item active" >
                                 <img src="{{ $data->gambar_kos1 }}" class="d-block w-100" alt="">
                             </div>
                         </div>
