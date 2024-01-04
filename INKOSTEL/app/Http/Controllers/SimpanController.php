@@ -11,7 +11,7 @@ class SimpanController extends Controller
     public function tampilkanHalamanSimpan()
     {
         // Ambil data dari database
-        $dataKos = Simpan::all();
+        $dataKos = Simpan::paginate(8);
 
         // Kirimkan data ke view
         return view('simpan', compact('dataKos'));

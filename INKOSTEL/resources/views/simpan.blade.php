@@ -37,7 +37,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $kos->nama_kos}}</h5>
                         <p class="card-text1">{{ $kos->harga_kos_pertahun }} </p>
-                        <p id="jarak-{{ $kos->id }}" class="card-text2">{{ $kos->jarak_kos}}</p>
+                        <p id="jarak-{{ $kos->id }}" class="card-text2">{{ $kos->jarak_kos}} </p>
                         <form action="{{ route('hapus.simpan', ['id' => $kos->id]) }}" method="post">
                             @csrf
                             @method('DELETE')
@@ -48,13 +48,36 @@
             </div>
              @endforeach
         </div>
+                <!-- Tombol paginate -->
+                <div class="pagination">
+            @if ($dataKos->onFirstPage())
+                <span class="disabled">&laquo;</span>
+            @else
+                <a href="{{ $dataKos->previousPageUrl() }}" rel="prev">&laquo;</a>
+            @endif
+
+            @foreach ($dataKos->getUrlRange(1, $dataKos->lastPage()) as $page => $url)
+                @if ($page == $dataKos->currentPage())
+                    <span class="current">{{ $page }}</span>
+                @else
+                    <a href="{{ $url }}">{{ $page }}</a>
+                @endif
+            @endforeach
+
+            @if ($dataKos->hasMorePages())
+                <a href="{{ $dataKos->nextPageUrl() }}" rel="next">&raquo;</a>
+            @else
+                <span class="disabled">&raquo;</span>
+            @endif
+        </div>
     </div>
     <!-- end main -->
 
     <!-- script js -->
-
+   
     <script src="{{ asset('js/simpan.js') }}"></script>
     @endsection
+    
   </body>
 </html>
 
