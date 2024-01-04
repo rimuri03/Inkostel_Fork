@@ -1,11 +1,21 @@
- // convert harga
+// untuk mengembalikan data card setelah pencarian
+document.addEventListener("DOMContentLoaded", function () {
+  // Bersihkan nilai pencarian jika tidak ada kata kunci pencarian
+  const searchInput = document.getElementById('searchInput');
+  if (!searchInput.value) {
+      searchInput.value = '';
+  }
+});
+
+
+// convert harga
 document.addEventListener("DOMContentLoaded", function() {
     var cardText1Elements = document.querySelectorAll('.card-text1');
     cardText1Elements.forEach(function(cardText1Element) {
         var hargaValue = parseFloat(cardText1Element.getAttribute('data-harga'));
         cardText1Element.textContent = formatHarga(hargaValue);
     });
-  });
+});
 
 
 // Fungsi untuk mengonversi harga
@@ -54,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
           (filterType === 'termurah' && cardData.harga <= 5000000) ||
           (filterType === 'putra' && cardData.jenis.includes('putra')) ||
           (filterType === 'putri' && cardData.jenis.includes('putri'))) {
-          card.style.display = 'block';
+          card.style.display = 'flex';
         } else {
           card.style.display = 'none';
         }
@@ -63,89 +73,31 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Simpan Kos
-function bookmarkKost(button) {
-                const kostId = button.getAttribute('data-id');
-                const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-                // Mengganti warna saat diklik
-                if (button.classList.contains('bookmarked')) {
-                    button.style.backgroundColor = '';
-                    button.style.color = '#41EBC6';
-                    button.style.borderColor = '#41EBC6';
-                    button.classList.remove('bookmarked');
-                } else {
-                    button.style.backgroundColor = '#41EBC6';
-                    button.style.color = 'white';
-                    button.style.borderColor = '#41EBC6';
-                    button.classList.add('bookmarked');
-                }
 
-                // Kirim AJAX request ke server untuk menyimpan kost
-                fetch(`/simpan/${kostId}`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': csrfToken,
-                    },
-                })
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Network response was not ok');
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        if (data.success) {
-                            alert('Kost berhasil disimpan!');
-                        } else {
-                            alert('Gagal menyimpan kost!');
-                        }
-                    })
-                    .catch(error => console.error('Error:', error));
-            }
+// untuk pindah ke halaman detailkos
+function handleCardClick(element) {
 
-            function bookmarkKost(button) {
-              const kostId = button.getAttribute('data-id');
-              const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+  // Mengambil URL dari atribut data-href
+  var href = element.closest('.card-title, .card-text1, .card-text2').getAttribute('data-href');
 
-              // Mengganti warna saat diklik
-              if (button.classList.contains('bookmarked')) {
-                  button.style.backgroundColor = '';
-                  button.style.color = '#41EBC6';
-                  button.style.borderColor = '#41EBC6';
-                  button.classList.remove('bookmarked');
-              } else {
-                  button.style.backgroundColor = '#41EBC6';
-                  button.style.color = 'white';
-                  button.style.borderColor = '#41EBC6';
-                  button.classList.add('bookmarked');
-              }
+  // Mengarahkan pengguna ke halaman detailKos.blade.php
+  window.location.href = href;
+}
 
-              // Kirim AJAX request ke server untuk menyimpan kost
-              fetch(`/simpan/${kostId}`, {
-                  method: 'POST',
-                  headers: {
-                      'Content-Type': 'application/json',
-                      'X-CSRF-TOKEN': csrfToken,
-                  },
-              })
-                  .then(response => {
-                      if (!response.ok) {
-                          throw new Error('Network response was not ok');
-                      }
-                      return response.json();
-                  })
-                  .then(data => {
-                      if (data.success) {
-                          alert('Kost berhasil disimpan!');
-                      } else {
-                          alert('Gagal menyimpan kost!');
-                      }
-                  })
-                  .catch(error => console.error('Error:', error));
-          }
-//akhir simpan kos
+
+// icon Bookmark
+function toggleBookmark(button) {
+  // Mengganti warna saat diklik
+  if (button.classList.contains('bookmarked')) {
+    button.innerHTML = '<i class="bi bi-bookmark"></i>';
+    button.classList.remove('bookmarked');
+  } else {
+    button.innerHTML = '<i class="bi bi-bookmark-fill"></i>';
+    button.classList.add('bookmarked');
+  }
+}
+
   
  
   

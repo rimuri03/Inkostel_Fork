@@ -8,10 +8,14 @@ use App\Helpers\Helpers;
 
 class CariKosController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $carikos = CariKos::all();
-        return view('carikost', compact(['carikos']));
+        $searchTerm = $request->input('search');
+        $carikos = CariKos::when($searchTerm, function ($query, $searchTerm) {
+            return $query->where('nama_kos', 'LIKE', '%' . $searchTerm . '%');
+        })->get();
+
+        return view('carikost', compact('carikos', 'searchTerm'));
     }
 
     public function detailkos($id)

@@ -21,8 +21,7 @@ body{
     height: auto;
     display: flex;
     align-items: center;
-    margin-top: 1px;
-    margin-left: -60px;
+    margin-left: 60px;
     padding-top:10px;
   }
   
@@ -31,14 +30,14 @@ body{
   }
   
   /* button search */
-  .search .btn{ 
+  /* .search .btn{ 
     border-radius: 10px;
     color: white;
     background-color: #41EBC6;
     margin-left: 0px;
     width: 40px; 
     height: 40px; 
-  }
+  } */
   /*Search End*/
   
   
@@ -195,6 +194,13 @@ body{
     flex: 1;
     margin-right: 100px;
     font-size: 30px;
+  }
+
+
+  #searchInput{
+    width:400px;
+    margin-left: -55px;
+    
   }
   
   

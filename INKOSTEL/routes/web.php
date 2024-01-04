@@ -9,7 +9,6 @@ use App\Http\Controllers\LoginRegis;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JualController;
 use App\Http\Controllers\ProfileController;
-
 use App\Http\Controllers\CariKosController;
 use App\Http\Controllers\ValidationController;
 
@@ -31,6 +30,8 @@ Route::post('/logout', [LoginRegis::class, 'logout'])->name('logout');
 Route::get('/carikost', [CariKosController::class, 'index'])->name('carikost');
 
 
+
+
 //Simpan Kost
 Route::get('/simpan', [SimpanController::class, 'tampilkanHalamanSimpan'])->name('simpan.halaman');
 Route::post('/simpan/{id}', [SimpanController::class, 'simpanKost']);
@@ -43,8 +44,8 @@ Route::get('/profile', [ProfileController::class,'profile']);
 Route::post('/update/{id}', [ProfileController::class,'update']);
 
 
-
-Route::get('/detailkos/{id_kos}', [CariKosController::class, 'detailKos']);
+// detailkos
+Route::get('/detailkos/{id_kos}', [CariKosController::class, 'detailKos'])->name('detailkos');
 
 Route::get('/acc/{id_kos}', [ValidationController::class,'acceptkos']);
 
@@ -71,7 +72,8 @@ Route::post('/jualkos', function(){
         'gambar_kos5' => request('gambar_kos5'),
         'alamat' => request('alamat'),
         'Deskripsi' => request('Deskripsi'),
-        'ContactPerson' => request('ContactPerson')
+        'ContactPerson' => request('ContactPerson'),
+        'Fasilitas' => request('Fasilitas')
 
     ]);
     return redirect('/jualkos');
