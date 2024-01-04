@@ -87,7 +87,7 @@ function handleCardClick(element) {
 
 
 // icon Bookmark
-function toggleBookmark(button) {
+function bookmarkKost(button) {
   // Mengganti warna saat diklik
   if (button.classList.contains('bookmarked')) {
     button.innerHTML = '<i class="bi bi-bookmark"></i>';
@@ -96,21 +96,33 @@ function toggleBookmark(button) {
     button.innerHTML = '<i class="bi bi-bookmark-fill"></i>';
     button.classList.add('bookmarked');
   }
+
+  const kostId = button.getAttribute('data-id');
+  const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+  // Kirim AJAX request ke server untuk menyimpan kost
+  fetch(`/simpan/${kostId}`, {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-TOKEN': csrfToken,
+      },
+  })
+      .then(response => {
+          if (!response.ok) {
+              throw new Error('Network response was not ok');
+          }
+          return response.json();
+      })
+      .then(data => {
+          if (data.success) {
+              alert('Kost berhasil disimpan!');
+          } else {
+              alert('Gagal menyimpan kost!');
+          }
+      })
+      .catch(error => console.error('Error:', error));
 }
 
-  
- 
-  
 
-  
-
-
-
-  
-
-  
-
-
-
-  
 
