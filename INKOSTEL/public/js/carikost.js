@@ -1,11 +1,21 @@
- // convert harga
+// untuk mengembalikan data card setelah pencarian
+document.addEventListener("DOMContentLoaded", function () {
+  // Bersihkan nilai pencarian jika tidak ada kata kunci pencarian
+  const searchInput = document.getElementById('searchInput');
+  if (!searchInput.value) {
+      searchInput.value = '';
+  }
+});
+
+
+// convert harga
 document.addEventListener("DOMContentLoaded", function() {
     var cardText1Elements = document.querySelectorAll('.card-text1');
     cardText1Elements.forEach(function(cardText1Element) {
         var hargaValue = parseFloat(cardText1Element.getAttribute('data-harga'));
         cardText1Element.textContent = formatHarga(hargaValue);
     });
-  });
+});
 
 
 // Fungsi untuk mengonversi harga
@@ -54,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
           (filterType === 'termurah' && cardData.harga <= 5000000) ||
           (filterType === 'putra' && cardData.jenis.includes('putra')) ||
           (filterType === 'putri' && cardData.jenis.includes('putri'))) {
-          card.style.display = 'block';
+          card.style.display = 'flex';
         } else {
           card.style.display = 'none';
         }
@@ -63,10 +73,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
+
+// untuk pindah ke halaman detailkos
 function handleCardClick(element) {
 
   // Mengambil URL dari atribut data-href
-  var href = element.closest('.card-body').getAttribute('data-href');
+  var href = element.closest('.card-title, .card-text1, .card-text2').getAttribute('data-href');
 
   // Mengarahkan pengguna ke halaman detailKos.blade.php
   window.location.href = href;
@@ -77,18 +90,13 @@ function handleCardClick(element) {
 function toggleBookmark(button) {
   // Mengganti warna saat diklik
   if (button.classList.contains('bookmarked')) {
-      button.style.backgroundColor = '';
-      button.style.color = '#41EBC6';
-      button.style.borderColor = '#41EBC6';
-      button.classList.remove('bookmarked');
+    button.innerHTML = '<i class="bi bi-bookmark"></i>';
+    button.classList.remove('bookmarked');
   } else {
-      button.style.backgroundColor = '#41EBC6';
-      button.style.color = 'white';
-      button.style.borderColor = '#41EBC6';
-      button.classList.add('bookmarked');
+    button.innerHTML = '<i class="bi bi-bookmark-fill"></i>';
+    button.classList.add('bookmarked');
   }
 }
-
 
   
  

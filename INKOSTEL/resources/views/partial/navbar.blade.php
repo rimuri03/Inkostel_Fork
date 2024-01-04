@@ -29,12 +29,14 @@
 
                         </div>
 
-                        <div class="col-md-4 text-center">
+                        <div class="col-md-4 text-center" id="searchbar">
                             <div class="search">
-                                <input class="form-control mr-sm-2" id="searchInput" type="search" placeholder="Cari Kos disini..!" aria-label="Cari">
-                                <button type="button" class="btn">
+                                <form action="{{ route('carikost') }}" method="GET">
+                                    <input class="form-control" id="searchInput" name="search" type="search" placeholder="Cari Kos disini..!" aria-label="Cari">
+                                </form>
+                                <!-- <button type="submit" class="btn">
                                     <i class="bi bi-search"></i>
-                                </button>
+                                </button> -->
                             </div>
                         </div>
 
