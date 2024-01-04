@@ -9,6 +9,7 @@ use App\Http\Controllers\LoginRegis;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JualController;
 use App\Http\Controllers\ProfileController;
+
 use App\Http\Controllers\CariKosController;
 use App\Http\Controllers\ValidationController;
 
@@ -30,24 +31,17 @@ Route::post('/logout', [LoginRegis::class, 'logout'])->name('logout');
 Route::get('/carikost', [CariKosController::class, 'index'])->name('carikost');
 
 
-
-
 //Simpan Kost
 Route::get('/simpan', [SimpanController::class, 'tampilkanHalamanSimpan'])->name('simpan.halaman');
-Route::post('/simpan/{id}', [SimpanController::class, 'simpanKost']);
-Route::delete('/simpan/hapus/{id}', [SimpanController::class, 'hapusSimpan'])->name('hapus.simpan');
 //akhir simpan kost
 
 
 //profile
-Route::get('/profile', [ProfileController::class,'profile']); 
-Route::post('/update/{id}', [ProfileController::class,'update']);
+Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
+Route::post('/store', [ProfileController::class, 'store'])->name('store');
 
 
-// detailkos
-Route::get('/detailkos/{id_kos}', [CariKosController::class, 'detailKos'])->name('detailkos');
-
-Route::get('/acc/{id_kos}', [ValidationController::class,'acceptkos']);
+Route::get('/detailkos/{id_kos}', [CariKosController::class, 'detailKos']);
 
 
 
@@ -55,6 +49,8 @@ Route::get('/acc/{id_kos}', [ValidationController::class,'acceptkos']);
 // Route::get('/jualkos', [JualController::class, 'tampilregisjual']);
 
 // Route::post('/jualkos', [JualController::class, 'store'])->name('jualkos');
+
+
 Route:: get('/jualkos', function(){
     return view('jualkos');
 });
@@ -95,15 +91,10 @@ Route::get('/footer', function () {
     return view('partial.footer');
 });
 
-// Validasi dan Accept
 Route::get('/val', function () {
     return view('validasi');
 });
 
-
 Route::get('/acc', function () {
     return view('accept');
 });
-
-Route::get('/val', [ValidationController::class,'index']);
-Route::post('/accept', [ValidationController::class, 'update']);
