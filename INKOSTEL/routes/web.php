@@ -72,7 +72,8 @@ Route::post('/jualkos', function(){
         'gambar_kos5' => request('gambar_kos5'),
         'alamat' => request('alamat'),
         'Deskripsi' => request('Deskripsi'),
-        'ContactPerson' => request('ContactPerson')
+        'ContactPerson' => request('ContactPerson'),
+        'Fasilitas' => request('Fasilitas')
 
     ]);
     return redirect('/jualkos');
