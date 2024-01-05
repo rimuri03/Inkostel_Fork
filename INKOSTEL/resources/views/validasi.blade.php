@@ -15,7 +15,6 @@
             <thead style="background-color:gray">
                 <tr>
                     <th scope="col">ID Kos</th>
-                    <th scope="col">ID User</th>
                     <th scope="col">Nama Kos</th>
                     <th scope="col">Harga Pertahun</th>
                     <th scope="col">Aksi</th>
@@ -26,7 +25,6 @@
                 <form action="/updateData/{{ $data->id_kos }}" method="get">
                     <tr>
                         <td>{{ $data->id_kos }}</td>
-                        <td>Idnya user</td>
                         <td>{{ $data->nama_kos}}</td>
                         <td>{{ $data->harga_kos_pertahun }}</td>
                         <td><button class="btn btn-primary" type="submit">Cek</button></td>

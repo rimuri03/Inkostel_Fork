@@ -19,7 +19,7 @@ class AdminMiddleware
         return $next($request);
     }
 
-    abort(403, 'Anda Tidak Bisa Mengakses Halaman Ini.'); // Mengembalikan response 403 jika tidak diizinkan
+    abort(403, 'Anda Tidak Bisa Mengakses Halaman Ini.'); 
 }
 
 }
