@@ -27,6 +27,9 @@ Route::post('/registration', [LoginRegis::class, 'registrationPost'])->name('reg
 //Logout
 Route::post('/logout', [LoginRegis::class, 'logout'])->name('logout');
 
+// MiddleWare
+Route::middleware(['guest']);
+
 // Cari Kost
 Route::get('/carikost', [CariKosController::class, 'index'])->name('carikost');
 
@@ -93,9 +96,12 @@ Route::get('/footer', function () {
     return view('partial.footer');
 });
 
-Route::get('/val', function () {
-    return view('validasi');
-});
+
+// Validasi
+Route::get('/val', [ValidationController::class, 'index']);
+
+Route::get('/updateData/{id_kos}', [ValidationController::class, 'acceptkos']);
+
 
 Route::get('/acc', function () {
     return view('accept');
