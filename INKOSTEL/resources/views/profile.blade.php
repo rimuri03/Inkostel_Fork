@@ -59,7 +59,7 @@
                             </div>
                             <label class="form-label"><h6 class="font-weight-bold" style="padding-top: 15px;">Username</h6></label>
                             <div class="form-group">
-                                <input type="text" class="form-control mb-1" name="username" placeholder="isi username anda..." id="usernameInput" value="{{ $profileData->username }}" readonly>
+                                <input type="text" class="form-control mb-1" name="username" placeholder="isi username anda..." id="usernameInput" value="{{ $profileData->username }}">
                             </div>
                         
                             <label class="form-label"><h6 class="font-weight-bold" style="padding-top: 15px;">Alamat Email</h6></label>
