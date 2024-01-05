@@ -157,6 +157,19 @@ body{
     background-color: #6DD6BF;
   }
   
+.lists .nav-link:hover .icon,
+.lists .nav-link:hover .link {
+    color: #FFF;
+}
+
+.nav-link:hover {
+    background-color: #E44E4E;
+}
+
+.nav-link:hover .icon,
+.nav-link:hover .link {
+    color: #FFF;
+}
   
   .overlay {
     position: fixed;
