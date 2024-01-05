@@ -39,7 +39,25 @@
                                 </button> -->
                             </div>
                         </div>
+                        <div class="col-md-4 text-end" id="button-container">
 
+                            @auth
+                            <h5 id="username">{{ Auth::user()->username }}</h5>
+                                <div>
+                                <a class="nav-link" href="/profile" id="profileButton">
+                                    @if(Auth::user()->foto_profil)
+                                        <img src="{{ asset('img/profile/' . Auth::user()->foto_profil) }}" style="border-radius:50%; height: 50px; width: 50px;" alt="Profile Picture">
+                                    @else
+                                        <img src="{{ asset('img/profile.png') }}" style="border-radius:50%; height: 50px; width: 50px;" alt="Default Profile Picture">
+                                    @endif
+                                </div>
+                                </a>
+                            @endauth
+                            @guest
+                                <!-- Default content saat user belum login -->
+                            @endguest
+                        </div>
+                        <!--
                         <div class="col-md-4 text-end" id="button-container">
                         @if(Auth::check())
                             <h5 id="username">{{ Auth::user()->username }}</h5>
@@ -49,6 +67,7 @@
                                 <span class="xp-user-live"></span>
                             </a>
                         </div>
+                    -->
                     </div>
                 </div>
                 <!-- SideBar Menu -->
