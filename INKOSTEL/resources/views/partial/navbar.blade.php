@@ -102,10 +102,12 @@
                         <div class="bottom-content">
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf
-                                <button type="submit" class="nav-link">
+                                <li class="list">
+                                <button type="submit" class="nav-link logout-button">
                                     <i class='bx bx-log-out icon'></i>
                                     <span class="link">Log Out</span>
                                 </button>
+                                </li>
                             </form>
                         </div>
                     </div>
