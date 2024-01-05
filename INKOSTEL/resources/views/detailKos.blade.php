@@ -32,20 +32,19 @@
                             <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="{{ asset('img/' . $carikos->gambar_kos1 }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 1" name="gambar_kos1">
+                                        <img src="{{ asset('img/' . $carikos->gambar_kos1) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 1" name="gambar_kos1">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset($carikos->gambar_kos2) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 2">
+                                        <img src="{{ asset('img/' . $carikos->gambar_kos2) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 2" name="gambar_kos2">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset($carikos->gambar_kos3) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 3">
-                                    </div>
-
-                                    <div class="carousel-item">
-                                        <img src="{{ asset($carikos->gambar_kos4) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 4">
+                                        <img src="{{ asset('img/' . $carikos->gambar_kos3) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 3" name="gambar_kos3">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset($carikos->gambar_kos5) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 5">
+                                        <img src="{{ asset('img/' . $carikos->gambar_kos4) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 4" name="gambar_kos4"
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{{ asset('img/' . $carikos->gambar_kos5) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 5" name="gambar_kos5">
                                     </div>
                                 </div>
                             </div>
