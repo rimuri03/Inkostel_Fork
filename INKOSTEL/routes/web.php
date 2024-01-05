@@ -9,7 +9,7 @@ use App\Http\Controllers\LoginRegis;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JualController;
 use App\Http\Controllers\ProfileController;
-
+use App\Http\Controllers\NavbarController;
 use App\Http\Controllers\CariKosController;
 use App\Http\Controllers\ValidationController;
 
