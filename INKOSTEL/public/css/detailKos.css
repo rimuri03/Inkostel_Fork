@@ -314,9 +314,16 @@ h4{
 .dropdown-item {
   margin: 2px; /* Atur margin untuk elemen dropdown item */
 }
-.dropdown :hover{
-  background-color: #6DD6BF !important;
+
+
+
+
+h6 {
+    padding-top: 30px;
 }
+
+
+
 /* body selesai */
 
 
@@ -407,6 +414,22 @@ hr {
 /* akhir */
 
 
+/* tombol Accept nya */
+
+#oktolak{
+    margin-left: 677px;
+    padding-top: 30px;
+}
+
+#terima{
+    width: 170px;
+    height: 40px;;
+}
+
+#tolak{
+    width: 170px;
+    height: 40px;
+}
 
 
 

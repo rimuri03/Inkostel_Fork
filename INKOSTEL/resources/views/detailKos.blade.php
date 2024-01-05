@@ -89,13 +89,13 @@
                         </h5>
                         <div class="row ">
                             <div class="col-md-6">
-                                <div class="dropdown">
+                                <div class="dropdown" id="luar">
                                     <button class="btn btn-outline-secondary dropdown-toggle" style="width: 10rem; color: #6DD6BF; border-color: #6DD6BF;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <span class="text-color"> Harga</span>
                                     </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#" onclick="ubahHarga('pertahun')">Pertahun</a></li>
-                                        <li><a class="dropdown-item" href="#" onclick="ubahHarga('perbulan')">Perbulan</a></li>
+                                    <ul class="dropdown-menu" id="dalam">
+                                        <li><a class="dropdown-item" id="drop_pertahun" href="#" onclick="ubahHarga('pertahun')">Pertahun</a></li>
+                                        <li><a class="dropdown-item" id="drop_perbulan" href="#" onclick="ubahHarga('perbulan')">Perbulan</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -115,6 +115,7 @@
                         <!-- Menggunakan "d-block mx-auto" untuk mengatur tombol di tengah -->
                     </div>
                 </div>
+                <h6>Alamat : {{ $carikos->alamat }}</h6>
             </div>
 
 

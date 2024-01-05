@@ -39,18 +39,35 @@
                                 </button> -->
                             </div>
                         </div>
+                        <div class="col-md-4 text-end" id="button-container">
 
+                            @auth
+                            <h5 id="username">{{ Auth::user()->username }}</h5>
+                                <div>
+                                <a class="nav-link" href="/profile" id="profileButton">
+                                    @if(Auth::user()->foto_profil)
+                                        <img src="{{ asset('img/profile/' . Auth::user()->foto_profil) }}" style="border-radius:50%; height: 50px; width: 50px;" alt="Profile Picture">
+                                    @else
+                                        <img src="{{ asset('img/profile.png') }}" style="border-radius:50%; height: 50px; width: 50px;" alt="Default Profile Picture">
+                                    @endif
+                                </div>
+                                </a>
+                            @endauth
+                            @guest
+                                <!-- Default content saat user belum login -->
+                            @endguest
+                        </div>
+                        <!--
                         <div class="col-md-4 text-end" id="button-container">
                         @if(Auth::check())
                             <h5 id="username">{{ Auth::user()->username }}</h5>
                         @endif
-
-                              <a class="nav-link" href="/profile" id="profileButton">
+                            <a class="nav-link" href="/profile" id="profileButton">
                                 <img src="{{ asset('img/profile.png') }}" style="width:50px; border-radius:50%;"/>
-
                                 <span class="xp-user-live"></span>
                             </a>
                         </div>
+                    -->
                     </div>
                 </div>
                 <!-- SideBar Menu -->
@@ -102,10 +119,12 @@
                         <div class="bottom-content">
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf
-                                <button type="submit" class="nav-link">
+                                <li class="list">
+                                <button type="submit" class="nav-link logout-button">
                                     <i class='bx bx-log-out icon'></i>
                                     <span class="link">Log Out</span>
                                 </button>
+                                </li>
                             </form>
                         </div>
                     </div>

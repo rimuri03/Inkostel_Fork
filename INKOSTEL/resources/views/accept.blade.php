@@ -100,10 +100,10 @@
                             <div class="col-md-6">
                                 <div class="dropdown">
                                     <button class="btn btn-outline-secondary dropdown-toggle" style="width: 10rem; border-color: #6DD6BF;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <span class="text-color"> kamar</span>
+                                        <span class="text-color"> Jarak</span>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">{{$validation->KamarKosong}}</a></li>
+                                        <li><a class="dropdown-item" href="#"> {{number_format($validation->jarak_kos / 1000, 2) }} km</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -112,11 +112,6 @@
                         <a href="https://wa.me/{{ $validation->ContactPerson }}" class="btn btn-outline-success d-block mx-auto bi bi-whatsapp">WhatsApp</a>
                         <!-- Menggunakan "d-block mx-auto" untuk mengatur tombol di tengah -->
                     </div>
-                </div>
-                <div class="col-sm-6">
-                    <h4>
-                        Jarak: {{ number_format($validation->jarak_kos / 1000, 2) }} km
-                    </h4>
                 </div>
 
 
@@ -145,9 +140,26 @@
                     return formatter.format(angka);
                 }
             </script>
+            <div class="row">
+            <div class="col-sm-4" id="oktolak">
+                <div class="row">
+                    <div class="col">
+                        <form method="GET" action="{{ route('terima', ['id_kos' => $validation->id_kos]) }}">
+                            @csrf <!-- Tambahkan csrf token -->
+                            <button class="btn btn-success" type="submit" id="terima">Terima</button>
+                        </form>
+                    </div>
+                    <div class="col">
+                        <form method="GET" action="{{ route('tolak', ['id_kos' => $validation->id_kos]) }}">
+                            @csrf <!-- Tambahkan csrf token -->
+                            <button class="btn btn-danger" type="submit" id="tolak">Tolak</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </div>
-
     <!-- body end -->
     <br>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

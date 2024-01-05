@@ -9,7 +9,7 @@ use App\Http\Controllers\LoginRegis;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JualController;
 use App\Http\Controllers\ProfileController;
-
+use App\Http\Controllers\NavbarController;
 use App\Http\Controllers\CariKosController;
 use App\Http\Controllers\ValidationController;
 
@@ -19,6 +19,11 @@ Route::get('/', function () {
     return view('index');   
 })->name('home');
 
+// MiddleWare
+Route::middleware(['guest'])->group(function(){
+    
+});
+
 //Login and Registration
 Route::get('/login', [LoginRegis::class, 'login'])->name('login');
 Route::post('/login', [LoginRegis::class, 'loginPost'])->name('loginPost');
@@ -26,6 +31,9 @@ Route::post('/registration', [LoginRegis::class, 'registrationPost'])->name('reg
 
 //Logout
 Route::post('/logout', [LoginRegis::class, 'logout'])->name('logout');
+
+// MiddleWare
+Route::middleware(['guest']);
 
 // Cari Kost
 Route::get('/carikost', [CariKosController::class, 'index'])->name('carikost');
@@ -40,7 +48,7 @@ Route::delete('/simpan/hapus/{id}', [SimpanController::class, 'hapusSimpan'])->n
 
 //profile
 Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
-Route::post('/store', [ProfileController::class, 'store'])->name('store');
+Route::post('/update/{id}', [ProfileController::class, 'update']);
 
 // detailkos
 Route::get('/detailkos/{id_kos}', [CariKosController::class, 'detailKos'])->name('detailkos');
@@ -64,10 +72,10 @@ Route::post('/jualkos', function(){
         'harga_kos_pertahun' => request('harga_kos_pertahun'),
         'jarak_kos' => request('jarak_kos'),
         'gambar_kos1' => request('gambar_kos1'),
-        'gambar_kos2' => request('gambar_kos2'),
-        'gambar_kos3' => request('gambar_kos3'),
-        'gambar_kos4' => request('gambar_kos4'),
-        'gambar_kos5' => request('gambar_kos5'),
+        'gambar_kos2' => request('gambar_kos1'),
+        'gambar_kos3' => request('gambar_kos1'),
+        'gambar_kos4' => request('gambar_kos1'),
+        'gambar_kos5' => request('gambar_kos1'),
         'alamat' => request('alamat'),
         'Deskripsi' => request('Deskripsi'),
         'ContactPerson' => request('ContactPerson'),
@@ -93,10 +101,11 @@ Route::get('/footer', function () {
     return view('partial.footer');
 });
 
-Route::get('/val', function () {
-    return view('validasi');
-});
 
-Route::get('/acc', function () {
-    return view('accept');
-});
+// Validasi
+Route::get('/val', [ValidationController::class, 'index'])->name('val');
+Route::get('/updateData/{id_kos}', [ValidationController::class, 'acceptkos']);
+
+// Acc
+Route::get('/terima/{id_kos}', [ValidationController::class, 'terima'])->name('terima');
+Route::get('/tolak/{id_kos}', [ValidationController::class, 'tolak'])->name('tolak');
