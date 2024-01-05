@@ -34,7 +34,7 @@
                         </div>
                         <div class="card-body d-flex align-items-center">
                             <div class="rounded-circle">
-                            <img src="{{ asset('img/' . $profileData->foto_profil) }}" alt="Profile Picture" class="profile-pict rounded float-left">
+                            <img src="{{ asset('img/profile' . $profileData->foto_profil) }}" alt="Profile Picture" class="profile-pict rounded float-left">
                             </div>
                             <div class="media-body ms-4" style="padding-bottom: 40px;">
                                 <div class="input-group">
