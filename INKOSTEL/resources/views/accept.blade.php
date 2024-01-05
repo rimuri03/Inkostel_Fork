@@ -113,11 +113,6 @@
                         <!-- Menggunakan "d-block mx-auto" untuk mengatur tombol di tengah -->
                     </div>
                 </div>
-                <div class="col-sm-6">
-                    <h4>
-                        Jarak: {{ number_format($validation->jarak_kos / 1000, 2) }} km
-                    </h4>
-                </div>
 
 
             </div>
@@ -147,8 +142,14 @@
             </script>
             <div class="col-sm-6" id="oktolak">
                 <div class="col">
-                    <button class="btn btn-success" type="submit" id="terima">Terima</button>
-                    <button class="btn btn-danger" type="submit" id="tolak">Tolak</button>
+                    <form method="GET" action="{{ route('terima', ['id_kos' => $validation->id_kos]) }}">
+                        @csrf <!-- Tambahkan csrf token -->
+                        <button class="btn btn-success" type="submit" id="terima">Terima</button>
+                    </form>
+                    <form method="GET" action="{{ route('tolak', ['id_kos' => $validation->id_kos]) }}">
+                        @csrf <!-- Tambahkan csrf token -->
+                        <button class="btn btn-danger" type="submit" id="tolak">Tolak</button>
+                    </form>
                 </div>
             </div>
         </div>

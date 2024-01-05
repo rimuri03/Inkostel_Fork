@@ -19,6 +19,11 @@ Route::get('/', function () {
     return view('index');   
 })->name('home');
 
+// MiddleWare
+Route::middleware(['guest'])->group(function(){
+    
+});
+
 //Login and Registration
 Route::get('/login', [LoginRegis::class, 'login'])->name('login');
 Route::post('/login', [LoginRegis::class, 'loginPost'])->name('loginPost');
@@ -67,10 +72,10 @@ Route::post('/jualkos', function(){
         'harga_kos_pertahun' => request('harga_kos_pertahun'),
         'jarak_kos' => request('jarak_kos'),
         'gambar_kos1' => request('gambar_kos1'),
-        'gambar_kos2' => request('gambar_kos1'),
-        'gambar_kos3' => request('gambar_kos1'),
-        'gambar_kos4' => request('gambar_kos1'),
-        'gambar_kos5' => request('gambar_kos1'),
+        'gambar_kos2' => request('gambar_kos2'),
+        'gambar_kos3' => request('gambar_kos3'),
+        'gambar_kos4' => request('gambar_kos4'),
+        'gambar_kos5' => request('gambar_kos5'),
         'alamat' => request('alamat'),
         'Deskripsi' => request('Deskripsi'),
         'ContactPerson' => request('ContactPerson'),
@@ -98,11 +103,9 @@ Route::get('/footer', function () {
 
 
 // Validasi
-Route::get('/val', [ValidationController::class, 'index']);
-
+Route::get('/val', [ValidationController::class, 'index'])->name('val');
 Route::get('/updateData/{id_kos}', [ValidationController::class, 'acceptkos']);
 
-
-Route::get('/acc', function () {
-    return view('accept');
-});
+// Acc
+Route::get('/terima/{id_kos}', [ValidationController::class, 'terima'])->name('terima');
+Route::get('/tolak/{id_kos}', [ValidationController::class, 'tolak'])->name('tolak');
