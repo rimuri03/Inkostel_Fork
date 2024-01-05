@@ -9,6 +9,15 @@ use App\Models\jual;
 
 class JualController extends Controller
 {
+    // public function update(Request $request, $id)
+    // {
+        
+
+    //     $img = $request->file("file");
+    //     $img->move("img/profile", $img->getClientOriginalName());
+       
+        
+    // }
     // public function tampilregisjual()
     // {
     //     return view("jualkos");
