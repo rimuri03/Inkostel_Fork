@@ -193,6 +193,26 @@ body{
     background-color: #6DD6BF;
     color: #fff; /* Ganti warna teks jika diperlukan */
   }
+
+  .logout-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12px 14px; /* Sesuaikan dengan panjang yang diinginkan */
+}
+
+/* Optional: Jika Anda ingin menyesuaikan lebar ikon dan teks di dalam tombol logout */
+.logout-button .icon {
+    margin-right: 14px;
+    font-size: 20px;
+}
+
+.logout-button .link {
+    font-size: 16px;
+    color: #595959;
+    font-weight: 400;
+}
   
   /*sidebar end*/
   
