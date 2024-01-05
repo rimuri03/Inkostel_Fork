@@ -25,38 +25,39 @@ class SimpanController extends Controller
         return view('detailKos', compact('dataKos'));
     }
 
+
     public function simpanKost($id, Request $request)
     {
         $user = auth()->user();
-    
-        // Cek apakah sudah disimpan sebelumnya
-        $existingBookmark = Simpan::where('user_id', $user->id)->where('id', $id)->first();
-    
-        if ($existingBookmark) {
-            return response()->json(['success' => false, 'message' => 'Kost sudah disimpan sebelumnya.']);
-        }
-    
+
         // Ambil data kos yang akan disimpan
         $carikos = CariKos::find($id);
-    
-        // Pastikan data kos ditemukan
-        if (!$carikos) {
-            return response()->json(['success' => false, 'message' => 'Kost tidak ditemukan.']);
-        }
-    
+
+        // Cek apakah sudah disimpan sebelumnya
+        $bookmark = Simpan::where('user_id', $user->id)->where('id_kos', $id)->first();
+
+   
+
         // Simpan data ke tabel BookmarkKos
-        Simpan::create([
-            'user_id' => $user->id,
-            'id_kos' => $id,
-            'nama_kos' => $carikos->nama_kos,
-            'harga_kos_pertahun' => $carikos->harga_kos_pertahun,
-            'jarak_kos' => $carikos->jarak_kos,
-            'gambar_kos1' => $carikos->gambar_kos1,
-            // Tambahkan kolom lain yang diperlukan
-        ]);
-    
-        
+        Simpan::updateOrCreate(
+            [
+                'user_id' => $user->id,
+                'id_kos' => $id,
+            ],
+            [
+                'user_id' => $user->id,
+                'id_kos' => $id,
+                'nama_kos' => $carikos->nama_kos,
+                'harga_kos_pertahun' => $carikos->harga_kos_pertahun,
+                'jarak_kos' => $carikos->jarak_kos,
+                'gambar_kos1' => $carikos->gambar_kos1,
+                // Tambahkan kolom lain yang diperlukan
+            ]
+        );
+
+       
     }
+
 
     public function hapusSimpan($id)
     {
