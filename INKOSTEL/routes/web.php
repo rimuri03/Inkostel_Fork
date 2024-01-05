@@ -39,8 +39,8 @@ Route::delete('/simpan/hapus/{id}', [SimpanController::class, 'hapusSimpan'])->n
 
 
 //profile
-Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
-Route::post('/store', [ProfileController::class, 'store'])->name('store');
+Route::get('/profile', [ProfileController::class, 'profile']);
+Route::post('/update/{id}', [ProfileController::class, 'update']);
 
 // detailkos
 Route::get('/detailkos/{id_kos}', [CariKosController::class, 'detailKos'])->name('detailkos');
