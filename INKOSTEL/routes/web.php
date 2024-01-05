@@ -19,6 +19,11 @@ Route::get('/', function () {
     return view('index');   
 })->name('home');
 
+// MiddleWare
+Route::middleware(['guest'])->group(function(){
+    
+});
+
 //Login and Registration
 Route::get('/login', [LoginRegis::class, 'login'])->name('login');
 Route::post('/login', [LoginRegis::class, 'loginPost'])->name('loginPost');
@@ -98,11 +103,9 @@ Route::get('/footer', function () {
 
 
 // Validasi
-Route::get('/val', [ValidationController::class, 'index']);
-
+Route::get('/val', [ValidationController::class, 'index'])->name('val');
 Route::get('/updateData/{id_kos}', [ValidationController::class, 'acceptkos']);
 
-
-Route::get('/acc', function () {
-    return view('accept');
-});
+// Acc
+Route::get('/terima/{id_kos}', [ValidationController::class, 'terima'])->name('terima');
+Route::get('/tolak/{id_kos}', [ValidationController::class, 'tolak'])->name('tolak');
