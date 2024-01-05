@@ -156,6 +156,11 @@ body{
   .lists .nav-link:hover {
     background-color: #6DD6BF;
   }
+
+  .nav-link:hover {
+    background-color: #E44E4E;
+}
+
   
 .lists .nav-link:hover .icon,
 .lists .nav-link:hover .link {
