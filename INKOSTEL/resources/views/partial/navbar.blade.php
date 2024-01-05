@@ -44,10 +44,8 @@
                         @if(Auth::check())
                             <h5 id="username">{{ Auth::user()->username }}</h5>
                         @endif
-
-                              <a class="nav-link" href="/profile" id="profileButton">
+                            <a class="nav-link" href="/profile" id="profileButton">
                                 <img src="{{ asset('img/profile.png') }}" style="width:50px; border-radius:50%;"/>
-
                                 <span class="xp-user-live"></span>
                             </a>
                         </div>
