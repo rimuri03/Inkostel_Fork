@@ -36,14 +36,14 @@
                                         <img src="{{ asset('img/' . $validation->gambar_kos2) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 2" name="gambar_kos2">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset($validation->gambar_kos3) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 3">
+                                        <img src="{{ asset('img/' . $validation->gambar_kos3)  }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 3">
                                     </div>
 
                                     <div class="carousel-item">
-                                        <img src="{{ asset($validation->gambar_kos4) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 4">
+                                        <img src="{{ asset('img/' . $validation->gambar_kos4)  }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 4">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset($validation->gambar_kos5) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 5">
+                                        <img src="{{ asset('img/' . $validation->gambar_kos5)  }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 5">
                                     </div>
                                 </div>
                             </div>

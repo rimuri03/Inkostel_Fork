@@ -67,67 +67,9 @@ Route::get('/jualkos', function () {
 
 
 
-Route::post('/jualkos', function (\Illuminate\Http\Request $request) {
+Route::post('/jualkos', [ValidationController::class, 'store'])->name('jualkos');
 
-    // Mengelola unggahan file gambar_kos1
-    $img1 = $request->file('gambar_kos1');
-    $img1Name = $img1->getClientOriginalName();
-    $img1->move('img', $img1Name);
 
-    // Mengelola unggahan file gambar_kos2
-    if ($request->hasFile('gambar_kos2')) {
-        $img2 = $request->file('gambar_kos2');
-        $img2Name = $img2->getClientOriginalName();
-        $img2->move('img', $img2Name);
-    } else {
-        $img2Name = null;
-    }
-    if ($request->hasFile('gambar_kos3')) {
-        $img3 = $request->file('gambar_kos3');
-        $img3Name = $img3->getClientOriginalName();
-        $img3->move('img', $img3Name);
-    } else {
-        $img3Name = null;
-    }
-    if ($request->hasFile('gambar_kos4')) {
-        $img4 = $request->file('gambar_kos4');
-        $img4Name = $img4->getClientOriginalName();
-        $img2->move('img', $img4Name);
-    } else {
-        $img4Name = null;
-    }
-    if ($request->hasFile('gambar_kos5')) {
-        $img5 = $request->file('gambar_kos5');
-        $img5Name = $img5->getClientOriginalName();
-        $img5->move('img/profile', $img5Name);
-    } else {
-        $img5Name = null;
-    }
-
-    // Mengelola unggahan file gambar_kos3
-    // Lakukan hal yang sama untuk gambar_kos3 hingga gambar_kos5
-
-    // Membuat instance Validasi baru dan menyimpan data ke database
-    Validasi::create([
-        'nama_kos' => $request->input('nama_kos'),
-        'harga_kos_perbulan' => $request->input('harga_kos_perbulan'),
-        'harga_kos_pertahun' => $request->input('harga_kos_pertahun'),
-        'jarak_kos' => $request->input('jarak_kos'),
-        'Deskripsi' => request('Deskripsi'),
-        'alamat' => request('alamat'),
-        'ContactPerson' => request('ContactPerson'),
-        'gambar_kos1' => $img1Name,
-        'gambar_kos2' => $img2Name,
-        'gambar_kos3' => $img3Name,
-        'gambar_kos4' => $img4Name,
-        'gambar_kos5' => $img5Name,
-        // Tambahkan baris serupa untuk gambar_kos3 hingga gambar_kos5
-        // Tambahkan baris serupa untuk field lainnya
-    ]);
-
-    // Mengalihkan kembali atau ke lokasi yang diinginkan setelah pengiriman berhasil
-    return redirect('/jualkos')->with('success', 'Data berhasil disimpan.');
-})->name('jualkos');
 
 
 // Route::post('/jualkos', function(){

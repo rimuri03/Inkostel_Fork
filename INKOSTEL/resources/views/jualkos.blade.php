@@ -149,19 +149,8 @@
 
             <label for="InputGambar" class="form-label">Unggah Tampilan Kamar</label>
             <div class="mb-4 input-group">
-              <span class="input-group-text">
-                <input class="form-control" type="file" name="gambar_kos1" id="gambar_kos1" multiple>
-                <!-- <br>
-                <input class="form-control" type="file" name="gambar_kos2" id="gambar_kos2">
-                <br>
-                <input class="form-control" type="file" name="gambar_kos3" id="gambar_kos3">
-                <br>
-                <input class="form-control" type="file" name="gambar_kos4" id="gambar_kos4">
-                <br>
-                <input class="form-control" type="file" name="gambar_kos5" id="gambar_kos5"> -->
-              </span>
+                <input class="form-control" type="file" name="gambar_kos1[]" id="gambar_kos1" multiple>
             </div>
-
 
             <div class="form-floating mb-4 mt-4">
               <textarea id="Deskripsi" class="form-control" style="height: 140px;" name="Deskripsi"

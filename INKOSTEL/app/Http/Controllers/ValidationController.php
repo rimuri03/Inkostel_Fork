@@ -61,4 +61,33 @@ class ValidationController extends Controller
         // Redirect ke halaman tertentu atau tampilkan pesan sukses jika diperlukan
         return redirect()->route('val');
     }
+
+    public function store(Request $request)
+    {
+        $imageNames = [];
+
+        foreach ($request->file('gambar_kos1') as $key => $file) {
+            $imageName = $file->getClientOriginalName();
+            $file->move(public_path('img'), $imageName);
+            $imageNames[] = $imageName;
+        }
+
+        $validasi = new Validasi();
+        $validasi->nama_kos = $request->input('nama_kos');
+        $validasi->harga_kos_perbulan = $request->input('harga_kos_perbulan');
+        $validasi->harga_kos_pertahun = $request->input('harga_kos_pertahun');
+        $validasi->jarak_kos = $request->input('jarak_kos');
+        // Mengambil gambar dari array dan menyimpannya ke kolom yang sesuai
+        for ($i = 1; $i <= count($imageNames); $i++) {
+            $validasi->{"gambar_kos" . $i} = $imageNames[$i - 1] ?? null;
+        }
+        $validasi->alamat = $request->input('alamat');
+        $validasi->Deskripsi = $request->input('Deskripsi');
+        $validasi->ContactPerson = $request->input('ContactPerson');
+        // Set field-field lainnya jika ada
+
+        $validasi->save();
+
+        return redirect('/jualkos')->with('success', 'Data berhasil disimpan.');
+    }
 }
