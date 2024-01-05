@@ -75,7 +75,7 @@
               <input type="text" class="form-control" name="ContactPerson" id="ContactPerson" placeholder="">
             </div>
 
-            <div class="mt-3">
+            <!-- <div class="mt-3">
               <label for="cekkosong">Fasilitas:</label>
             </div>
 
@@ -123,7 +123,7 @@
               <label for="cekkosong" class="form-check-label">
                 Kamar Mandi Dalam
               </label>
-            </div>
+            </div> -->
 
             <label for="Harga" class="form-label">Tentukan Harga:</label>
             <div class="form-check">
@@ -150,15 +150,15 @@
             <label for="InputGambar" class="form-label">Unggah Tampilan Kamar</label>
             <div class="mb-4 input-group">
               <span class="input-group-text">
-                <input class="form-control" type="file" name="gambar_kos1" id="gambar_kos1">
-                <br>
+                <input class="form-control" type="file" name="gambar_kos1" id="gambar_kos1" multiple>
+                <!-- <br>
                 <input class="form-control" type="file" name="gambar_kos2" id="gambar_kos2">
                 <br>
                 <input class="form-control" type="file" name="gambar_kos3" id="gambar_kos3">
                 <br>
                 <input class="form-control" type="file" name="gambar_kos4" id="gambar_kos4">
                 <br>
-                <input class="form-control" type="file" name="gambar_kos5" id="gambar_kos5">
+                <input class="form-control" type="file" name="gambar_kos5" id="gambar_kos5"> -->
               </span>
             </div>
 
