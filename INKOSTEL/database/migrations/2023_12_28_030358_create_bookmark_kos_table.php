@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('bookmark_kos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('kos_id');
+            $table->unsignedBigInteger('id_kos');
             $table->string('nama_kos');
             $table->string('harga_kos_pertahun');
             $table->string('jarak_kos');

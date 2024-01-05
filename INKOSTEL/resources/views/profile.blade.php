@@ -34,7 +34,7 @@
                         </div>
                         <div class="card-body d-flex align-items-center">
                             <div class="rounded-circle">
-                            <img src="{{ asset('img/' . $profileData->foto_profil) }}" alt="Profile Picture" class="profile-pict rounded float-left">
+                                <img src="{{ $profileData->foto_profil ? asset('img/profile/' . $profileData->foto_profil) : asset('img/profile.png') }}" alt="Profile Picture" class="profile-pict rounded float-left" style="border-radius: 50%;">
                             </div>
                             <div class="media-body ms-4" style="padding-bottom: 40px;">
                                 <div class="input-group">
@@ -57,7 +57,6 @@
                             <div class="form-group">
                                 <input type="text" class="form-control mb-1" name="nama_panjang" placeholder="Isi nama lengkap anda..." id="nameInput" value="{{ $profileData->nama_panjang }}">
                             </div>
-            
                             <label class="form-label"><h6 class="font-weight-bold" style="padding-top: 15px;">Username</h6></label>
                             <div class="form-group">
                                 <input type="text" class="form-control mb-1" name="username" placeholder="isi username anda..." id="usernameInput" value="{{ $profileData->username }}" readonly>
@@ -67,7 +66,6 @@
                             <div class="form-group">
                                 <input type="text" id="emailInput" class="form-control" placeholder="isi alamat email anda..." name="email" value="{{ $profileData->email }}" readonly>
                             </div>
-                        
                             <label class="form-label"><h6 class="font-weight-bold" style="padding-top: 15px;">Nomor Telepon</h6></label>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">

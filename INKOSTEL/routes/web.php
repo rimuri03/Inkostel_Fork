@@ -9,6 +9,7 @@ use App\Http\Controllers\LoginRegis;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JualController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\NavbarController;
 use App\Http\Controllers\CariKosController;
 use App\Http\Controllers\ValidationController;
 
@@ -26,10 +27,11 @@ Route::post('/registration', [LoginRegis::class, 'registrationPost'])->name('reg
 //Logout
 Route::post('/logout', [LoginRegis::class, 'logout'])->name('logout');
 
+// MiddleWare
+Route::middleware(['guest']);
+
 // Cari Kost
 Route::get('/carikost', [CariKosController::class, 'index'])->name('carikost');
-
-
 
 
 //Simpan Kost
@@ -40,21 +42,20 @@ Route::delete('/simpan/hapus/{id}', [SimpanController::class, 'hapusSimpan'])->n
 
 
 //profile
-Route::get('/profile', [ProfileController::class,'profile']); 
-Route::post('/update/{id}', [ProfileController::class,'update']);
-
+Route::get('/profile', [ProfileController::class, 'profile']);
+Route::post('/update/{id}', [ProfileController::class, 'update']);
 
 // detailkos
 Route::get('/detailkos/{id_kos}', [CariKosController::class, 'detailKos'])->name('detailkos');
-
 Route::get('/acc/{id_kos}', [ValidationController::class,'acceptkos']);
-
 
 
 //jual Kos
 // Route::get('/jualkos', [JualController::class, 'tampilregisjual']);
 
 // Route::post('/jualkos', [JualController::class, 'store'])->name('jualkos');
+
+
 Route:: get('/jualkos', function(){
     return view('jualkos');
 });
@@ -95,15 +96,13 @@ Route::get('/footer', function () {
     return view('partial.footer');
 });
 
-// Validasi dan Accept
-Route::get('/val', function () {
-    return view('validasi');
-});
+
+// Validasi
+Route::get('/val', [ValidationController::class, 'index']);
+
+Route::get('/updateData/{id_kos}', [ValidationController::class, 'acceptkos']);
 
 
 Route::get('/acc', function () {
     return view('accept');
 });
-
-Route::get('/val', [ValidationController::class,'index']);
-Route::post('/accept', [ValidationController::class, 'update']);

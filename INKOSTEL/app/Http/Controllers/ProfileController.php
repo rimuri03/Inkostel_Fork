@@ -20,7 +20,7 @@ class ProfileController extends Controller
         $profileData = Profile::where('id', $id)->first();
         
         $img = $request->file("file");
-        $img -> move("img",$img->getClientOriginalName());
+        $img -> move("img/profile",$img->getClientOriginalName());
         $profileData->username = $request->username;
         $profileData->email = $request->email;
         $profileData->nama_panjang = $request->nama_panjang;
