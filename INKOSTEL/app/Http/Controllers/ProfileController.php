@@ -11,8 +11,14 @@ class ProfileController extends Controller
 {
     public function profile()
     {
-        $profileData = Profile::first();
-        return view('profile', compact(['profileData']));
+        $user = Auth::user();
+
+        if ($user) {
+            $profileData = Profile::find($user->id);
+            return view('profile', compact('profileData'));
+        } else {
+            return redirect()->route('login');
+        }
     }
     
     public function update(Request $request, $id)
