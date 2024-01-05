@@ -40,9 +40,9 @@ Route::get('/simpan', [SimpanController::class, 'tampilkanHalamanSimpan'])->name
 Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
 Route::post('/store', [ProfileController::class, 'store'])->name('store');
 
-
-Route::get('/detailkos/{id_kos}', [CariKosController::class, 'detailKos']);
-
+// detailkos
+Route::get('/detailkos/{id_kos}', [CariKosController::class, 'detailKos'])->name('detailkos');
+Route::get('/acc/{id_kos}', [ValidationController::class,'acceptkos']);
 
 
 //jual Kos
