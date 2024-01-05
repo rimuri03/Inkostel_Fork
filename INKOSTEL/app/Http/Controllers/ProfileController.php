@@ -24,7 +24,6 @@ class ProfileController extends Controller
     public function update(Request $request, $id)
     {
         $profileData = Profile::where('id', $id)->first();
-        
         $img = $request->file("file");
         $img -> move("img/profile",$img->getClientOriginalName());
         $profileData->username = $request->username;
@@ -33,7 +32,6 @@ class ProfileController extends Controller
         $profileData->nomor_telpon = $request->nomor_telpon;
         $profileData->foto_profil = $img->getClientOriginalName();
         $profileData->save();
-
         return redirect('profile')->with('success', 'Data Berhasil Diperbarui');
     }
 }

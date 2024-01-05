@@ -30,10 +30,10 @@
                             <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="{{ asset($validation->gambar_kos1) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 1">
+                                        <img src="{{ asset('img/' . $validation->gambar_kos1) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 1" name="gambar_kos1">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset($validation->gambar_kos2) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 2">
+                                        <img src="{{ asset('img/' . $validation->gambar_kos2) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 2" name="gambar_kos2">
                                     </div>
                                     <div class="carousel-item">
                                         <img src="{{ asset($validation->gambar_kos3) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 3">
