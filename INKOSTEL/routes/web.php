@@ -13,15 +13,15 @@ use App\Http\Controllers\NavbarController;
 use App\Http\Controllers\CariKosController;
 use App\Http\Controllers\ValidationController;
 
+
 //use App\Http\Controllers\RegisterController;
 
 Route::get('/', function () {
-    return view('index');   
+    return view('index');
 })->name('home');
 
 // MiddleWare
-Route::middleware(['guest'])->group(function(){
-    
+Route::middleware(['guest'])->group(function () {
 });
 
 //Login and Registration
@@ -52,7 +52,7 @@ Route::post('/update/{id}', [ProfileController::class, 'update']);
 
 // detailkos
 Route::get('/detailkos/{id_kos}', [CariKosController::class, 'detailKos'])->name('detailkos');
-Route::get('/acc/{id_kos}', [ValidationController::class,'acceptkos']);
+Route::get('/acc/{id_kos}', [ValidationController::class, 'acceptkos']);
 
 
 //jual Kos
@@ -61,30 +61,95 @@ Route::get('/acc/{id_kos}', [ValidationController::class,'acceptkos']);
 // Route::post('/jualkos', [JualController::class, 'store'])->name('jualkos');
 
 
-Route:: get('/jualkos', function(){
+Route::get('/jualkos', function () {
     return view('jualkos');
 });
 
-Route::post('/jualkos', function(){
+
+
+Route::post('/jualkos', function (\Illuminate\Http\Request $request) {
+
+    // Mengelola unggahan file gambar_kos1
+    $img1 = $request->file('gambar_kos1');
+    $img1Name = $img1->getClientOriginalName();
+    $img1->move('img', $img1Name);
+
+    // Mengelola unggahan file gambar_kos2
+    if ($request->hasFile('gambar_kos2')) {
+        $img2 = $request->file('gambar_kos2');
+        $img2Name = $img2->getClientOriginalName();
+        $img2->move('img', $img2Name);
+    } else {
+        $img2Name = null;
+    }
+    if ($request->hasFile('gambar_kos3')) {
+        $img3 = $request->file('gambar_kos3');
+        $img3Name = $img3->getClientOriginalName();
+        $img3->move('img', $img3Name);
+    } else {
+        $img3Name = null;
+    }
+    if ($request->hasFile('gambar_kos4')) {
+        $img4 = $request->file('gambar_kos4');
+        $img4Name = $img4->getClientOriginalName();
+        $img2->move('img', $img4Name);
+    } else {
+        $img4Name = null;
+    }
+    if ($request->hasFile('gambar_kos5')) {
+        $img5 = $request->file('gambar_kos5');
+        $img5Name = $img5->getClientOriginalName();
+        $img5->move('img/profile', $img5Name);
+    } else {
+        $img5Name = null;
+    }
+
+    // Mengelola unggahan file gambar_kos3
+    // Lakukan hal yang sama untuk gambar_kos3 hingga gambar_kos5
+
+    // Membuat instance Validasi baru dan menyimpan data ke database
     Validasi::create([
-        'nama_kos' => request('nama_kos'),
-        'harga_kos_perbulan' => request('harga_kos_perbulan'),
-        'harga_kos_pertahun' => request('harga_kos_pertahun'),
-        'jarak_kos' => request('jarak_kos'),
-        'gambar_kos1' => request('gambar_kos1'),
-        'gambar_kos2' => request('gambar_kos2'),
-        'gambar_kos3' => request('gambar_kos3'),
-        'gambar_kos4' => request('gambar_kos4'),
-        'gambar_kos5' => request('gambar_kos5'),
-        'alamat' => request('alamat'),
+        'nama_kos' => $request->input('nama_kos'),
+        'harga_kos_perbulan' => $request->input('harga_kos_perbulan'),
+        'harga_kos_pertahun' => $request->input('harga_kos_pertahun'),
+        'jarak_kos' => $request->input('jarak_kos'),
         'Deskripsi' => request('Deskripsi'),
+        'alamat' => request('alamat'),
         'ContactPerson' => request('ContactPerson'),
-        'Fasilitas' => request('Fasilitas')
-
+        'gambar_kos1' => $img1Name,
+        'gambar_kos2' => $img2Name,
+        'gambar_kos3' => $img3Name,
+        'gambar_kos4' => $img4Name,
+        'gambar_kos5' => $img5Name,
+        // Tambahkan baris serupa untuk gambar_kos3 hingga gambar_kos5
+        // Tambahkan baris serupa untuk field lainnya
     ]);
-    return redirect('/jualkos');
 
+    // Mengalihkan kembali atau ke lokasi yang diinginkan setelah pengiriman berhasil
+    return redirect('/jualkos')->with('success', 'Data berhasil disimpan.');
 })->name('jualkos');
+
+
+// Route::post('/jualkos', function(){
+//     Validasi::create([
+//         'nama_kos' => request('nama_kos'),
+//         'harga_kos_perbulan' => request('harga_kos_perbulan'),
+//         'harga_kos_pertahun' => request('harga_kos_pertahun'),
+//         'jarak_kos' => request('jarak_kos'),
+//         'gambar_kos1' => request('gambar_kos1'),
+//         'gambar_kos2' => request('gambar_kos1'),
+//         'gambar_kos3' => request('gambar_kos1'),
+//         'gambar_kos4' => request('gambar_kos1'),
+//         'gambar_kos5' => request('gambar_kos1'),
+//         'alamat' => request('alamat'),
+//         'Deskripsi' => request('Deskripsi'),
+//         'ContactPerson' => request('ContactPerson'),
+//         'Fasilitas' => request('Fasilitas')
+
+//     ]);
+//     return redirect('/jualkos');
+
+// })->name('jualkos');
 
 
 //LayOut --> Hapus saat versi final
