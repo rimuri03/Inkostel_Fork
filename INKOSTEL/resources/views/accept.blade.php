@@ -140,18 +140,24 @@
                     return formatter.format(angka);
                 }
             </script>
-            <div class="col-sm-6" id="oktolak">
-                <div class="col">
-                    <form method="GET" action="{{ route('terima', ['id_kos' => $validation->id_kos]) }}">
-                        @csrf <!-- Tambahkan csrf token -->
-                        <button class="btn btn-success" type="submit" id="terima">Terima</button>
-                    </form>
-                    <form method="GET" action="{{ route('tolak', ['id_kos' => $validation->id_kos]) }}">
-                        @csrf <!-- Tambahkan csrf token -->
-                        <button class="btn btn-danger" type="submit" id="tolak">Tolak</button>
-                    </form>
+            <div class="row">
+            <div class="col-sm-4" id="oktolak">
+                <div class="row">
+                    <div class="col">
+                        <form method="GET" action="{{ route('terima', ['id_kos' => $validation->id_kos]) }}">
+                            @csrf <!-- Tambahkan csrf token -->
+                            <button class="btn btn-success" type="submit" id="terima">Terima</button>
+                        </form>
+                    </div>
+                    <div class="col">
+                        <form method="GET" action="{{ route('tolak', ['id_kos' => $validation->id_kos]) }}">
+                            @csrf <!-- Tambahkan csrf token -->
+                            <button class="btn btn-danger" type="submit" id="tolak">Tolak</button>
+                        </form>
+                    </div>
                 </div>
             </div>
+        </div>
         </div>
     </div>
     <!-- body end -->
