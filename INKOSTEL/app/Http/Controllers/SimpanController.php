@@ -17,6 +17,14 @@ class SimpanController extends Controller
         return view('simpan', compact('dataKos'));
     }
 
+    public function detailkos($id)
+    {
+       
+        $dataKos = Simpan::find($id);
+
+        return view('detailKos', compact('dataKos'));
+    }
+
     public function simpanKost($id, Request $request)
     {
         $user = auth()->user();
@@ -39,7 +47,7 @@ class SimpanController extends Controller
         // Simpan data ke tabel BookmarkKos
         Simpan::create([
             'user_id' => $user->id,
-            'kos_id' => $id,
+            'id_kos' => $id,
             'nama_kos' => $carikos->nama_kos,
             'harga_kos_pertahun' => $carikos->harga_kos_pertahun,
             'jarak_kos' => $carikos->jarak_kos,

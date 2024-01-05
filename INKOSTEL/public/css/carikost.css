@@ -1,5 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination a,
+.pagination span {
+  padding: 10px;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  color: #333;
+}
+
+.pagination a:hover {
+  background-color: #ddd;
+}
+
+.pagination .current {
+  background-color: #41EBC6;
+  color: white;
+  border: 1px solid #41EBC6;
+}
+
 /* Di dalam file carikost.css */
 .bookmark-btn {
   position: relative;
@@ -15,6 +42,7 @@
   margin-top: -50px;
   color: #41EBC6;
 }
+
 
 
 

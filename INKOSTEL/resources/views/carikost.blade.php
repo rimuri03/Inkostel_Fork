@@ -31,33 +31,57 @@
         <button type="button" class="btn" data-filter="putri">Putri</button>
     </div>
 
-    <!-- main -->
-    <div id="conmain">
-        <div class="row" id="rowcard">
+   <!-- main -->
+    <div class="container my-5" id="conmain">
+        <div class="row row-cols-1 row-cols-md-3 g-0" id="card">
             <!-- akan di foreach -->
             @foreach($carikos as $data)
             <div class="col-md-3 mb-4" id="coba">
                 <div class="card" id=cobacard>
-                    <div class="border-image" id="carouselIdValue" >
+                    <div class="border-image" id="carouselIdValue">
                         <div class="carousel inner">
-                            <div class="carousel-item active" >
-                                <img src="{{ $data->gambar_kos1 }}" class="d-block w-100" alt="">
+                            <div class="carousel-item active">
+                            <img src="{{ $data->gambar_kos1 }}" class="d-block w-100" alt="">
                             </div>
                         </div>
                     </div>
 
-                    <div class="card-body">
+                    <div class="card-body">    
                         <p style="display: none;" >{{ $data->id_kos }}</p>
                         <h5 class="card-title" data-href="{{ route('detailkos', ['id_kos' => $data->id_kos]) }}" onclick="handleCardClick(this)">{{ $data->nama_kos}}</h5>
-                        <p class="card-text1" data-harga="{{ $data->harga_kos_pertahun }}" data-href="{{ route('detailkos', ['id_kos' => $data->id_kos]) }}" onclick="handleCardClick(this)">{{ $data->harga_kos }}</p>
+                        <p class="card-text1" data-harga="{{ $data->harga_kos_pertahun }}" data-href="{{ route('detailkos', ['id_kos' => $data->id_kos]) }}" onclick="handleCardClick(this)">{{ $data->harga_kos_pertahun }}</p>
                         <p id="jarak-{{ $data->id }}" class="card-text2" data-href="{{ route('detailkos', ['id_kos' => $data->id_kos]) }}" onclick="handleCardClick(this)">{{ $data->jarak_kos}}</p>
                         <button class="bookmark-btn" data-id="{{ $data->id_kos }}" onclick="bookmarkKost(this)">
                             <i class="bi bi-bookmark"></i>
                         </button>
+                
+                   
                     </div>
                 </div>
             </div>
              @endforeach
+        </div>
+                <!-- Tombol paginate -->
+                <div class="pagination">
+            @if ($carikos->onFirstPage())
+                <span class="disabled">&laquo;</span>
+            @else
+                <a href="{{ $carikos->previousPageUrl() }}" rel="prev">&laquo;</a>
+            @endif
+
+            @foreach ($carikos->getUrlRange(1, $carikos->lastPage()) as $page => $url)
+                @if ($page == $carikos->currentPage())
+                    <span class="current">{{ $page }}</span>
+                @else
+                    <a href="{{ $url }}">{{ $page }}</a>
+                @endif
+            @endforeach
+
+            @if ($carikos->hasMorePages())
+                <a href="{{ $carikos->nextPageUrl() }}" rel="next">&raquo;</a>
+            @else
+                <span class="disabled">&raquo;</span>
+            @endif
         </div>
     </div>
     <!-- end main -->

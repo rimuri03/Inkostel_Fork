@@ -18,7 +18,14 @@
     @extends('partial.navbar')
 
     @section('isi')
-
+    <!-- Tombol Filter Pencarian -->
+    <div class="filter-button">
+        <button type="button" class="btn" data-filter="semua">Semua</button>
+        <button type="button" class="btn" data-filter="terdekat">Terdekat</button>
+        <button type="button" class="btn" data-filter="termurah">Termurah</button>
+        <button type="button" class="btn" data-filter="putra">Putra</button>
+        <button type="button" class="btn" data-filter="putri">Putri</button>
+    </div>
     <!-- main -->
     <div class="container my-5" id="conmain">
         <div class="row row-cols-1 row-cols-md-3 g-0" id="card">
@@ -34,14 +41,18 @@
                         </div>
                     </div>
 
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $kos->nama_kos}}</h5>
-                        <p class="card-text1">{{ $kos->harga_kos_pertahun }} </p>
-                        <p id="jarak-{{ $kos->id }}" class="card-text2">{{ $kos->jarak_kos}} </p>
+                    <div class="card-body">    
+                        <p style="display: none;" >{{ $kos->id_kos }}</p>
+                        <h5 class="card-title" data-href="{{ route('detailkos', ['id_kos' => $kos->id_kos]) }}" onclick="handleCardClick(this)">{{ $kos->nama_kos}}</h5>
+                        <p class="card-text1" data-harga="{{ $kos->harga_kos_pertahun }}" data-href="{{ route('detailkos', ['id_kos' => $kos->id_kos]) }}" onclick="handleCardClick(this)">{{ $kos->harga_kos_pertahun }}</p>
+                        <p id="jarak-{{ $kos->id }}" class="card-text2" data-href="{{ route('detailkos', ['id_kos' => $kos->id_kos]) }}" onclick="handleCardClick(this)">{{ $kos->jarak_kos}}</p>
+                
                         <form action="{{ route('hapus.simpan', ['id' => $kos->id]) }}" method="post">
                             @csrf
                             @method('DELETE')
-                            <button type="submit">Hapus</button>
+                            <button class="bookmark-btn" onclick="deletekos(this)">
+                                <i class=" bi-bookmark"></i> 
+                            </button>
                         </form>
                     </div>
                 </div>
