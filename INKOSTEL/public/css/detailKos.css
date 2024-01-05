@@ -417,17 +417,18 @@ hr {
 /* tombol Accept nya */
 
 #oktolak{
-    margin-left: 500px;
+    margin-left: 715px;
+    padding-top: 30px;
 }
 
 #terima{
-    width: 100px;
+    width: 190px;
     height: 40px;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 #tolak{
-    width: 100px;
+    width: 190px;
     height: 40px;
 }
 
