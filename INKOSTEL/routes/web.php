@@ -67,65 +67,47 @@ Route::get('/jualkos', function () {
 
 
 
+use Illuminate\Support\Facades\Storage;
+
+
+
 Route::post('/jualkos', function (\Illuminate\Http\Request $request) {
 
-    // Mengelola unggahan file gambar_kos1
-    $img1 = $request->file('gambar_kos1');
-    $img1Name = $img1->getClientOriginalName();
-    $img1->move('img', $img1Name);
+    $namaGambar = [];
 
-    // Mengelola unggahan file gambar_kos2
-    if ($request->hasFile('gambar_kos2')) {
-        $img2 = $request->file('gambar_kos2');
-        $img2Name = $img2->getClientOriginalName();
-        $img2->move('img', $img2Name);
-    } else {
-        $img2Name = null;
-    }
-    if ($request->hasFile('gambar_kos3')) {
-        $img3 = $request->file('gambar_kos3');
-        $img3Name = $img3->getClientOriginalName();
-        $img3->move('img', $img3Name);
-    } else {
-        $img3Name = null;
-    }
-    if ($request->hasFile('gambar_kos4')) {
-        $img4 = $request->file('gambar_kos4');
-        $img4Name = $img4->getClientOriginalName();
-        $img2->move('img', $img4Name);
-    } else {
-        $img4Name = null;
-    }
-    if ($request->hasFile('gambar_kos5')) {
-        $img5 = $request->file('gambar_kos5');
-        $img5Name = $img5->getClientOriginalName();
-        $img5->move('img/profile', $img5Name);
-    } else {
-        $img5Name = null;
+    for ($i = 1; $i <= 5; $i++) {
+        $namaInput = "gambar_kos$i";
+
+        if ($request->hasFile($namaInput)) {
+            $gambar = $request->file($namaInput);
+            $namaFile = $gambar->getClientOriginalName();
+
+            // Simpan file di penyimpanan lokal
+            $gambar->storeAs('public/img', $namaFile);
+
+            // Simpan nama file di dalam array
+            $namaGambar[$namaInput] = $namaFile;
+        } else {
+            $namaGambar[$namaInput] = null;
+        }
     }
 
-    // Mengelola unggahan file gambar_kos3
-    // Lakukan hal yang sama untuk gambar_kos3 hingga gambar_kos5
-
-    // Membuat instance Validasi baru dan menyimpan data ke database
     Validasi::create([
         'nama_kos' => $request->input('nama_kos'),
         'harga_kos_perbulan' => $request->input('harga_kos_perbulan'),
         'harga_kos_pertahun' => $request->input('harga_kos_pertahun'),
         'jarak_kos' => $request->input('jarak_kos'),
-        'Deskripsi' => request('Deskripsi'),
-        'alamat' => request('alamat'),
-        'ContactPerson' => request('ContactPerson'),
-        'gambar_kos1' => $img1Name,
-        'gambar_kos2' => $img2Name,
-        'gambar_kos3' => $img3Name,
-        'gambar_kos4' => $img4Name,
-        'gambar_kos5' => $img5Name,
-        // Tambahkan baris serupa untuk gambar_kos3 hingga gambar_kos5
-        // Tambahkan baris serupa untuk field lainnya
+        'Deskripsi' => $request->input('Deskripsi'),
+        'alamat' => $request->input('alamat'),
+        'ContactPerson' => $request->input('ContactPerson'),
+        'gambar_kos1' => $namaGambar['gambar_kos1'],
+        'gambar_kos2' => $namaGambar['gambar_kos1'],
+        'gambar_kos3' => $namaGambar['gambar_kos1'],
+        'gambar_kos4' => $namaGambar['gambar_kos1'],
+        'gambar_kos5' => $namaGambar['gambar_kos1'],
     ]);
 
-    // Mengalihkan kembali atau ke lokasi yang diinginkan setelah pengiriman berhasil
+    // Redirect kembali ke lokasi yang diinginkan setelah pengiriman berhasil
     return redirect('/jualkos')->with('success', 'Data berhasil disimpan.');
 })->name('jualkos');
 
