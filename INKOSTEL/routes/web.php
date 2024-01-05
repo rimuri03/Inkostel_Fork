@@ -103,9 +103,9 @@ Route::get('/footer', function () {
 
 
 // Validasi
-Route::get('/val', [ValidationController::class, 'index'])->name('val');
-Route::get('/updateData/{id_kos}', [ValidationController::class, 'acceptkos']);
+Route::get('/val', [ValidationController::class, 'index'])->name('val')->middleware('admin');
+Route::get('/updateData/{id_kos}', [ValidationController::class, 'acceptkos'])->middleware('admin');
 
 // Acc
-Route::get('/terima/{id_kos}', [ValidationController::class, 'terima'])->name('terima');
-Route::get('/tolak/{id_kos}', [ValidationController::class, 'tolak'])->name('tolak');
+Route::get('/terima/{id_kos}', [ValidationController::class, 'terima'])->name('terima')->middleware('admin');
+Route::get('/tolak/{id_kos}', [ValidationController::class, 'tolak'])->name('tolak')->middleware('admin');
