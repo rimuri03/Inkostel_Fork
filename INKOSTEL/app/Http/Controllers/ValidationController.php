@@ -10,7 +10,7 @@ class ValidationController extends Controller
 {
     public function index(){
         $validation = Validasi::all();
-        return view("validasi",compact(["validation"]));
+        return view("validasi",compact(['validation']));
     }
 
     public function acceptkos($id)
@@ -20,7 +20,6 @@ class ValidationController extends Controller
 
         return view('accept', compact('validation'));
     }
-
 
     public function update(Request $request)
     {

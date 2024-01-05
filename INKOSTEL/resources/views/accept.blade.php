@@ -100,10 +100,10 @@
                             <div class="col-md-6">
                                 <div class="dropdown">
                                     <button class="btn btn-outline-secondary dropdown-toggle" style="width: 10rem; border-color: #6DD6BF;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <span class="text-color"> kamar</span>
+                                        <span class="text-color"> Jarak</span>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">{{$validation->KamarKosong}}</a></li>
+                                        <li><a class="dropdown-item" href="#"> {{number_format($validation->jarak_kos / 1000, 2) }} km</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -145,9 +145,14 @@
                     return formatter.format(angka);
                 }
             </script>
+            <div class="col-sm-6" id="oktolak">
+                <div class="col">
+                    <button class="btn btn-success" type="submit" id="terima">Terima</button>
+                    <button class="btn btn-danger" type="submit" id="tolak">Tolak</button>
+                </div>
+            </div>
         </div>
     </div>
-
     <!-- body end -->
     <br>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
