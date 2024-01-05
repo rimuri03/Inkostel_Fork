@@ -47,7 +47,7 @@ Route::delete('/simpan/hapus/{id}', [SimpanController::class, 'hapusSimpan'])->n
 
 
 //profile
-Route::get('/profile', [ProfileController::class, 'profile']);
+Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
 Route::post('/update/{id}', [ProfileController::class, 'update']);
 
 // detailkos

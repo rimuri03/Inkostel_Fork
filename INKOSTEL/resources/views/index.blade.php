@@ -34,11 +34,23 @@
                                 </button>
                               </div>
                         </div>
-                
+                        <!--
                         <div class="col-md-4 text-end" id="button-container">
                             <a href="/login">
                             <button type="button" class="btn btn-success custom-button1" id="loginButton">Login</button>
                             </a>
+                        </div>
+                        -->
+                        <div class="col-md-4 text-end" id="button-container">
+                            @guest
+                                <a href="/login">
+                                    <button type="button" class="btn btn-success custom-button1" id="loginButton">Login</button>
+                                </a>
+                            @endguest
+
+                            @auth
+                                <!-- If the user is authenticated, the login button will not be shown -->
+                            @endauth
                         </div>
                 </div>
             </div>
