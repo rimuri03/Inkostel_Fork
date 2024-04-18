@@ -75,56 +75,6 @@
               <input type="text" class="form-control" name="ContactPerson" id="ContactPerson" placeholder="">
             </div>
 
-            <!-- <div class="mt-3">
-              <label for="cekkosong">Fasilitas:</label>
-            </div>
-
-            <div class="form-check mt-3">
-              <input type="checkbox" class="form-check-input" value="AC" name="Fasilitas" id="Fasilitas">
-              <label for="cekkosong" class="form-check-label">
-                AC
-              </label>
-            </div>
-
-
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" value="Kulkas" name="Fasilitas" id="Fasilitas">
-              <label for="cekkosong" class="form-check-label">
-                Kulkas
-              </label>
-            </div>
-
-
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" value="Water Heater" name="Fasilitas" id="Fasilitas">
-              <label for="cekkosong" class="form-check-label">
-                Water Heater
-              </label>
-            </div>
-
-
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" value="Kompor" name="Fasilitas" id="Fasilitas">
-              <label for="cekkosong" class="form-check-label">
-                Kompor
-              </label>
-            </div>
-
-
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" value="Wifi" name="Fasilitas" id="Fasilitas">
-              <label for="cekkosong" class="form-check-label">
-                Wifi
-              </label>
-            </div>
-
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" value="Kamar Mandi Dalam" name="Fasilitas" id="Fasilitas">
-              <label for="cekkosong" class="form-check-label">
-                Kamar Mandi Dalam
-              </label>
-            </div> -->
-
             <label for="Harga" class="form-label">Tentukan Harga:</label>
             <div class="form-check">
 
@@ -134,7 +84,7 @@
                   <i> Rp </i>
                 </span>
                 <input type="text" class="form-control" name="harga_kos_pertahun" id="harga_kos_pertahun"
-                  placeholder="e.g. 1.000.000." required>
+                  placeholder="e.g. 1000000" required>
               </div>
 
               <label for="Harga" class="form-label">Bulanan (Opsional)</label>
@@ -143,7 +93,7 @@
                   <i> Rp </i>
                 </span>
                 <input type="text" class="form-control" name="harga_kos_perbulan" id="harga_kos_perbulan"
-                  placeholder="e.g. 1.000.000.">
+                  placeholder="e.g. 1000000">
               </div>
             </div>
 

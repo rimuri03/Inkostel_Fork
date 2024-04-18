@@ -54,47 +54,13 @@ Route::post('/update/{id}', [ProfileController::class, 'update']);
 Route::get('/detailkos/{id_kos}', [CariKosController::class, 'detailKos'])->name('detailkos');
 Route::get('/acc/{id_kos}', [ValidationController::class, 'acceptkos']);
 
-
-//jual Kos
-// Route::get('/jualkos', [JualController::class, 'tampilregisjual']);
-
-// Route::post('/jualkos', [JualController::class, 'store'])->name('jualkos');
-
-
 Route::get('/jualkos', function () {
     return view('jualkos');
 });
 
 
-
+// Iklan Kos
 Route::post('/jualkos', [ValidationController::class, 'store'])->name('jualkos');
-
-
-
-
-// Route::post('/jualkos', function(){
-//     Validasi::create([
-//         'nama_kos' => request('nama_kos'),
-//         'harga_kos_perbulan' => request('harga_kos_perbulan'),
-//         'harga_kos_pertahun' => request('harga_kos_pertahun'),
-//         'jarak_kos' => request('jarak_kos'),
-//         'gambar_kos1' => request('gambar_kos1'),
-//         'gambar_kos2' => request('gambar_kos1'),
-//         'gambar_kos3' => request('gambar_kos1'),
-//         'gambar_kos4' => request('gambar_kos1'),
-//         'gambar_kos5' => request('gambar_kos1'),
-//         'alamat' => request('alamat'),
-//         'Deskripsi' => request('Deskripsi'),
-//         'ContactPerson' => request('ContactPerson'),
-//         'Fasilitas' => request('Fasilitas')
-
-//     ]);
-//     return redirect('/jualkos');
-
-// })->name('jualkos');
-
-
-//LayOut --> Hapus saat versi final
 
 Route::get('/layout', function () {
     return view('layout');
@@ -107,7 +73,6 @@ Route::get('/navbar', function () {
 Route::get('/footer', function () {
     return view('partial.footer');
 });
-
 
 // Validasi
 Route::get('/val', [ValidationController::class, 'index'])->name('val')->middleware('admin');

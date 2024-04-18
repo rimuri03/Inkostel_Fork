@@ -100,13 +100,16 @@
                     </ul>
 
                     <div class="bottom-content">
-                        <li class="list">
-                            <a href="#" class="nav-link">
-                                <i class='bx bx-log-out icon'></i>
-                                <span class="link">Log Out</span>
-                            </a>
-                        </li>
-                    </div>
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <li class="list">
+                                <button type="submit" class="nav-link logout-button">
+                                    <i class='bx bx-log-out icon'></i>
+                                    <span class="link">Log Out</span>
+                                </button>
+                                </li>
+                            </form>
+                        </div>
                 </div>
             </div>
         </nav>

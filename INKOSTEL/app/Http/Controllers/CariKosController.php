@@ -13,7 +13,7 @@ class CariKosController extends Controller
         $searchTerm = $request->input('search');
         $carikos = CariKos::when($searchTerm, function ($query, $searchTerm) {
             return $query->where('nama_kos', 'LIKE', '%' . $searchTerm . '%');
-        })->paginate(5);;
+        })->paginate(8);;
 
         return view('carikost', compact('carikos', 'searchTerm'));
     }
