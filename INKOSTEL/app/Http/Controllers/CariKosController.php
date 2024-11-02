@@ -20,11 +20,10 @@ class CariKosController extends Controller
 
     public function detailkos($id)
     {
-       
+
         $carikos = CariKos::find($id);
 
         return view('detailKos', compact('carikos'));
     }
-    
-    
 }
+// TEs
