@@ -35,18 +35,6 @@
                                         <img src="{{ asset('img/' . $carikos->gambar_kos1) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 1" name="gambar_kos1">
                                     </div>
                                     <div class="carousel-item">
-<<<<<<< Updated upstream
-                                        <img src="{{ asset('img/' . $carikos->gambar_kos2) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 2" name="gambar_kos2">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="{{ asset('img/' . $carikos->gambar_kos3) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 3" name="gambar_kos3">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="{{ asset('img/' . $carikos->gambar_kos4) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 4" name="gambar_kos4"
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="{{ asset('img/' . $carikos->gambar_kos5) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 5" name="gambar_kos5">
-=======
                                         <img src="{{ asset('img/' . $carikos->gambar_kos2) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 2">
                                     </div>
                                     <div class="carousel-item">
@@ -58,7 +46,6 @@
                                     </div>
                                     <div class="carousel-item">
                                         <img src="{{ asset('img/' . $carikos->gambar_kos5) }}" class="d-block w-100" style="height: 270px;" alt="Kos Image 5">
->>>>>>> Stashed changes
                                     </div>
                                 </div>
                             </div>

@@ -7,14 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Atur Dulu</title>
 
-    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}"> 
+    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
-  </head>
-  <body>
+</head>
+
+<body>
 
     <!-- navbar start -->
     <header>
@@ -43,18 +44,18 @@
 
                             @auth
                             <h5 id="username">{{ Auth::user()->username }}</h5>
-                                <div>
+                            <div>
                                 <a class="nav-link" href="/profile" id="profileButton">
                                     @if(Auth::user()->foto_profil)
-                                        <img src="{{ asset('img/profile/' . Auth::user()->foto_profil) }}" style="border-radius:50%; height: 50px; width: 50px;" alt="Profile Picture">
+                                    <img src="{{ asset('img/profile/' . Auth::user()->foto_profil) }}" style="border-radius:50%; height: 50px; width: 50px;" alt="Profile Picture">
                                     @else
-                                        <img src="{{ asset('img/profile.png') }}" style="border-radius:50%; height: 50px; width: 50px;" alt="Default Profile Picture">
+                                    <img src="{{ asset('img/profile.png') }}" style="border-radius:50%; height: 50px; width: 50px;" alt="Default Profile Picture">
                                     @endif
-                                </div>
-                                </a>
+                            </div>
+                            </a>
                             @endauth
                             @guest
-                                <!-- Default content saat user belum login -->
+                            <!-- Default content saat user belum login -->
                             @endguest
                         </div>
                         <!--
@@ -120,10 +121,10 @@
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf
                                 <li class="list">
-                                <button type="submit" class="nav-link logout-button">
-                                    <i class='bx bx-log-out icon'></i>
-                                    <span class="link">Log Out</span>
-                                </button>
+                                    <button type="submit" class="nav-link logout-button">
+                                        <i class='bx bx-log-out icon'></i>
+                                        <span class="link">Log Out</span>
+                                    </button>
                                 </li>
                             </form>
                         </div>
@@ -142,15 +143,9 @@
 
     <!-- script js -->
     <script src="{{ asset('js/layout.js') }}"></script>
-    
+
     @yield('script')
-    <br>
-    <br>
-    <br>
-    <br>
     @extends('partial.footer')
-  </body>
+</body>
+
 </html>
-
- 
-
