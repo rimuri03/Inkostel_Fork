@@ -87,4 +87,20 @@ public function it_can_add_a_review_with_empty_comment()
     $this->assertDatabaseHas('reviews', $data);
 }
 
+/** @test */
+public function it_requires_rating_to_be_between_1_and_5()
+{
+    $data = [
+        'id_kos' => '7',
+        'user_id' => '14',
+        'rating' => '6', // Rating tidak valid
+        'comment' => 'Rating ini tidak valid'
+    ];
+
+    $response = Review::create($data);
+
+    // Pastikan bahwa data tidak masuk ke dalam database
+    $this->assertDatabaseMissing('reviews', $data);
+}
+
 }
