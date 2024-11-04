@@ -18,5 +18,11 @@ class CariKos extends Model
 
     ];
     protected $primaryKey = 'id_kos';
+    
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
 
 }

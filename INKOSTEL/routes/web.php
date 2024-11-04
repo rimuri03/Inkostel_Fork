@@ -12,6 +12,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\NavbarController;
 use App\Http\Controllers\CariKosController;
 use App\Http\Controllers\ValidationController;
+use App\Http\Controllers\ReviewController;
+
 
 
 //use App\Http\Controllers\RegisterController;
@@ -81,3 +83,7 @@ Route::get('/updateData/{id_kos}', [ValidationController::class, 'acceptkos'])->
 // Acc
 Route::get('/terima/{id_kos}', [ValidationController::class, 'terima'])->name('terima')->middleware('admin');
 Route::get('/tolak/{id_kos}', [ValidationController::class, 'tolak'])->name('tolak')->middleware('admin');
+
+// Review
+Route::post('/add-review', [ReviewController::class, 'addReview'])->middleware('auth');
+Route::get('/reviews/{id_kos}', [ReviewController::class, 'getReviews']);
